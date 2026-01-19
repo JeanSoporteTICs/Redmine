@@ -1,0 +1,365 @@
+{"ts":"2025-12-31T15:28:58+01:00","http_code":422,"error":"","body":"{\"errors\":[\"Unidad solicitante no puede estar en blanco\"]}","payload":{"issue":{"project_id":47,"subject":"problema impresora etiquetas \/ farmacia hospitalizados","description":"","tracker_id":3,"priority_id":2,"status_id":1,"category_id":158,"start_date":"2025-12-31","due_date":"2025-12-31","estimated_hours":1,"assigned_to_id":42}},"message_id":"bb4ee83a-a11f-4d1f-8f2f-50d3beb7cc93"}
+{"ts":"2025-12-31T15:28:58+01:00","http_code":422,"error":"","body":"{\"errors\":[\"Unidad solicitante no puede estar en blanco\"]}","payload":{"issue":{"project_id":47,"subject":"problema manager \/ calidad de vida laboral","description":"","tracker_id":3,"priority_id":2,"status_id":1,"category_id":94,"start_date":"2025-12-31","due_date":"2025-12-31","estimated_hours":1,"assigned_to_id":42}},"message_id":"83c5482f-e3e6-46b9-add3-e48b85ec5df8"}
+{"ts":"2025-12-31T15:28:58+01:00","http_code":422,"error":"","body":"{\"errors\":[\"Unidad solicitante no puede estar en blanco\"]}","payload":{"issue":{"project_id":47,"subject":"apoyo revisión servidor \/ informática","description":"","tracker_id":3,"priority_id":2,"status_id":1,"category_id":97,"start_date":"2025-12-31","due_date":"2025-12-31","estimated_hours":1,"assigned_to_id":42}},"message_id":"1bb4edd5-4804-45bb-8ee7-af2f517fafd4"}
+{"ts":"2026-01-07T16:37:00+01:00","http_code":422,"error":"","body":"{\"errors\":[\"Unidad solicitante no puede estar en blanco\"]}","payload":{"issue":{"project_id":47,"subject":"problema página web \/ informática","description":"","tracker_id":3,"priority_id":2,"status_id":1,"category_id":124,"start_date":"2026-01-07","due_date":"2026-01-07","estimated_hours":1,"assigned_to_id":42,"custom_fields":[{"id":3,"value":"Álvaro rochi"},{"id":5,"value":"informática"}]}},"message_id":"e8a16a60-d73d-4323-a109-149f7c3d0225"}
+{"ts":"2026-01-07T16:40:16+01:00","http_code":422,"error":"","body":"{\"errors\":[\"Unidad solicitante no puede estar en blanco\"]}","payload":{"issue":{"project_id":47,"subject":"problema página web \/ informática","description":"","tracker_id":3,"priority_id":2,"status_id":1,"category_id":124,"start_date":"2026-01-07","due_date":"2026-01-07","estimated_hours":1,"assigned_to_id":42,"custom_fields":[{"id":3,"value":"Álvaro rochi"},{"id":5,"value":"informática"}]}},"message_id":"e8a16a60-d73d-4323-a109-149f7c3d0225"}
+{"ts":"2026-01-12T21:14:20+01:00","http_code":422,"error":"","body":"{\"errors\":[\"Unidad solicitante no puede estar en blanco\"]}","payload":{"issue":{"project_id":47,"subject":"problema nextcloud \/ medicina","description":"","tracker_id":3,"priority_id":2,"status_id":1,"category_id":499,"start_date":"2026-01-12","due_date":"2026-01-12","estimated_hours":1,"assigned_to_id":42,"custom_fields":[{"id":3,"value":"carolina"},{"id":5,"value":"medicina"}]}},"message_id":"d0054349-80fe-4ad7-a918-ff53c27c3313"}
+{"ts":"2026-01-12T21:14:20+01:00","http_code":422,"error":"","body":"{\"errors\":[\"Unidad solicitante no puede estar en blanco\"]}","payload":{"issue":{"project_id":47,"subject":"instalar manager \/ unidad física","description":"","tracker_id":3,"priority_id":2,"status_id":1,"category_id":94,"start_date":"2026-01-12","due_date":"2026-01-12","estimated_hours":1,"assigned_to_id":42,"custom_fields":[{"id":3,"value":"madeline"},{"id":5,"value":"unidad física"}]}},"message_id":"ee04679d-e904-4b7d-9586-f964d30a9549"}
+{"ts":"2026-01-12T21:14:21+01:00","http_code":422,"error":"","body":"{\"errors\":[\"Unidad solicitante no puede estar en blanco\"]}","payload":{"issue":{"project_id":47,"subject":"problema impresora \/ unidad física","description":"","tracker_id":3,"priority_id":2,"status_id":1,"category_id":97,"start_date":"2026-01-12","due_date":"2026-01-12","estimated_hours":1,"assigned_to_id":42,"custom_fields":[{"id":3,"value":"barbara"},{"id":5,"value":"unidad física"}]}},"message_id":"f6a9cce5-cf63-4ade-89f8-1944297d38f4"}
+{"ts":"2026-01-12T21:14:21+01:00","http_code":422,"error":"","body":"{\"errors\":[\"Unidad solicitante no puede estar en blanco\"]}","payload":{"issue":{"project_id":47,"subject":"instalar manager \/ equipos medicos","description":"","tracker_id":3,"priority_id":2,"status_id":1,"category_id":94,"start_date":"2026-01-12","due_date":"2026-01-12","estimated_hours":1,"assigned_to_id":42,"custom_fields":[{"id":3,"value":"rodrigo"},{"id":5,"value":"equipos medicos"}]}},"message_id":"5093a186-f1b0-4bd6-90a0-26a6f25db6ae"}
+{"ts":"2026-01-12T21:14:21+01:00","http_code":422,"error":"","body":"{\"errors\":[\"Unidad solicitante no puede estar en blanco\"]}","payload":{"issue":{"project_id":47,"subject":"problema software sidexis \/ dental","description":"","tracker_id":3,"priority_id":2,"status_id":1,"category_id":620,"start_date":"2026-01-12","due_date":"2026-01-12","estimated_hours":1,"assigned_to_id":42,"custom_fields":[{"id":3,"value":"hernán"},{"id":5,"value":"dental"}]}},"message_id":"d8ce855a-0ec5-4bf0-8857-39e9e9c79aed"}
+{"ts":"2026-01-12T21:14:21+01:00","http_code":422,"error":"","body":"{\"errors\":[\"Unidad solicitante no puede estar en blanco\"]}","payload":{"issue":{"project_id":47,"subject":"problema página web \/ reclutamiento","description":"","tracker_id":3,"priority_id":2,"status_id":1,"category_id":124,"start_date":"2026-01-12","due_date":"2026-01-12","estimated_hours":1,"assigned_to_id":42,"custom_fields":[{"id":3,"value":"karina"},{"id":5,"value":"reclutamiento"}]}},"message_id":"627d88c3-c730-476a-bb58-5f2593598320"}
+{"ts":"2026-01-12T21:14:21+01:00","http_code":422,"error":"","body":"{\"errors\":[\"Unidad solicitante no puede estar en blanco\"]}","payload":{"issue":{"project_id":47,"subject":"configurar impresora \/ poli cardiología","description":"","tracker_id":3,"priority_id":2,"status_id":1,"category_id":97,"start_date":"2026-01-12","due_date":"2026-01-12","estimated_hours":1,"assigned_to_id":42,"custom_fields":[{"id":3,"value":"javiera"},{"id":5,"value":"poli cardiología"}]}},"message_id":"e7f25d6f-7d71-4648-8987-24c44e037aa3"}
+{"ts":"2026-01-12T21:14:21+01:00","http_code":422,"error":"","body":"{\"errors\":[\"Unidad solicitante no puede estar en blanco\"]}","payload":{"issue":{"project_id":47,"subject":"problema impresora de etiquetas \/ rayos","description":"","tracker_id":3,"priority_id":2,"status_id":1,"category_id":97,"start_date":"2026-01-12","due_date":"2026-01-12","estimated_hours":1,"assigned_to_id":42,"custom_fields":[{"id":3,"value":"ruth"},{"id":5,"value":"rayos"}]}},"message_id":"6a00c254-9198-4952-8dd8-4bdc7db1ab90"}
+{"ts":"2026-01-12T21:14:21+01:00","http_code":422,"error":"","body":"{\"errors\":[\"Unidad solicitante no puede estar en blanco\"]}","payload":{"issue":{"project_id":47,"subject":"problema impresora \/ quimio ambulatoria","description":"","tracker_id":3,"priority_id":2,"status_id":1,"category_id":97,"start_date":"2026-01-12","due_date":"2026-01-12","estimated_hours":1,"assigned_to_id":42,"custom_fields":[{"id":3,"value":"varinia"},{"id":5,"value":"quimio ambulatoria"}]}},"message_id":"5fe95aaa-e959-4949-bc1d-c9f82c3584aa"}
+{"ts":"2026-01-13T00:11:40+01:00","http_code":422,"error":"","body":"{\"errors\":[\"Unidad solicitante no puede estar en blanco\"]}","payload":{"issue":{"project_id":47,"subject":"problema impresora \/ ginecología","description":"","tracker_id":3,"priority_id":2,"status_id":1,"category_id":97,"start_date":"2026-01-12","due_date":"2026-01-12","estimated_hours":1,"assigned_to_id":42,"custom_fields":[{"id":3,"value":"maryann"},{"id":5,"value":"ginecología"}]}},"message_id":"50c05099-a2a8-4302-a5f1-b8ec0b70979e"}
+{
+    "ts": "2026-01-19T13:41:07+01:00",
+    "http_code": 401,
+    "error": "",
+    "body": "",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema equipo \/ hematología infantil",
+            "description": "problema equipo, hematología infantil, michelle",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-16",
+            "due_date": "2026-01-16",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97
+        }
+    },
+    "message_id": "d63806e5-ede7-4480-87c9-e518816f7dca"
+}
+{
+    "ts": "2026-01-19T13:41:07+01:00",
+    "http_code": 401,
+    "error": "",
+    "body": "",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "archivo perdido \/ recursos humanos",
+            "description": "archivo perdido, recursos humanos, felipe carrasco",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-16",
+            "due_date": "2026-01-16",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97
+        }
+    },
+    "message_id": "36e9a302-4940-4cf1-8610-1e9b689887d7"
+}
+{
+    "ts": "2026-01-19T13:42:26+01:00",
+    "http_code": 401,
+    "error": "",
+    "body": "",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema impresora \/ uci",
+            "description": "problema impresora, uci, lilian",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-19",
+            "due_date": "2026-01-19",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97
+        }
+    },
+    "message_id": "3a96906d-ae0b-4367-a407-7c4cb25bf936"
+}
+{
+    "ts": "2026-01-19T13:45:37+01:00",
+    "http_code": 401,
+    "error": "",
+    "body": "",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema equipo \/ hematología infantil",
+            "description": "problema equipo, hematología infantil, michelle",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-19",
+            "due_date": "2026-01-19",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97
+        }
+    },
+    "message_id": "7caad57c-349a-4a1f-af21-dfd56b11c033"
+}
+{
+    "ts": "2026-01-19T13:45:37+01:00",
+    "http_code": 401,
+    "error": "",
+    "body": "",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "archivo perdido \/ recursos humanos",
+            "description": "archivo perdido, recursos humanos, felipe carrasco",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-19",
+            "due_date": "2026-01-19",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97
+        }
+    },
+    "message_id": "8bccec8e-3601-4cd1-9cb5-376ab3b83c76"
+}
+{
+    "ts": "2026-01-19T14:08:34+01:00",
+    "http_code": 422,
+    "error": "",
+    "body": "{\"errors\":[\"Unidad solicitante no puede estar en blanco\"]}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "archivo perdido \/ recursos humanos",
+            "description": "archivo perdido, recursos humanos, felipe carrasco",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-19",
+            "due_date": "2026-01-19",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97
+        }
+    },
+    "message_id": "0912a452-591b-4a51-a539-cf7003dffd41"
+}
+{
+    "ts": "2026-01-19T14:08:34+01:00",
+    "http_code": 422,
+    "error": "",
+    "body": "{\"errors\":[\"Unidad solicitante no puede estar en blanco\"]}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema equipo \/ hematología infantil",
+            "description": "problema equipo, hematología infantil, michelle",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-19",
+            "due_date": "2026-01-19",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97
+        }
+    },
+    "message_id": "0e2e5f3e-1beb-455b-883b-dd77799c8dac"
+}
+{
+    "ts": "2026-01-19T14:11:26+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112300,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"archivo perdido \/ recursos humanos\",\"description\":\"archivo perdido, recursos humanos, felipe carrasco\",\"start_date\":\"2026-01-19\",\"due_date\":\"2026-01-19\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"RECURSOS HUMANOS\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-19T13:11:25Z\",\"updated_on\":\"2026-01-19T13:11:25Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "archivo perdido \/ recursos humanos",
+            "description": "archivo perdido, recursos humanos, felipe carrasco",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-19",
+            "due_date": "2026-01-19",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "11",
+                    "value": "RECURSOS HUMANOS"
+                }
+            ]
+        }
+    },
+    "message_id": "d5934f8f-afe9-4bb7-a7a9-6e00a19304a2"
+}
+{
+    "ts": "2026-01-19T14:11:26+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112301,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"problema equipo \/ hematología infantil\",\"description\":\"problema equipo, hematología infantil, michelle\",\"start_date\":\"2026-01-19\",\"due_date\":\"2026-01-19\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"HBV\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-19T13:11:26Z\",\"updated_on\":\"2026-01-19T13:11:26Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema equipo \/ hematología infantil",
+            "description": "problema equipo, hematología infantil, michelle",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-19",
+            "due_date": "2026-01-19",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "11",
+                    "value": "HBV"
+                }
+            ]
+        }
+    },
+    "message_id": "eb60735a-49be-4080-b52f-443ccf766f62"
+}
+{
+    "ts": "2026-01-19T14:28:13+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112305,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"problema impresora \/ uci\",\"description\":\"problema impresora, uci, lilian\",\"start_date\":\"2026-01-19\",\"due_date\":\"2026-01-19\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"UCI ADULTO\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-19T13:28:13Z\",\"updated_on\":\"2026-01-19T13:28:13Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema impresora \/ uci",
+            "description": "problema impresora, uci, lilian",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-19",
+            "due_date": "2026-01-19",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "11",
+                    "value": "UCI ADULTO"
+                }
+            ]
+        }
+    },
+    "message_id": "78533efa-2ae3-403c-8c5f-541e8e8e5c31"
+}
+{
+    "ts": "2026-01-19T14:42:27+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112308,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"problema impresora \/ bodega farmacia\",\"description\":\"problema impresora, bodega farmacia, elizabeth\",\"start_date\":\"2026-01-19\",\"due_date\":\"2026-01-19\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"HBV\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-19T13:42:27Z\",\"updated_on\":\"2026-01-19T13:42:27Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema impresora \/ bodega farmacia",
+            "description": "problema impresora, bodega farmacia, elizabeth",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-19",
+            "due_date": "2026-01-19",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "11",
+                    "value": "HBV"
+                }
+            ]
+        }
+    },
+    "message_id": "ee4e0596-5bff-4c46-a716-817480e22ed6"
+}
+{
+    "ts": "2026-01-19T17:39:58+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112359,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"configurar impresora \/ urgencia shap\",\"description\":\"configurar impresora, urgencia shap, carolina\",\"start_date\":\"2026-01-19\",\"due_date\":\"2026-01-19\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"HBV\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-19T16:39:58Z\",\"updated_on\":\"2026-01-19T16:39:58Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "configurar impresora \/ urgencia shap",
+            "description": "configurar impresora, urgencia shap, carolina",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-19",
+            "due_date": "2026-01-19",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "11",
+                    "value": "HBV"
+                }
+            ]
+        }
+    },
+    "message_id": "8339e8fb-45bb-432c-93ee-7cd11e79c034"
+}
+{
+    "ts": "2026-01-19T17:39:58+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112360,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"problema impresora \/ urgencia ginecología\",\"description\":\"problema impresora, urgencia ginecología, johana\",\"start_date\":\"2026-01-19\",\"due_date\":\"2026-01-19\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"URGENCIA GINECO-OBSTETRICIA\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-19T16:39:58Z\",\"updated_on\":\"2026-01-19T16:39:58Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema impresora \/ urgencia ginecología",
+            "description": "problema impresora, urgencia ginecología, johana",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-19",
+            "due_date": "2026-01-19",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "11",
+                    "value": "URGENCIA GINECO-OBSTETRICIA"
+                }
+            ]
+        }
+    },
+    "message_id": "9afbeeeb-ba76-4192-99d9-7abd9f4d702b"
+}
+{
+    "ts": "2026-01-19T19:18:06+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112381,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"pc no enciende \/ psiquiatría\",\"description\":\"pc no enciende, psiquiatría, raúl\",\"start_date\":\"2026-01-19\",\"due_date\":\"2026-01-19\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"PSIQUIATRIA\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-19T18:18:06Z\",\"updated_on\":\"2026-01-19T18:18:06Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "pc no enciende \/ psiquiatría",
+            "description": "pc no enciende, psiquiatría, raúl",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-19",
+            "due_date": "2026-01-19",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "11",
+                    "value": "PSIQUIATRIA"
+                }
+            ]
+        }
+    },
+    "message_id": "396f0243-ac22-4e4f-a9b6-5dc8990ef728"
+}
