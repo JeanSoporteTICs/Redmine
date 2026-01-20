@@ -575,3 +575,287 @@
     },
     "message_id": "2f6cf35b-946c-4c2b-8eb1-4dfccee05ea8"
 }
+{
+    "ts": "2026-01-20T19:20:24+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112470,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"problema equipo \/ oncología\",\"description\":\"\",\"start_date\":\"2026-01-20\",\"due_date\":\"2026-01-20\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"ONCOLOGIA\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-20T18:20:24Z\",\"updated_on\":\"2026-01-20T18:20:24Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema equipo \/ oncología",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-20",
+            "due_date": "2026-01-20",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "10",
+                    "value": "ONCOLOGíA"
+                },
+                {
+                    "id": "11",
+                    "value": "ONCOLOGIA"
+                }
+            ]
+        }
+    },
+    "message_id": "586efb94-b0a6-414f-bb24-3df2d0370e26"
+}
+{
+    "ts": "2026-01-20T19:24:24+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112471,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"problema equipo \/ oncología\",\"description\":\"\",\"start_date\":\"2026-01-20\",\"due_date\":\"2026-01-20\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"adolfo\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"ONCOLOGíA\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"ONCOLOGIA\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-20T18:24:24Z\",\"updated_on\":\"2026-01-20T18:24:24Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema equipo \/ oncología",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-20",
+            "due_date": "2026-01-20",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "adolfo"
+                },
+                {
+                    "id": "5",
+                    "value": "ONCOLOGíA"
+                },
+                {
+                    "id": "11",
+                    "value": "ONCOLOGIA"
+                }
+            ]
+        }
+    },
+    "message_id": "fd6e2f1e-23f7-4656-ba11-dbbc1ec4dcfb"
+}
+{
+    "ts": "2026-01-20T19:53:27+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112475,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":253,\"name\":\"Huelleros\"},\"subject\":\"revisión de licitación huelleros \/ informática\",\"description\":\"hola\",\"start_date\":\"2026-01-20\",\"due_date\":\"2026-01-20\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"daniel\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"INFORMáTICA\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"HBV\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-20T18:53:27Z\",\"updated_on\":\"2026-01-20T18:53:27Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "revisión de licitación huelleros \/ informática",
+            "description": "hola",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-20",
+            "due_date": "2026-01-20",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 253,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "daniel"
+                },
+                {
+                    "id": "5",
+                    "value": "INFORMáTICA"
+                },
+                {
+                    "id": "11",
+                    "value": "HBV"
+                }
+            ]
+        }
+    },
+    "message_id": "a559ca92-5407-47e6-8153-ab4e931a83cc"
+}
+{
+    "ts": "2026-01-20T20:20:55+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112481,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":253,\"name\":\"Huelleros\"},\"subject\":\"revisión de licitación huelleros \/ informática\",\"description\":\"hola\",\"start_date\":\"2026-01-20\",\"due_date\":\"2026-01-20\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"daniel\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"INFORMáTICA\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"HBV\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-20T19:20:55Z\",\"updated_on\":\"2026-01-20T19:20:55Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "revisión de licitación huelleros \/ informática",
+            "description": "hola",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-20",
+            "due_date": "2026-01-20",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 253,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "daniel"
+                },
+                {
+                    "id": "5",
+                    "value": "INFORMáTICA"
+                },
+                {
+                    "id": "11",
+                    "value": "HBV"
+                }
+            ]
+        }
+    },
+    "message_id": "a559ca92-5407-47e6-8153-ab4e931a83cc"
+}
+{
+    "ts": "2026-01-20T20:21:46+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112482,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":620,\"name\":\"Sidexis\"},\"subject\":\"problema sidexis \/ dental (box 20)\",\"description\":\"problema sidexis, dental (box 20), andrea\",\"start_date\":\"2026-01-20\",\"due_date\":\"2026-01-20\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"andrea\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"DENTAL (BOX 20)\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"DENTAL\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-20T19:21:46Z\",\"updated_on\":\"2026-01-20T19:21:46Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema sidexis \/ dental (box 20)",
+            "description": "problema sidexis, dental (box 20), andrea",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-20",
+            "due_date": "2026-01-20",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 620,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "andrea"
+                },
+                {
+                    "id": "5",
+                    "value": "DENTAL (BOX 20)"
+                },
+                {
+                    "id": "11",
+                    "value": "DENTAL"
+                }
+            ]
+        }
+    },
+    "message_id": "37771d40-0112-4143-8084-4f1cc94959d2"
+}
+{
+    "ts": "2026-01-20T20:21:46+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112483,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"problema impresora \/ recuperación central\",\"description\":\"problema impresora, recuperación central, matías\",\"start_date\":\"2026-01-20\",\"due_date\":\"2026-01-20\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"matías\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"RECUPERACIóN CENTRAL\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"HBV\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-20T19:21:46Z\",\"updated_on\":\"2026-01-20T19:21:46Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema impresora \/ recuperación central",
+            "description": "problema impresora, recuperación central, matías",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-20",
+            "due_date": "2026-01-20",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "matías"
+                },
+                {
+                    "id": "5",
+                    "value": "RECUPERACIóN CENTRAL"
+                },
+                {
+                    "id": "11",
+                    "value": "HBV"
+                }
+            ]
+        }
+    },
+    "message_id": "9f0ff04f-545e-4ad3-a706-20a7091a9a57"
+}
+{
+    "ts": "2026-01-20T20:21:47+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112484,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":94,\"name\":\"Manager\"},\"subject\":\"problema manager \/ dental\",\"description\":\"problema manager, dental, maria paz\",\"start_date\":\"2026-01-20\",\"due_date\":\"2026-01-20\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"maria paz\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"DENTAL\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"DENTAL\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-20T19:21:47Z\",\"updated_on\":\"2026-01-20T19:21:47Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema manager \/ dental",
+            "description": "problema manager, dental, maria paz",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-20",
+            "due_date": "2026-01-20",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 94,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "maria paz"
+                },
+                {
+                    "id": "5",
+                    "value": "DENTAL"
+                },
+                {
+                    "id": "11",
+                    "value": "DENTAL"
+                }
+            ]
+        }
+    },
+    "message_id": "c7663bc4-5ea5-43b9-adb7-1728eb4bfcf0"
+}
+{
+    "ts": "2026-01-20T20:21:48+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112485,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"problema correo \/ poli medicina\",\"description\":\"\",\"start_date\":\"2026-01-20\",\"due_date\":\"2026-01-20\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"ana maria\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"POLI MEDICINA\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"POLI MEDICINA\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-20T19:21:48Z\",\"updated_on\":\"2026-01-20T19:21:48Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema correo \/ poli medicina",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-20",
+            "due_date": "2026-01-20",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "ana maria"
+                },
+                {
+                    "id": "5",
+                    "value": "POLI MEDICINA"
+                },
+                {
+                    "id": "11",
+                    "value": "POLI MEDICINA"
+                }
+            ]
+        }
+    },
+    "message_id": "87c3d688-60d5-4d09-8eed-4cb08fdff1c6"
+}

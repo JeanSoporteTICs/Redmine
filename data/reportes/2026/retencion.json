@@ -563,5 +563,30 @@
         "procesado_ts": "2026-01-20T17:32:53+01:00",
         "_archivado_por": "retencion",
         "_archivado_en": "2026-01-20T17:32:53+01:00"
+    },
+    {
+        "id": "fd6e2f1e-23f7-4656-ba11-dbbc1ec4dcfb",
+        "numero": "+56973712780",
+        "mensaje": "",
+        "fecha": "20-01-2026",
+        "hora": "15:24:07",
+        "fecha_inicio": "20-01-2026",
+        "fecha_fin": "20-01-2026",
+        "tipo": "Soporte",
+        "prioridad": "NORMAL",
+        "estado": "procesado",
+        "hora_extra": "0",
+        "tiempo_estimado": "1",
+        "categoria": "Equipos",
+        "unidad": "oncología",
+        "unidad_solicitante": "ONCOLOGIA",
+        "solicitante": "adolfo",
+        "asunto": "problema equipo \/ oncología",
+        "asignado_a": "42",
+        "asignado_nombre": "Jean Cortés Lorca",
+        "redmine_id": 112471,
+        "procesado_ts": "2026-01-20T19:24:24+01:00",
+        "_archivado_por": "retencion",
+        "_archivado_en": "2026-01-20T19:24:24+01:00"
     }
 ]
