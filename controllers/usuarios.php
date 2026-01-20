@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/auth.php';
 // CRUD básico para usuarios usando data/usuarios.json
 $DATA_FILE = __DIR__ . '/../data/usuarios.json';
 
@@ -148,6 +149,15 @@ function handle_usuarios() {
                 return [$rows, 'Error: las contraseñas no coinciden'];
             }
             $hash = $pwd !== '' ? password_hash($pwd, PASSWORD_DEFAULT) : '';
+            $assignedRole = sanitize_input($_POST['rol'] ?? 'usuario');
+            $rolePerms = [];
+            if (function_exists('auth_load_roles')) {
+                $roles = auth_load_roles();
+                $cfg = $roles[$assignedRole] ?? [];
+                if (is_array($cfg)) {
+                    $rolePerms = $cfg;
+                }
+            }
             $rows[] = [
                 'id' => $id_input !== '' ? $id_input : ($rut_sin_dv ?: uniqid('', true)),
                 'rut_sin_dv' => $rut_sin_dv,
@@ -156,9 +166,10 @@ function handle_usuarios() {
                 'rut' => $rut_input,
                 'numero_celular' => $phone_base,
                 'estamento' => sanitize_input($_POST['estamento'] ?? ''),
-                'rol' => sanitize_input($_POST['rol'] ?? 'usuario'),
+                'rol' => $assignedRole,
                 'api' => sanitize_input($_POST['api'] ?? ''),
                 'password' => $hash,
+                'permisos' => $rolePerms,
             ];
             save_usuarios($DATA_FILE, $rows);
             $flash = 'Usuario creado';

@@ -414,7 +414,28 @@ function handle_request(): array {
                 }
                 break;
             case 'reset_errors':
-                $flash = 'Errores marcados como pendientes.';
+                $ids = isset($_POST['ids']) ? explode(',', $_POST['ids']) : [];
+                $ids = array_filter(array_map('trim', $ids));
+                $updated = 0;
+                foreach ($messages as &$message) {
+                    if (!in_array(($message['id'] ?? ''), $ids, true)) {
+                        continue;
+                    }
+                    if (strtolower($message['estado'] ?? '') !== 'error') {
+                        continue;
+                    }
+                    $message['estado'] = 'pendiente';
+                    unset($message['redmine_id']);
+                    $message['procesado_ts'] = '';
+                    $updated++;
+                }
+                unset($message);
+                if ($updated > 0) {
+                    save_messages($messages);
+                    $flash = $updated . ' error(es) marcados como pendientes.';
+                } else {
+                    $flash = 'No se encontraron errores seleccionados.';
+                }
                 break;
             default:
                 $flash = 'Acción desconocida.';
