@@ -511,7 +511,7 @@ $csrf = csrf_token();
 
             <div class="col-md-3"><label class="form-label">Prioridad</label><input name="prioridad" id="md-prioridad" class="form-control" list="prioridad-list"></div>
 
-            <div class="col-md-3"><label class="form-label">Categorías;a</label><input name="categoria" id="md-categoria" class="form-control" list="cat-list"></div>
+            <div class="col-md-3"><label class="form-label">Categorías</label><input name="categoria" id="md-categoria" class="form-control" list="cat-list"></div>
 
             <div class="col-md-3">
               <label class="form-label">Asignado a</label>
@@ -537,7 +537,7 @@ $csrf = csrf_token();
               <label class="form-label">Hora extra</label>
               <select name="hora_extra" id="md-hora_extra" class="form-select">
                 <option value="0" selected>No</option>
-                <option value="1">Sí;</option>
+                <option value="1">Sí</option>
               </select>
             </div>
 
