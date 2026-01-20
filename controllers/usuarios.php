@@ -169,11 +169,19 @@ function handle_usuarios() {
                     $rolePerms = $cfg;
                 }
             }
+            $requiredName = sanitize_input($_POST['nombre'] ?? '');
+            $requiredLast = sanitize_input($_POST['apellido'] ?? '');
+            if ($requiredName === '' || $requiredLast === '') {
+                return [$rows, 'Error: nombre y apellido son obligatorios'];
+            }
+            if ($phone_base === '') {
+                return [$rows, 'Error: el celular debe contener dígitos válidos'];
+            }
             $rows[] = [
                 'id' => $id_input !== '' ? $id_input : ($rut_sin_dv ?: uniqid('', true)),
                 'rut_sin_dv' => $rut_sin_dv,
-                'nombre' => sanitize_input($_POST['nombre'] ?? ''),
-                'apellido' => sanitize_input($_POST['apellido'] ?? ''),
+                'nombre' => $requiredName,
+                'apellido' => $requiredLast,
                 'rut' => format_rut_value($rut_input),
                 'numero_celular' => $phone_base,
                 'estamento' => sanitize_input($_POST['estamento'] ?? ''),
@@ -205,11 +213,19 @@ function handle_usuarios() {
                 }
                 $current['password'] = password_hash($pwd, PASSWORD_DEFAULT);
             }
+            $requiredNameUp = sanitize_input($_POST['nombre'] ?? $current['nombre']);
+            $requiredLastUp = sanitize_input($_POST['apellido'] ?? $current['apellido']);
+            if ($requiredNameUp === '' || $requiredLastUp === '') {
+                return [$rows, 'Error: nombre y apellido son obligatorios'];
+            }
+            if ($phone_base === '') {
+                return [$rows, 'Error: el celular debe contener dígitos válidos'];
+            }
             $current['rut_sin_dv'] = $rut_sin_dv;
-            $current['nombre'] = sanitize_input($_POST['nombre'] ?? $current['nombre']);
-            $current['apellido'] = sanitize_input($_POST['apellido'] ?? $current['apellido']);
+            $current['nombre'] = $requiredNameUp;
+            $current['apellido'] = $requiredLastUp;
             $current['rut'] = format_rut_value($rut_input);
-            $current['numero_celular'] = sanitize_phone($_POST['numero_celular'] ?? $current['numero_celular']);
+            $current['numero_celular'] = $phone_base;
             $current['estamento'] = sanitize_input($_POST['estamento'] ?? $current['estamento']);
             $current['rol'] = sanitize_input($_POST['rol'] ?? ($current['rol'] ?? 'usuario'));
             $current['api'] = sanitize_input($_POST['api'] ?? $current['api']);
