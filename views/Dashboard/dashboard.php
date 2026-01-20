@@ -1,10 +1,19 @@
-﻿<?php
+<?php
 
 require_once __DIR__ . '/../../controllers/auth.php';
 auth_require_login('/redmine/login.php');
 require_once __DIR__ . '/../../controllers/dashboard.php';
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+$flashSession = $_SESSION['flash'] ?? null;
+unset($_SESSION['flash']);
+
 list($messages, $flash, $securityLog) = handle_request();
+if ($flashSession) {
+    $flash = $flashSession;
+}
 
 $pendientes = array_filter($messages, fn($m) => strtolower($m['estado'] ?? '') === 'pendiente');
 
@@ -366,9 +375,8 @@ $csrf = csrf_token();
                   data-hora="<?= $h($m['hora'] ?? '') ?>"
 
                   data-numero="<?= $h($m['numero'] ?? '') ?>"
-                  data-descripcion="<?= $h($m['descripcion'] ?? '') ?>"
 
-                  
+                  <!-- data-mensaje="<?= $h($m['mensaje'] ?? '') ?>" -->
 
                 >Detalle / Editar</button>
                 <?php if (strtolower($m['estado'] ?? '') === 'error'): ?>
@@ -545,7 +553,7 @@ $csrf = csrf_token();
 
             <div class="col-md-3"><label class="form-label">Número</label><input name="numero" id="md-numero" class="form-control"></div>
 
-            <div class="col-12"><label class="form-label">Descripción</label><textarea name="descripcion" id="md-descripcion" class="form-control" rows="2"></textarea></div>
+            <div class="col-12"><label class="form-label">Mensaje</label><textarea name="mensaje" id="md-mensaje" class="form-control" rows="2"></textarea></div>
 
           </div>
 
@@ -665,7 +673,9 @@ $csrf = csrf_token();
 
   set('md-numero', 'data-numero');
 
-  set('md-descripcion', 'data-descripcion');
+  set('md-mensaje', 'data-mensaje');
+
+
 
   const estadoInput = document.getElementById('md-estado');
   const estadoHelp = document.getElementById('estado-help');

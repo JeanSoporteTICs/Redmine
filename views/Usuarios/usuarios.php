@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once __DIR__ . '/../../controllers/auth.php';
 auth_require_role(['root','gestor'], '/redmine/login.php');
 require_once __DIR__ . '/../../controllers/usuarios.php';
@@ -256,11 +256,16 @@ function normalizePhoneForComparison(raw) {
 }
 
 function setupPhonePrefix() {
-  const digitsOnly = (raw) => (raw || '').replace(/\D/g, '').slice(0, 8);
   const formatPhoneValue = (raw) => {
-    const digits = digitsOnly(raw);
-    if (digits.length < 8) return '';
-    return '+569' + digits;
+    let digits = (raw || '').replace(/\D/g, '');
+    if (!digits) return '';
+    if (digits.length === 8 && digits.startsWith('7')) {
+      digits = '9' + digits;
+    }
+    if (digits.length > 9) {
+      digits = digits.slice(-9);
+    }
+    return '+569' + digits.slice(-9);
   };
 
   const ensure = (input, force = false) => {
@@ -274,9 +279,9 @@ function setupPhonePrefix() {
   document.querySelectorAll('input[name="numero_celular"]').forEach(input => {
     input.addEventListener('blur', () => ensure(input, true));
     input.addEventListener('input', () => {
-      const sanitized = digitsOnly(input.value);
-      if (input.value !== sanitized) {
-        input.value = sanitized;
+      const digits = input.value.replace(/\D/g, '');
+      if (digits.length >= 8) {
+        ensure(input);
       }
     });
   });
