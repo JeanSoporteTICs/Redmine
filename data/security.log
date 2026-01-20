@@ -60,3 +60,9 @@
 [2026-01-20 19:18:26] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
 [2026-01-20 19:40:30] CSRF_ALERT - Token=NULL session=NULL
 [2026-01-20 19:40:35] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[2026-01-20 20:32:58] CSRF_ALERT - Token=NULL session=NULL
+[2026-01-20 20:33:03] LOGIN_SUCCESS - User root root (1)
+[2026-01-20 20:51:56] CSRF_ALERT - Token=NULL session=NULL
+[2026-01-20 20:51:59] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[2026-01-20 21:10:25] CSRF_ALERT - Token=NULL session=NULL
+[2026-01-20 21:10:28] LOGIN_SUCCESS - User Jean Cortés Lorca (42)

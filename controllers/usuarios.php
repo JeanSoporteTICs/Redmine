@@ -1,5 +1,23 @@
 <?php
 require_once __DIR__ . '/auth.php';
+
+function usuarios_set_flash(string $message): void {
+    auth_start_session();
+    $_SESSION['usuarios_flash'] = $message;
+}
+
+function usuarios_consume_flash(): ?string {
+    auth_start_session();
+    $message = $_SESSION['usuarios_flash'] ?? null;
+    unset($_SESSION['usuarios_flash']);
+    return $message;
+}
+
+function usuarios_redirect_back(): void {
+    $location = $_SERVER['REQUEST_URI'] ?? '/redmine/views/Usuarios/usuarios.php';
+    header('Location: ' . $location);
+    exit;
+}
 // CRUD básico para usuarios usando data/usuarios.json
 $DATA_FILE = __DIR__ . '/../data/usuarios.json';
 
@@ -131,7 +149,7 @@ function format_rut_value(string $rut): string {
 function handle_usuarios() {
     global $DATA_FILE;
     $rows = load_usuarios($DATA_FILE);
-    $flash = null;
+    $flash = usuarios_consume_flash();
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (function_exists('csrf_validate')) csrf_validate();
         $action = $_POST['action'] ?? '';
@@ -191,7 +209,8 @@ function handle_usuarios() {
                 'permisos' => $rolePerms,
             ];
             save_usuarios($DATA_FILE, $rows);
-            $flash = 'Usuario creado';
+            usuarios_set_flash('Usuario creado');
+            usuarios_redirect_back();
         } elseif ($action === 'update') {
             $id = $_POST['id'] ?? '';
             $index = find_user_index($rows, $id);
@@ -230,12 +249,14 @@ function handle_usuarios() {
             $current['rol'] = sanitize_input($_POST['rol'] ?? ($current['rol'] ?? 'usuario'));
             $current['api'] = sanitize_input($_POST['api'] ?? $current['api']);
             save_usuarios($DATA_FILE, $rows);
-            $flash = 'Usuario actualizado';
+            usuarios_set_flash('Usuario actualizado');
+            usuarios_redirect_back();
         } elseif ($action === 'delete') {
             $id = $_POST['id'] ?? '';
             $rows = array_values(array_filter($rows, fn($r) => (string)($r['id'] ?? '') !== (string)$id));
             save_usuarios($DATA_FILE, $rows);
-            $flash = 'Usuario eliminado';
+            usuarios_set_flash('Usuario eliminado');
+            usuarios_redirect_back();
         }
     }
     return [$rows, $flash];

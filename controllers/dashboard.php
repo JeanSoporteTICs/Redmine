@@ -3,6 +3,24 @@
 require_once __DIR__ . '/auth.php';
 require_once __DIR__ . '/security.php';
 
+function dashboard_set_flash(string $message): void {
+    auth_start_session();
+    $_SESSION['flash'] = $message;
+}
+
+function dashboard_consume_flash(): ?string {
+    auth_start_session();
+    $message = $_SESSION['flash'] ?? null;
+    unset($_SESSION['flash']);
+    return $message;
+}
+
+function dashboard_redirect_back(): void {
+    $location = $_SERVER['REQUEST_URI'] ?? '/redmine/views/Dashboard/dashboard.php';
+    header('Location: ' . $location);
+    exit;
+}
+
 function dashboard_messages_file(): string {
     return __DIR__ . '/../data/mensaje.json';
 }
@@ -77,8 +95,8 @@ function parse_issue_date(string $value): ?string {
 function build_redmine_issue_payload(array $message, array $cfg, array $catMap, array $unitMap): array {
     $issue = [
         'project_id' => (int)($cfg['project_id'] ?? 0),
-        'subject' => trim($message['asunto'] ?? $message['mensaje'] ?? ''),
-        'description' => trim($message['mensaje'] ?? ''),
+        'subject' => trim($message['asunto'] ?? $message['descripcion'] ?? $message['mensaje'] ?? ''),
+        'description' => trim($message['descripcion'] ?? $message['mensaje'] ?? ''),
         'tracker_id' => (int)($cfg['tracker_id'] ?? 0),
         'priority_id' => (int)($cfg['priority_id'] ?? 0),
         'status_id' => (int)($cfg['status_id'] ?? 0),
@@ -113,7 +131,7 @@ function build_redmine_issue_payload(array $message, array $cfg, array $catMap, 
                 $value = $message['solicitante'] ?? '';
                 break;
             case 'cf_unidad':
-                $value = strtoupper(trim($message['unidad'] ?? ''));
+                $value = trim($message['unidad'] ?? '');
                 break;
             case 'cf_unidad_solicitante':
                 $value = strtoupper(trim($message['unidad_solicitante'] ?? $message['unidad'] ?? ''));
@@ -348,15 +366,16 @@ function handle_request(): array {
     if (apply_retention_archive($messages)) {
         save_messages($messages);
     }
-    $flash = null;
+    $flash = dashboard_consume_flash();
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         csrf_validate();
         $action = $_POST['action'] ?? '';
+        $flashMsg = null;
         switch ($action) {
             case 'update':
                 $id = $_POST['id'] ?? '';
                 if ($id === '') {
-                    $flash = 'Falta el identificador del mensaje.';
+                    $flashMsg = 'Falta el identificador del mensaje.';
                     break;
                 }
                 $updated = false;
@@ -364,7 +383,7 @@ function handle_request(): array {
                     'tipo','estado','asunto','prioridad','categoria',
                     'asignado_a','solicitante','unidad','unidad_solicitante',
                     'hora_extra','fecha_inicio','fecha_fin','tiempo_estimado',
-                    'fecha','hora','numero','mensaje'
+                'fecha','hora','numero','descripcion'
                 ];
                 foreach ($messages as &$message) {
                     if (($message['id'] ?? '') !== $id) {
@@ -381,36 +400,36 @@ function handle_request(): array {
                 unset($message);
                 if ($updated) {
                     save_messages($messages);
-                    $flash = 'Mensaje actualizado.';
+                    $flashMsg = 'Mensaje actualizado.';
                 } else {
-                    $flash = 'No se encontró el mensaje.';
+                    $flashMsg = 'No se encontró el mensaje.';
                 }
                 break;
             case 'delete':
                 $id = $_POST['id'] ?? '';
                 if ($id === '') {
-                    $flash = 'Identificador no válido.';
+                    $flashMsg = 'Identificador no válido.';
                     break;
                 }
                 $before = count($messages);
                 $messages = array_values(array_filter($messages, fn($m) => ($m['id'] ?? '') !== $id));
                 if ($before !== count($messages)) {
                     save_messages($messages);
-                    $flash = 'Mensaje eliminado.';
+                    $flashMsg = 'Mensaje eliminado.';
                 } else {
-                    $flash = 'No se encontró el mensaje para eliminar.';
+                    $flashMsg = 'No se encontró el mensaje para eliminar.';
                 }
                 break;
             case 'process_selected':
-                $flash = 'Solicitado envío de los tickets seleccionados a Redmine.';
+                // se resuelve después del switch para incluir resultados del envío.
                 break;
             case 'archive_selected':
                 $ids = isset($_POST['ids']) ? explode(',', $_POST['ids']) : [];
                 $archived = archive_selected_messages($messages, $ids);
                 if ($archived > 0) {
-                    $flash = $archived . ' tickets archivados.';
+                    $flashMsg = $archived . ' tickets archivados.';
                 } else {
-                    $flash = 'No había mensajes seleccionados para archivar.';
+                    $flashMsg = 'No había mensajes seleccionados para archivar.';
                 }
                 break;
             case 'reset_errors':
@@ -432,40 +451,38 @@ function handle_request(): array {
                 unset($message);
                 if ($updated > 0) {
                     save_messages($messages);
-                    $flash = $updated . ' error(es) marcados como pendientes.';
+                    $flashMsg = $updated . ' error(es) marcados como pendientes.';
                 } else {
-                    $flash = 'No se encontraron errores seleccionados.';
+                    $flashMsg = 'No se encontraron errores seleccionados.';
                 }
                 break;
             default:
-                $flash = 'Acción desconocida.';
+                $flashMsg = 'Acción desconocida.';
                 break;
         }
-            if ($action === 'process_selected') {
-                $ids = isset($_POST['ids']) ? explode(',', $_POST['ids']) : [];
-                $result = send_selected_messages($messages, $ids, load_platform_config(), $userToken);
-                $flashParts = [];
+        if ($action === 'process_selected') {
+            $ids = isset($_POST['ids']) ? explode(',', $_POST['ids']) : [];
+            $result = send_selected_messages($messages, $ids, load_platform_config(), $userToken);
+            $flashParts = [];
             if ($result['success'] > 0) {
                 $flashParts[] = $result['success'] . ' ticket(s) enviados.';
             }
             if ($result['attempts'] > $result['success']) {
                 $flashParts[] = 'Hubo fallas con ' . ($result['attempts'] - $result['success']) . ' ticket(s).';
             }
-                if (empty($flashParts)) {
-                    $flashParts[] = 'No se enviaron tickets.';
-                }
-                if (!empty($result['errors'])) {
-                    $flashParts[] = implode(' ', $result['errors']);
-                }
-                if (!empty($result['redmine_ids'])) {
-                    $flashParts[] = 'Redmine ID(s): ' . implode(', ', $result['redmine_ids']);
-                }
-                $flash = implode(' ', $flashParts);
+            if (empty($flashParts)) {
+                $flashParts[] = 'No se enviaron tickets.';
             }
-        $messages = load_messages();
-        if (apply_retention_archive($messages)) {
-            save_messages($messages);
+            if (!empty($result['errors'])) {
+                $flashParts[] = implode(' ', $result['errors']);
+            }
+            if (!empty($result['redmine_ids'])) {
+                $flashParts[] = 'Redmine ID(s): ' . implode(', ', $result['redmine_ids']);
+            }
+            $flashMsg = implode(' ', $flashParts);
         }
+        dashboard_set_flash($flashMsg ?? '');
+        dashboard_redirect_back();
     }
     $rawLog = security_load_events();
     $securityLog = array_filter($rawLog, fn($entry) => (($entry['tag'] ?? '') !== 'CSRF_ALERT'));

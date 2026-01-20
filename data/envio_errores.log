@@ -859,3 +859,75 @@
     },
     "message_id": "87c3d688-60d5-4d09-8eed-4cb08fdff1c6"
 }
+{
+    "ts": "2026-01-20T21:11:23+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112494,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"problema archivo \/ recursos humanos\",\"description\":\"problema archivo, recursos humanos, Fabian\",\"start_date\":\"2026-01-20\",\"due_date\":\"2026-01-20\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"Fabian\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"recursos humanos\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"RECURSOS HUMANOS\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-20T20:11:22Z\",\"updated_on\":\"2026-01-20T20:11:22Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema archivo \/ recursos humanos",
+            "description": "problema archivo, recursos humanos, Fabian",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-20",
+            "due_date": "2026-01-20",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "Fabian"
+                },
+                {
+                    "id": "5",
+                    "value": "recursos humanos"
+                },
+                {
+                    "id": "11",
+                    "value": "RECURSOS HUMANOS"
+                }
+            ]
+        }
+    },
+    "message_id": "02101be0-8f6f-40fb-9254-a035f82590ed"
+}
+{
+    "ts": "2026-01-20T21:33:26+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112497,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"equipo no enciende \/ pediatria\",\"description\":\"prueba\",\"start_date\":\"2026-01-20\",\"due_date\":\"2026-01-20\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"Barbara\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"pediatria\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"PEDIATRIA\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-20T20:33:26Z\",\"updated_on\":\"2026-01-20T20:33:26Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "equipo no enciende \/ pediatria",
+            "description": "prueba",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-20",
+            "due_date": "2026-01-20",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "Barbara"
+                },
+                {
+                    "id": "5",
+                    "value": "pediatria"
+                },
+                {
+                    "id": "11",
+                    "value": "PEDIATRIA"
+                }
+            ]
+        }
+    },
+    "message_id": "99e6f141-8cea-44e0-b1ab-1bb795e9d8f4"
+}
