@@ -376,8 +376,6 @@ $csrf = csrf_token();
 
                   data-numero="<?= $h($m['numero'] ?? '') ?>"
 
-                  <!-- data-mensaje="<?= $h($m['mensaje'] ?? '') ?>" -->
-
                 >Detalle / Editar</button>
                 <?php if (strtolower($m['estado'] ?? '') === 'error'): ?>
                   <?php
