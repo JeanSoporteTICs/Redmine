@@ -163,8 +163,8 @@ $csrf = csrf_token();
               </select>
             </div>
             <div class="col-md-8"><label class="form-label">API</label><input name="api" id="em-api" class="form-control" placeholder="API"></div>
-            <div class="col-md-6"><label class="form-label">Nueva Contraseña;a</label><input type="password" name="password" id="em-password" class="form-control" placeholder="Opcional"></div>
-            <div class="col-md-6"><label class="form-label">Repetir Contraseña;a</label><input type="password" name="password_confirm" id="em-password_confirm" class="form-control" placeholder="Opcional"></div>
+            <div class="col-md-6"><label class="form-label">Nueva Contraseña</label><input type="password" name="password" id="em-password" class="form-control" placeholder="Opcional"></div>
+            <div class="col-md-6"><label class="form-label">Repetir Contraseña</label><input type="password" name="password_confirm" id="em-password_confirm" class="form-control" placeholder="Opcional"></div>
           </div>
         </div>
         <div class="modal-footer">
