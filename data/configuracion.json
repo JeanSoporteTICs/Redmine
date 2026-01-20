@@ -77,7 +77,7 @@
         }
     ],
     "project_name": "Backlog Soporte TI",
-    "cf_unidad_solicitante": "11",
+    "cf_unidad_solicitante": null,
     "categories_url": "https:\/\/coresalud.cl\/gp\/projects\/backlog-soporte-ti\/issue_categories.json",
     "unidades_url": "https:\/\/coresalud.cl\/gp\/custom_fields.json"
 }

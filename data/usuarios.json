@@ -31,7 +31,8 @@
             "cfg_trackers": true,
             "cfg_prioridades": true,
             "cfg_estados": true,
-            "cfg_roles": true,
+            "cfg_roles": false,
+            "cfg_usuarios": false,
             "actividad": true
         }
     },
@@ -79,7 +80,9 @@
             "cfg_trackers": true,
             "cfg_prioridades": true,
             "cfg_estados": true,
-            "cfg_roles": true
+            "cfg_roles": true,
+            "cfg_usuarios": true,
+            "actividad": false
         }
     }
 ]

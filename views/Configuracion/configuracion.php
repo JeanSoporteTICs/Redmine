@@ -139,11 +139,12 @@ if (empty($rolesData)) {
       'cfg_proyecto' => true,
       'cfg_retencion' => true,
       'cfg_sesion' => true,
-      'cfg_trackers' => true,
-      'cfg_prioridades' => true,
-      'cfg_estados' => true,
-      'cfg_roles' => true,
-      'actividad' => true,
+        'cfg_trackers' => true,
+        'cfg_prioridades' => true,
+        'cfg_estados' => true,
+        'cfg_roles' => true,
+        'cfg_usuarios' => true,
+        'actividad' => true,
       'actividad' => true,
     ],
     'gestor' => [
@@ -168,6 +169,7 @@ if (empty($rolesData)) {
       'cfg_prioridades' => true,
       'cfg_estados' => true,
       'cfg_roles' => true,
+      'cfg_usuarios' => true,
     ],
     'administrador' => [
       'mensajes' => 'todos',
@@ -191,6 +193,7 @@ if (empty($rolesData)) {
       'cfg_prioridades' => true,
       'cfg_estados' => true,
       'cfg_roles' => false,
+      'cfg_usuarios' => false,
       'actividad' => false,
       'actividad' => true,
     ],
@@ -216,6 +219,7 @@ if (empty($rolesData)) {
       'cfg_prioridades' => false,
       'cfg_estados' => false,
       'cfg_roles' => false,
+      'cfg_usuarios' => false,
     ],
   ];
 }
@@ -228,47 +232,50 @@ $selectedRoleSel = $_POST['role_select'] ?? 'gestor';
 $newRoleName = trim($_POST['new_role'] ?? '');
 $selectedRole = $newRoleName !== '' ? $newRoleName : $selectedRoleSel;
 $selectedUser = $_POST['user_select'] ?? '';
+$canManageRoles = auth_can('cfg_roles');
+$canManageUsers = auth_can('cfg_usuarios');
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $role === 'root') {
-  $actionRoles = $_POST['action'] ?? '';
-  if ($actionRoles === 'load_role') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $action = $_POST['action'] ?? '';
+  if ($action === 'load_role' && $canManageRoles) {
     if (function_exists('csrf_validate')) csrf_validate();
     $selectedRole = trim($_POST['role_select'] ?? $selectedRole);
     $flash = null;
     $flashRoles = null;
     $openRolesModal = true;
-  } elseif ($actionRoles === 'save_roles') {
+  } elseif ($action === 'save_roles' && $canManageRoles) {
     if (function_exists('csrf_validate')) csrf_validate();
     $selectedRole = $newRoleName !== '' ? $newRoleName : trim($_POST['role_select'] ?? $selectedRole);
-      if ($selectedRole !== '') {
-        if (!isset($rolesData[$selectedRole])) $rolesData[$selectedRole] = [];
-        if ($selectedRole === 'root') {
-          $rolesData['root'] = [
-            'all' => true,
-            'mensajes' => 'todos',
-            'mensajes_acceso' => true,
-            'horas_extra' => 'todos',
-            'historico' => true,
-            'historico_scope' => ($_POST['historico_scope'] ?? 'todos'),
-            'historico_acciones' => isset($_POST['perm_historico_acciones']),
-            'configuracion' => true,
-            'estadisticas' => true,
-            'estadisticas_manual' => true,
-            'usuarios' => true,
-            'categorias' => true,
-            'unidades' => true,
-            'simulador' => true,
-            'cfg_conexion' => true,
-            'cfg_proyecto' => true,
-            'cfg_retencion' => true,
-            'cfg_sesion' => true,
-            'cfg_trackers' => true,
-            'cfg_prioridades' => true,
-            'cfg_estados' => true,
-            'cfg_roles' => true,
-            'actividad' => true,
-          ];
-        } else {
+    if ($selectedRole !== '') {
+      if (!isset($rolesData[$selectedRole])) $rolesData[$selectedRole] = [];
+      if ($selectedRole === 'root') {
+        $rolesData['root'] = [
+          'all' => true,
+          'mensajes' => 'todos',
+          'mensajes_acceso' => true,
+          'horas_extra' => 'todos',
+          'historico' => true,
+          'historico_scope' => ($_POST['historico_scope'] ?? 'todos'),
+          'historico_acciones' => isset($_POST['perm_historico_acciones']),
+          'configuracion' => true,
+          'estadisticas' => true,
+          'estadisticas_manual' => true,
+          'usuarios' => true,
+          'categorias' => true,
+          'unidades' => true,
+          'simulador' => true,
+          'cfg_conexion' => true,
+          'cfg_proyecto' => true,
+          'cfg_retencion' => true,
+          'cfg_sesion' => true,
+          'cfg_trackers' => true,
+          'cfg_prioridades' => true,
+          'cfg_estados' => true,
+          'cfg_roles' => true,
+          'cfg_usuarios' => true,
+          'actividad' => true,
+        ];
+      } else {
         $rolesData[$selectedRole] = [
           'mensajes' => ($_POST['mensajes_scope'] ?? 'asignados'),
           'mensajes_acceso' => isset($_POST['perm_mensajes']),
@@ -291,6 +298,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $role === 'root') {
           'cfg_prioridades' => isset($_POST['perm_cfg_prioridades']),
           'cfg_estados' => isset($_POST['perm_cfg_estados']),
           'cfg_roles' => isset($_POST['perm_cfg_roles']),
+          'cfg_usuarios' => isset($_POST['perm_cfg_usuarios']),
           'actividad' => isset($_POST['perm_actividad']),
         ];
       }
@@ -299,13 +307,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $role === 'root') {
       $openRolesModal = true;
     }
   }
-  if ($actionRoles === 'load_user_perms') {
+  if ($action === 'load_user_perms' && $canManageUsers) {
     if (function_exists('csrf_validate')) csrf_validate();
     $selectedUser = trim($_POST['user_select'] ?? $selectedUser);
     $flash = null;
     $flashUsuarios = null;
     $openUsersModal = true;
-  } elseif ($actionRoles === 'save_user_perms') {
+  } elseif ($action === 'save_user_perms' && $canManageUsers) {
     if (function_exists('csrf_validate')) csrf_validate();
     $selectedUser = trim($_POST['user_select'] ?? $selectedUser);
     if ($selectedUser !== '' && isset($usuariosIndex[$selectedUser])) {
@@ -342,6 +350,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $role === 'root') {
         'cfg_prioridades' => isset($_POST['u_perm_cfg_prioridades']),
         'cfg_estados' => isset($_POST['u_perm_cfg_estados']),
         'cfg_roles' => isset($_POST['u_perm_cfg_roles']),
+        'cfg_usuarios' => isset($_POST['u_perm_cfg_usuarios']),
         'actividad' => isset($_POST['u_perm_actividad']),
       ];
       foreach ($usuariosData as &$u) {
@@ -382,12 +391,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
   <link href="/redmine/assets/theme.css" rel="stylesheet">
   <style>
     /* Fallback modal styles si Bootstrap no carga */
-    .modal { display: none; position: fixed; z-index: 1055; inset: 0; overflow: auto; background: rgba(0,0,0,0.5); }
-    .modal.show { display: block; }
-    .modal-dialog { margin: 5% auto; }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1055;
+      inset: 0;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.5);
+      overflow: hidden;
+    }
+    .modal.show { display: flex; }
+    .modal-dialog {
+      margin: 0 auto;
+      max-height: calc(100vh - 30px);
+    }
     .modal-dialog.modal-dialog-top { margin-top: 12px; }
-    .modal-body.modal-body-tight { max-height: calc(100vh - 230px); overflow-y: auto; }
+    .modal-dialog-scrollable,
+    .modal-dialog-scrollable .modal-content {
+      max-height: calc(100vh - 60px);
+    }
+    .modal-dialog-scrollable .modal-body,
+    .modal-body.modal-body-tight {
+      max-height: calc(100vh - 200px);
+      overflow-y: auto;
+    }
     .modal-backdrop { display: block; }
+    .modal-dialog-scrollable .modal-body {
+      max-height: calc(100vh - 220px);
+      overflow-y: auto;
+    }
     /* Botones de config */
     .cfg-grid { row-gap: 20px; }
     .cfg-btn {
@@ -508,19 +541,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         <i class="bi bi-arrow-right-short"></i>
       </button>
     </div>
-<?php if ($role === 'root'): ?>
-<div class="col-12 col-md-6 col-lg-4">
-  <button class="cfg-btn d-flex align-items-center justify-content-between gap-2" type="button" data-bs-toggle="modal" data-bs-target="#rolesModal" id="btn-roles-modal">
-    <span class="d-flex align-items-center gap-2"><i class="bi bi-shield-lock-fill text-danger"></i>Roles y permisos</span>
-    <i class="bi bi-arrow-right-short"></i>
-  </button>
-</div>
-<div class="col-12 col-md-6 col-lg-4">
-  <button class="cfg-btn d-flex align-items-center justify-content-between gap-2" type="button" data-bs-toggle="modal" data-bs-target="#usuariosModal" id="btn-usuarios-modal">
-    <span class="d-flex align-items-center gap-2"><i class="bi bi-people text-primary"></i>Usuarios y permisos</span>
-    <i class="bi bi-arrow-right-short"></i>
-  </button>
-</div>
+<?php if ($canManageRoles || $canManageUsers): ?>
+  <?php if ($canManageRoles): ?>
+  <div class="col-12 col-md-6 col-lg-4">
+    <button class="cfg-btn d-flex align-items-center justify-content-between gap-2" type="button" data-bs-toggle="modal" data-bs-target="#rolesModal" id="btn-roles-modal">
+      <span class="d-flex align-items-center gap-2"><i class="bi bi-shield-lock-fill text-danger"></i>Roles y permisos</span>
+      <i class="bi bi-arrow-right-short"></i>
+    </button>
+  </div>
+  <?php endif; ?>
+  <?php if ($canManageUsers): ?>
+  <div class="col-12 col-md-6 col-lg-4">
+    <button class="cfg-btn d-flex align-items-center justify-content-between gap-2" type="button" data-bs-toggle="modal" data-bs-target="#usuariosModal" id="btn-usuarios-modal">
+      <span class="d-flex align-items-center gap-2"><i class="bi bi-people text-primary"></i>Usuarios y permisos</span>
+      <i class="bi bi-arrow-right-short"></i>
+    </button>
+  </div>
+  <?php endif; ?>
 <?php endif; ?>
   </div>
 
@@ -829,34 +866,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
   </div>
 </div>
 
-<?php if ($role === 'root'):
+<?php if ($canManageRoles || $canManageUsers):
   $rolesList = array_keys($rolesData ?: []);
   sort($rolesList);
-  $selCfg = $rolesData[$selectedRole] ?? [];
-  if (!isset($selCfg['mensajes_acceso'])) $selCfg['mensajes_acceso'] = true;
-  $scopeHist = $selCfg['historico_scope'] ?? 'asignados';
-  $scopeMsg = $selCfg['mensajes'] ?? 'asignados';
-  $scopeHoras = $selCfg['horas_extra'] ?? 'asignados';
-
-  // Datos para modal de usuarios
-  $usersList = [];
-  foreach ($usuariosData as $u) {
-    if (!isset($u['id'])) continue;
-    $label = ($u['nombre'] ?? '') . ' ' . ($u['apellido'] ?? '') . ' (ID ' . $u['id'] . ')';
-    $usersList[(string)$u['id']] = trim($label);
-  }
-  ksort($usersList);
-  $selUserData = $selectedUser !== '' && isset($usuariosIndex[$selectedUser]) ? $usuariosIndex[$selectedUser] : null;
-  $selUserRole = $selUserData['rol'] ?? '';
-  $selUserPerms = $selUserData['permisos'] ?? null;
-  $roleDefaults = $selUserRole && isset($rolesData[$selUserRole]) ? $rolesData[$selUserRole] : [];
-  $uCfg = is_array($selUserPerms) ? $selUserPerms : $roleDefaults;
-  $uScopeMsg = $uCfg['mensajes'] ?? 'asignados';
-  $uScopeHoras = $uCfg['horas_extra'] ?? 'asignados';
-  $uScopeHist = $uCfg['historico_scope'] ?? 'asignados';
-  $uHistAcciones = !empty($uCfg['historico_acciones']);
-  $uHas = fn($k) => !empty($uCfg[$k]);
+  if ($canManageRoles):
+    $selCfg = $rolesData[$selectedRole] ?? [];
+    if (!isset($selCfg['mensajes_acceso'])) $selCfg['mensajes_acceso'] = true;
+    $scopeHist = $selCfg['historico_scope'] ?? 'asignados';
+    $scopeMsg = $selCfg['mensajes'] ?? 'asignados';
+    $scopeHoras = $selCfg['horas_extra'] ?? 'asignados';
+  endif;
+  if ($canManageUsers):
+    // Datos para modal de usuarios
+    $usersList = [];
+    foreach ($usuariosData as $u) {
+      if (!isset($u['id'])) continue;
+      $label = ($u['nombre'] ?? '') . ' ' . ($u['apellido'] ?? '') . ' (ID ' . $u['id'] . ')';
+      $usersList[(string)$u['id']] = trim($label);
+    }
+    ksort($usersList);
+    $selUserData = $selectedUser !== '' && isset($usuariosIndex[$selectedUser]) ? $usuariosIndex[$selectedUser] : null;
+    $selUserRole = $selUserData['rol'] ?? '';
+    $selUserPerms = $selUserData['permisos'] ?? null;
+    $roleDefaults = $selUserRole && isset($rolesData[$selUserRole]) ? $rolesData[$selUserRole] : [];
+    $uCfg = is_array($selUserPerms) ? $selUserPerms : $roleDefaults;
+    $uScopeMsg = $uCfg['mensajes'] ?? 'asignados';
+    $uScopeHoras = $uCfg['horas_extra'] ?? 'asignados';
+    $uScopeHist = $uCfg['historico_scope'] ?? 'asignados';
+    $uHistAcciones = !empty($uCfg['historico_acciones']);
+    $uHas = fn($k) => !empty($uCfg[$k]);
+  endif;
 ?>
+<?php if ($canManageUsers): ?>
 <!-- Modal Usuarios y permisos -->
 <div class="modal fade" id="usuariosModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-scrollable">
@@ -1044,6 +1085,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                   <label class="form-check-label" for="u_perm_cfg_roles">Roles y permisos</label>
                 </div>
               </div>
+              <div class="col-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="u_perm_cfg_usuarios" id="u_perm_cfg_usuarios" <?= $uHas('cfg_usuarios') ? 'checked' : '' ?>>
+                  <label class="form-check-label" for="u_perm_cfg_usuarios">Usuarios y permisos</label>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1055,7 +1102,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     </div>
   </div>
 </div>
+<?php endif; ?>
 
+<?php if ($canManageRoles): ?>
 <div class="modal fade" id="rolesModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-scrollable">
     <div class="modal-content">
@@ -1228,12 +1277,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                   <label class="form-check-label" for="permCfgRoles">Roles y permisos</label>
                 </div>
               </div>
+              <div class="col-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="perm_cfg_usuarios" id="permCfgUsuarios" <?= !empty($selCfg['cfg_usuarios']) ? 'checked' : '' ?>>
+                  <label class="form-check-label" for="permCfgUsuarios">Usuarios y permisos</label>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="col-12 text-end">
             <button class="btn btn-primary" type="submit" id="btn-save-roles">Guardar permisos</button>
-            <p class="text-muted small mb-0">Root siempre mantiene acceso total.</p>
+         
           </div>
         </form>
       </div>
@@ -1241,6 +1296,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
   </div>
 </div>
 
+<?php endif; ?>
 <?php endif; ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
