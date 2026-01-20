@@ -49,7 +49,7 @@ function load_config($path) {
     if (!is_array($data)) $data = [];
     if (!array_key_exists('categories_url', $data)) $data['categories_url'] = '';
     if (!array_key_exists('unidades_url', $data)) $data['unidades_url'] = '';
-    if (!array_key_exists('cf_unidad_solicitante', $data) || $data['cf_unidad_solicitante'] === null || $data['cf_unidad_solicitante'] === '') {
+    if (!array_key_exists('cf_unidad_solicitante', $data)) {
         $data['cf_unidad_solicitante'] = 11;
     }
     foreach (['trackers','prioridades','estados'] as $k) {
