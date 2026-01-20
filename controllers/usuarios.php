@@ -117,6 +117,17 @@ function sanitize_phone(string $value): string {
     return preg_replace('/[^0-9+]/', '', $value ?? '');
 }
 
+function format_rut_value(string $rut): string {
+    $clean = preg_replace('/[^0-9kK]/', '', $rut ?? '');
+    if ($clean === '') return '';
+    $clean = strtoupper($clean);
+    if (strlen($clean) < 2) return $clean;
+    $body = substr($clean, 0, -1);
+    $dv = substr($clean, -1);
+    $body = preg_replace('/\B(?=(\d{3})+(?!\d))/', '.', $body);
+    return $body . '-' . $dv;
+}
+
 function handle_usuarios() {
     global $DATA_FILE;
     $rows = load_usuarios($DATA_FILE);
@@ -163,7 +174,7 @@ function handle_usuarios() {
                 'rut_sin_dv' => $rut_sin_dv,
                 'nombre' => sanitize_input($_POST['nombre'] ?? ''),
                 'apellido' => sanitize_input($_POST['apellido'] ?? ''),
-                'rut' => $rut_input,
+                'rut' => format_rut_value($rut_input),
                 'numero_celular' => $phone_base,
                 'estamento' => sanitize_input($_POST['estamento'] ?? ''),
                 'rol' => $assignedRole,
@@ -197,7 +208,7 @@ function handle_usuarios() {
             $current['rut_sin_dv'] = $rut_sin_dv;
             $current['nombre'] = sanitize_input($_POST['nombre'] ?? $current['nombre']);
             $current['apellido'] = sanitize_input($_POST['apellido'] ?? $current['apellido']);
-            $current['rut'] = $rut_input;
+            $current['rut'] = format_rut_value($rut_input);
             $current['numero_celular'] = sanitize_phone($_POST['numero_celular'] ?? $current['numero_celular']);
             $current['estamento'] = sanitize_input($_POST['estamento'] ?? $current['estamento']);
             $current['rol'] = sanitize_input($_POST['rol'] ?? ($current['rol'] ?? 'usuario'));
