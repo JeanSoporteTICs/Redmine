@@ -22,7 +22,6 @@
         "cfg_prioridades": true,
         "cfg_estados": true,
         "cfg_roles": true,
-        "cfg_usuarios": true,
         "actividad": true
     },
     "gestor": {
@@ -47,7 +46,6 @@
         "cfg_prioridades": true,
         "cfg_estados": true,
         "cfg_roles": true,
-        "cfg_usuarios": true,
         "actividad": true
     },
     "administrador": {
@@ -71,8 +69,7 @@
         "cfg_trackers": false,
         "cfg_prioridades": false,
         "cfg_estados": false,
-        "cfg_roles": false,
-        "cfg_usuarios": false
+        "cfg_roles": false
     },
     "usuario": {
         "mensajes": "asignados",
@@ -95,7 +92,6 @@
         "cfg_trackers": false,
         "cfg_prioridades": false,
         "cfg_estados": false,
-        "cfg_roles": false,
-        "cfg_usuarios": false
+        "cfg_roles": false
     }
 }

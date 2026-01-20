@@ -363,3 +363,215 @@
     },
     "message_id": "396f0243-ac22-4e4f-a9b6-5dc8990ef728"
 }
+{
+    "ts": "2026-01-20T13:37:14+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112407,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"problema equipo \/ cuidados paliativos oncología\",\"description\":\"problema equipo, cuidados paliativos oncología, tatiana\",\"start_date\":\"2026-01-20\",\"due_date\":\"2026-01-20\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"ONCOLOGIA\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-20T12:37:14Z\",\"updated_on\":\"2026-01-20T12:37:14Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema equipo \/ cuidados paliativos oncología",
+            "description": "problema equipo, cuidados paliativos oncología, tatiana",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-20",
+            "due_date": "2026-01-20",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "11",
+                    "value": "ONCOLOGIA"
+                }
+            ]
+        }
+    },
+    "message_id": "b50385ea-c485-47d2-9326-2e443ffeb3f2"
+}
+{
+    "ts": "2026-01-20T13:37:15+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112408,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":124,\"name\":\"Pagina Web\"},\"subject\":\"problema página web \/ rayos\",\"description\":\"problema página web, rayos, jesse\",\"start_date\":\"2026-01-20\",\"due_date\":\"2026-01-20\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"HBV\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-20T12:37:14Z\",\"updated_on\":\"2026-01-20T12:37:14Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema página web \/ rayos",
+            "description": "problema página web, rayos, jesse",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-20",
+            "due_date": "2026-01-20",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 124,
+            "custom_fields": [
+                {
+                    "id": "11",
+                    "value": "HBV"
+                }
+            ]
+        }
+    },
+    "message_id": "3a789a90-a80a-4197-8bef-2192700d883a"
+}
+{
+    "ts": "2026-01-20T13:37:15+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112409,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":124,\"name\":\"Pagina Web\"},\"subject\":\"petición desbloqueo página web \/ mds\",\"description\":\"petición desbloqueo página web, mds, jean\",\"start_date\":\"2026-01-20\",\"due_date\":\"2026-01-20\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"HBV\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-20T12:37:15Z\",\"updated_on\":\"2026-01-20T12:37:15Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "petición desbloqueo página web \/ mds",
+            "description": "petición desbloqueo página web, mds, jean",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-20",
+            "due_date": "2026-01-20",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 124,
+            "custom_fields": [
+                {
+                    "id": "11",
+                    "value": "HBV"
+                }
+            ]
+        }
+    },
+    "message_id": "100e51d4-a867-4208-bc0d-a6d7f7a2a359"
+}
+{
+    "ts": "2026-01-20T16:30:25+01:00",
+    "http_code": 422,
+    "error": "",
+    "body": "{\"errors\":[\"Unidad solicitante no puede estar en blanco\"]}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema con impresora \/ computación",
+            "description": "problema con impresora, computación, jean",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-20",
+            "due_date": "2026-01-20",
+            "estimated_hours": 1,
+            "assigned_to_id": "117",
+            "category_id": 97
+        }
+    },
+    "message_id": "cee39edb-b3d4-4e45-8df9-7be545829d8e"
+}
+{
+    "ts": "2026-01-20T16:32:19+01:00",
+    "http_code": 422,
+    "error": "",
+    "body": "{\"errors\":[\"Unidad solicitante no puede estar en blanco\"]}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema con impresora \/ computación",
+            "description": "problema con impresora, computación, jean",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-20",
+            "due_date": "2026-01-20",
+            "estimated_hours": 1,
+            "assigned_to_id": "117",
+            "category_id": 97
+        }
+    },
+    "message_id": "cee39edb-b3d4-4e45-8df9-7be545829d8e"
+}
+{
+    "ts": "2026-01-20T17:17:20+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112458,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"assigned_to\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"category\":{\"id\":101,\"name\":\"Impresoras\"},\"subject\":\"problema con impresora \/ computación\",\"description\":\"problema con impresora, computación, jean\",\"start_date\":\"2026-01-20\",\"due_date\":\"2026-01-20\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"COMPUTACION\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-20T16:17:20Z\",\"updated_on\":\"2026-01-20T16:17:20Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema con impresora \/ computación",
+            "description": "problema con impresora, computación, jean",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-20",
+            "due_date": "2026-01-20",
+            "estimated_hours": 1,
+            "assigned_to_id": "117",
+            "category_id": 101,
+            "custom_fields": [
+                {
+                    "id": "11",
+                    "value": "COMPUTACION"
+                }
+            ]
+        }
+    },
+    "message_id": "cee39edb-b3d4-4e45-8df9-7be545829d8e"
+}
+{
+    "ts": "2026-01-20T17:32:53+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112459,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":170,\"name\":\"instalacion de equipo\"},\"subject\":\"instalación de equipo \/ recuperación h\",\"description\":\"instalación de equipo, recuperación h, andrea\",\"start_date\":\"2026-01-20\",\"due_date\":\"2026-01-20\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"RECUPERACIÓN H\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-20T16:32:53Z\",\"updated_on\":\"2026-01-20T16:32:53Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "instalación de equipo \/ recuperación h",
+            "description": "instalación de equipo, recuperación h, andrea",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-20",
+            "due_date": "2026-01-20",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 170,
+            "custom_fields": [
+                {
+                    "id": "11",
+                    "value": "RECUPERACIÓN H"
+                }
+            ]
+        }
+    },
+    "message_id": "c7144128-6494-420e-8cbd-e646aaf83a43"
+}
+{
+    "ts": "2026-01-20T18:36:11+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112461,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"assigned_to\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"category\":{\"id\":155,\"name\":\"Etiquetadora\"},\"subject\":\"problemas con etiquetadora \/ cirugia adultos\",\"description\":\"problemas con etiquetadora, cirugia adultos, carolina\",\"start_date\":\"2026-01-20\",\"due_date\":\"2026-01-20\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"CIRUGIA ADULTO\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-20T17:36:11Z\",\"updated_on\":\"2026-01-20T17:36:11Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problemas con etiquetadora \/ cirugia adultos",
+            "description": "problemas con etiquetadora, cirugia adultos, carolina",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-20",
+            "due_date": "2026-01-20",
+            "estimated_hours": 1,
+            "assigned_to_id": "117",
+            "category_id": 155,
+            "custom_fields": [
+                {
+                    "id": "11",
+                    "value": "CIRUGIA ADULTO"
+                }
+            ]
+        }
+    },
+    "message_id": "2f6cf35b-946c-4c2b-8eb1-4dfccee05ea8"
+}
