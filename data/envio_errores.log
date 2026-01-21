@@ -1033,3 +1033,283 @@
     },
     "message_id": "bd24356a-4d9e-452f-9b90-1448d74b5293"
 }
+{
+    "ts": "2026-01-21T15:47:03+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112525,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"assigned_to\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"category\":{\"id\":594,\"name\":\"tonner\"},\"subject\":\"necesita tonner samsung \/ radioterapia\",\"description\":\"necesita tonner samsung, radioterapia, marcia\",\"start_date\":\"2026-01-21\",\"due_date\":\"2026-01-21\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"marcia\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"radioterapia\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"RADIOTERAPIA\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-21T14:47:03Z\",\"updated_on\":\"2026-01-21T14:47:03Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "necesita tonner samsung \/ radioterapia",
+            "description": "necesita tonner samsung, radioterapia, marcia",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-21",
+            "due_date": "2026-01-21",
+            "estimated_hours": 1,
+            "assigned_to_id": "117",
+            "category_id": 594,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "marcia"
+                },
+                {
+                    "id": "5",
+                    "value": "radioterapia"
+                },
+                {
+                    "id": "11",
+                    "value": "RADIOTERAPIA"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "66ccd9ea-abce-431c-90a4-9ef635d19a33"
+}
+{
+    "ts": "2026-01-21T16:35:39+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112544,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"assigned_to\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"category\":{\"id\":499,\"name\":\"Nextcloud\"},\"subject\":\"configurar carpeta compartida de nextcloud \/ recursos humanos\",\"description\":\"configurar carpeta compartida de nextcloud, recursos humanos, angel tapia\",\"start_date\":\"2026-01-21\",\"due_date\":\"2026-01-21\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"angel tapia\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"recursos humanos\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"RECURSOS HUMANOS\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-21T15:35:40Z\",\"updated_on\":\"2026-01-21T15:35:40Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "configurar carpeta compartida de nextcloud \/ recursos humanos",
+            "description": "configurar carpeta compartida de nextcloud, recursos humanos, angel tapia",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-21",
+            "due_date": "2026-01-21",
+            "estimated_hours": 1,
+            "assigned_to_id": "117",
+            "category_id": 499,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "angel tapia"
+                },
+                {
+                    "id": "5",
+                    "value": "recursos humanos"
+                },
+                {
+                    "id": "11",
+                    "value": "RECURSOS HUMANOS"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "83258e12-8163-4d38-adbb-371eda4a0469"
+}
+{
+    "ts": "2026-01-21T18:27:58+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112548,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":102,\"name\":\"Internet\"},\"subject\":\"equipo sin internet \/ sala de reuniones dirección\",\"description\":\"equipo sin internet, sala de reuniones dirección, Roberto\",\"start_date\":\"2026-01-21\",\"due_date\":\"2026-01-21\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"Roberto\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"sala de reuniones dirección\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"DIRECCION\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-21T17:27:59Z\",\"updated_on\":\"2026-01-21T17:27:59Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "equipo sin internet \/ sala de reuniones dirección",
+            "description": "equipo sin internet, sala de reuniones dirección, Roberto",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-21",
+            "due_date": "2026-01-21",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 102,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "Roberto"
+                },
+                {
+                    "id": "5",
+                    "value": "sala de reuniones dirección"
+                },
+                {
+                    "id": "11",
+                    "value": "DIRECCION"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "568a8bb7-c304-4da5-87c7-cffd336db9b2"
+}
+{
+    "ts": "2026-01-21T18:27:59+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112549,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"remasterizado de equipo \/ cuidados paliativos\",\"description\":\"remasterizado de equipo, cuidados paliativos, tatiana\",\"start_date\":\"2026-01-21\",\"due_date\":\"2026-01-21\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"tatiana\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"cuidados paliativos\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"CUIDADOS PALIATIVOS\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-21T17:27:59Z\",\"updated_on\":\"2026-01-21T17:27:59Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "remasterizado de equipo \/ cuidados paliativos",
+            "description": "remasterizado de equipo, cuidados paliativos, tatiana",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-21",
+            "due_date": "2026-01-21",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "tatiana"
+                },
+                {
+                    "id": "5",
+                    "value": "cuidados paliativos"
+                },
+                {
+                    "id": "11",
+                    "value": "CUIDADOS PALIATIVOS"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "9357d964-cb13-452b-a52b-7909c216c131"
+}
+{
+    "ts": "2026-01-21T18:27:59+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112550,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"catastro lector de huella biométrico \/ informática\",\"description\":\"catastro lector de huella biométrico, informática, daniel\",\"start_date\":\"2026-01-21\",\"due_date\":\"2026-01-21\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"daniel\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"informática\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"COMPUTACION\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-21T17:28:00Z\",\"updated_on\":\"2026-01-21T17:28:00Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "catastro lector de huella biométrico \/ informática",
+            "description": "catastro lector de huella biométrico, informática, daniel",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-21",
+            "due_date": "2026-01-21",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "daniel"
+                },
+                {
+                    "id": "5",
+                    "value": "informática"
+                },
+                {
+                    "id": "11",
+                    "value": "COMPUTACION"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "3f9e6f68-1a90-4503-8462-f72dcafc2123"
+}
+{
+    "ts": "2026-01-21T18:28:00+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112551,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"problema contraseña correo \/ IAAS\",\"description\":\"problema contraseña correo,iias, karina\",\"start_date\":\"2026-01-21\",\"due_date\":\"2026-01-21\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"karina\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"IAAS\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"IAAS\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-21T17:28:01Z\",\"updated_on\":\"2026-01-21T17:28:01Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema contraseña correo \/ IAAS",
+            "description": "problema contraseña correo,iias, karina",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-21",
+            "due_date": "2026-01-21",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "karina"
+                },
+                {
+                    "id": "5",
+                    "value": "IAAS"
+                },
+                {
+                    "id": "11",
+                    "value": "IAAS"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "080d71a0-d67b-4eaa-9c78-1e5254b70caf"
+}
+{
+    "ts": "2026-01-21T18:28:01+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112552,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":253,\"name\":\"Huelleros\"},\"subject\":\"problema huelleros \/ medicina nuclear\",\"description\":\"problema huelleros, medicina nuclear, dr hidalgo\",\"start_date\":\"2026-01-21\",\"due_date\":\"2026-01-21\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"dr hidalgo\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"medicina nuclear\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"MEDICINA\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-21T17:28:01Z\",\"updated_on\":\"2026-01-21T17:28:01Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema huelleros \/ medicina nuclear",
+            "description": "problema huelleros, medicina nuclear, dr hidalgo",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-21",
+            "due_date": "2026-01-21",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 253,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "dr hidalgo"
+                },
+                {
+                    "id": "5",
+                    "value": "medicina nuclear"
+                },
+                {
+                    "id": "11",
+                    "value": "MEDICINA"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "30ffba19-9bad-4985-98e2-592f9d648036"
+}
