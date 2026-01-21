@@ -1,1 +1,5 @@
 [2026-01-21 13:14:10] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[21-01-2026 09:52:30] CSRF_ALERT - Token=NULL session=NULL
+[21-01-2026 09:52:35] LOGIN_FAILURE - Intento con "42"
+[21-01-2026 09:52:41] LOGIN_FAILURE - Intento con "42"
+[21-01-2026 09:52:46] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
