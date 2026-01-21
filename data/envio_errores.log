@@ -1313,3 +1313,123 @@
     },
     "message_id": "30ffba19-9bad-4985-98e2-592f9d648036"
 }
+{
+    "ts": "2026-01-21T18:59:55+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112566,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"assigned_to\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"problemas para ingresar al pc \/ farmacia oncológica\",\"description\":\"problemas para ingresar al pc, farmacia oncológica , waleska\",\"start_date\":\"2026-01-21\",\"due_date\":\"2026-01-21\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"waleska\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"farmacia oncológica\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"HBV\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-21T17:59:56Z\",\"updated_on\":\"2026-01-21T17:59:56Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problemas para ingresar al pc \/ farmacia oncológica",
+            "description": "problemas para ingresar al pc, farmacia oncológica , waleska",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-21",
+            "due_date": "2026-01-21",
+            "estimated_hours": 1,
+            "assigned_to_id": "117",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "waleska"
+                },
+                {
+                    "id": "5",
+                    "value": "farmacia oncológica"
+                },
+                {
+                    "id": "11",
+                    "value": "HBV"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "fbeb1959-87a4-4898-bdda-4a20cce2bda3"
+}
+{
+    "ts": "2026-01-21T19:14:03+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112574,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"assigned_to\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"instalar computador \/ poli pediatria\",\"description\":\"instalar computador, poli pediatria, susana quiñones\",\"start_date\":\"2026-01-21\",\"due_date\":\"2026-01-21\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"susana quiñones\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"poli pediatria\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"PEDIATRIA\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-21T18:14:04Z\",\"updated_on\":\"2026-01-21T18:14:04Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "instalar computador \/ poli pediatria",
+            "description": "instalar computador, poli pediatria, susana quiñones",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-21",
+            "due_date": "2026-01-21",
+            "estimated_hours": 1,
+            "assigned_to_id": "117",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "susana quiñones"
+                },
+                {
+                    "id": "5",
+                    "value": "poli pediatria"
+                },
+                {
+                    "id": "11",
+                    "value": "PEDIATRIA"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "df3f85d3-4882-4c97-a7ba-e5ff43eba304"
+}
+{
+    "ts": "2026-01-21T20:12:11+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112580,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"assigned_to\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"category\":{\"id\":209,\"name\":\"excel\"},\"subject\":\"problemas con excel \/ admisión\",\"description\":\"problemas con excel, admisión, karen\",\"start_date\":\"2026-01-21\",\"due_date\":\"2026-01-21\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"karen\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"admisión\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"ADMISIÓN\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-21T19:12:11Z\",\"updated_on\":\"2026-01-21T19:12:11Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problemas con excel \/ admisión",
+            "description": "problemas con excel, admisión, karen",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-21",
+            "due_date": "2026-01-21",
+            "estimated_hours": 1,
+            "assigned_to_id": "117",
+            "category_id": 209,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "karen"
+                },
+                {
+                    "id": "5",
+                    "value": "admisión"
+                },
+                {
+                    "id": "11",
+                    "value": "ADMISIÓN"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "b10c6881-1a53-4476-a879-7b6781ecbe8d"
+}

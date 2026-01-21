@@ -54,7 +54,7 @@ def normalize_record(record: dict) -> dict:
         if not norm.get(key):
             norm[key] = ""
     if not norm.get("tiempo_estimado"):
-        norm["tiempo_estimado"] = "1"
+        norm["tiempo_estimado"] = ""
     if not norm.get("numero"):
         norm["numero"] = ""
     if not norm.get("id"):
@@ -225,7 +225,7 @@ async def webhook(req: Request):
         "prioridad": "NORMAL",
         "estado": "pendiente",
         "hora_extra": "NO",
-        "tiempo_estimado": "1",
+        "tiempo_estimado": "",
         "categoria": categoria_inferida,
         "unidad": unidad_descrip or unidad_inferida,
         "unidad_solicitante": unidad_inferida if unidad_inferida != "NO COINCIDE" else "HBV",
