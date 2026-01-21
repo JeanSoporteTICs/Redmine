@@ -352,6 +352,7 @@ $csrf = csrf_token();
                   data-prioridad="<?= $h($m['prioridad'] ?? '') ?>"
 
                   data-categoria="<?= $h($m['categoria'] ?? '') ?>"
+                  data-descripcion="<?= $h($m['descripcion'] ?? $m['mensaje'] ?? '') ?>"
 
                   data-asignado_a="<?= $h($m['asignado_a'] ?? '') ?>"
                   data-asignado_nombre="<?= $h($asignadoNombre) ?>"
@@ -551,7 +552,7 @@ $csrf = csrf_token();
 
             <div class="col-md-3"><label class="form-label">Número</label><input name="numero" id="md-numero" class="form-control"></div>
 
-            <div class="col-12"><label class="form-label">Mensaje</label><textarea name="mensaje" id="md-mensaje" class="form-control" rows="2"></textarea></div>
+            <div class="col-12"><label class="form-label">Mensaje</label><textarea name="descripcion" id="md-mensaje" class="form-control" rows="2"></textarea></div>
 
           </div>
 
@@ -671,7 +672,7 @@ $csrf = csrf_token();
 
   set('md-numero', 'data-numero');
 
-  set('md-mensaje', 'data-mensaje');
+  set('md-mensaje', 'data-descripcion');
 
 
 
