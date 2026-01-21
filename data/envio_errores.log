@@ -1433,3 +1433,42 @@
     },
     "message_id": "b10c6881-1a53-4476-a879-7b6781ecbe8d"
 }
+{
+    "ts": "2026-01-21T20:41:52+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112586,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":368,\"name\":\"hdmi \"},\"subject\":\"problema cable hdmi \/ ginecología\",\"description\":\"\",\"start_date\":\"2026-01-21\",\"due_date\":\"2026-01-21\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":null,\"total_estimated_hours\":null,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"paulina\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"ginecología\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"GINECOLOGIA\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-21T19:41:52Z\",\"updated_on\":\"2026-01-21T19:41:52Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema cable hdmi \/ ginecología",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-21",
+            "due_date": "2026-01-21",
+            "assigned_to_id": "42",
+            "category_id": 368,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "paulina"
+                },
+                {
+                    "id": "5",
+                    "value": "ginecología"
+                },
+                {
+                    "id": "11",
+                    "value": "GINECOLOGIA"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "84c1c493-cce5-4352-8922-e2fda72b6711"
+}

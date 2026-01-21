@@ -23,25 +23,27 @@
         "procesado_ts": "2026-01-21T20:12:11+01:00"
     },
     {
-        "id": "abcf4925-9543-4045-b543-0a8c9a3f62b9",
+        "id": "84c1c493-cce5-4352-8922-e2fda72b6711",
         "numero": "+56973712780",
         "mensaje": "problema cable hdmi, ginecología ,paulina",
         "fecha": "21-01-2026",
-        "hora": "16:21:19",
+        "hora": "16:41:02",
         "fecha_inicio": "21-01-2026",
         "fecha_fin": "21-01-2026",
         "tipo": "Soporte",
         "prioridad": "NORMAL",
-        "estado": "pendiente",
+        "estado": "procesado",
         "hora_extra": "0",
         "tiempo_estimado": "",
-        "categoria": "Equipos",
+        "categoria": "hdmi ",
         "unidad": "ginecología",
         "unidad_solicitante": "GINECOLOGIA",
         "solicitante": "paulina",
         "asunto": "problema cable hdmi \/ ginecología",
         "asignado_a": "42",
         "asignado_nombre": "Jean Cortés Lorca",
-        "descripcion": ""
+        "descripcion": "",
+        "redmine_id": 112586,
+        "procesado_ts": "2026-01-21T20:41:52+01:00"
     }
 ]
