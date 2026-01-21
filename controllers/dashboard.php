@@ -448,6 +448,26 @@ function archive_selected_messages(array &$messages, array $ids): int {
     return $archived;
 }
 
+function dashboard_messages_scope(): string {
+    if (function_exists('auth_user_has_all_permissions') && auth_user_has_all_permissions()) {
+        return 'todos';
+    }
+    $value = function_exists('auth_get_permission_value') ? auth_get_permission_value('mensajes') : null;
+    $scope = strtolower(trim((string)$value));
+    return $scope === 'todos' ? 'todos' : 'asignados';
+}
+
+function dashboard_filter_messages_by_scope(array $messages): array {
+    if (dashboard_messages_scope() === 'todos') {
+        return $messages;
+    }
+    $userId = (string)auth_get_user_id();
+    if ($userId === '') {
+        return [];
+    }
+    return array_values(array_filter($messages, fn ($row) => is_array($row) && (string)($row['asignado_a'] ?? '') === $userId));
+}
+
 function handle_request(): array {
     $messages = load_messages();
     $userId = auth_get_user_id();
@@ -583,5 +603,6 @@ function handle_request(): array {
     if (empty($securityLog)) {
         $securityLog = array_filter($rawLog, fn($entry) => in_array(($entry['tag'] ?? ''), ['LOGIN_SUCCESS', 'LOG', 'AUTH_SUCCESS']));
     }
+    $messages = dashboard_filter_messages_by_scope($messages);
     return [$messages, $flash, $securityLog];
 }

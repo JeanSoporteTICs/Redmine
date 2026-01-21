@@ -166,30 +166,62 @@ function auth_load_roles() {
     return $cache = is_array($data) ? $data : [];
 }
 
-function auth_can($permiso) {
-    $rol = auth_get_user_role();
-    if ($rol === 'root') return true; // root todo
-
-    // Configuración base por rol
-    $roles = auth_load_roles();
-    $cfg = $roles[$rol] ?? [];
-
-    // Overrides por usuario
-    $userId = auth_get_user_id();
-    $uData = $userId ? auth_find_user_by_id($userId) : null;
-    $uOverride = is_array($uData) ? ($uData['permisos'] ?? []) : [];
-
-    if (!empty($uOverride['all']) || !empty($cfg['all'])) return true;
-
-    // Si el usuario tiene una clave explícita, prevalece sobre el rol
-    if (array_key_exists($permiso, $uOverride)) {
-        $v = $uOverride[$permiso];
-    } else {
-        $v = $cfg[$permiso] ?? null;
+function auth_get_role_config(): array {
+    static $cache = null;
+    if ($cache !== null) {
+        return $cache;
     }
+    $roles = auth_load_roles();
+    $role = auth_get_user_role();
+    return $cache = $roles[$role] ?? [];
+}
 
-    if (is_array($v)) return count($v) > 0;
-    return !empty($v);
+function auth_get_user_override_permissions(): array {
+    static $cache = null;
+    if ($cache !== null) {
+        return $cache;
+    }
+    $userId = auth_get_user_id();
+    if ($userId === '') {
+        return $cache = [];
+    }
+    $user = auth_find_user_by_id($userId);
+    if (!is_array($user)) {
+        return $cache = [];
+    }
+    return $cache = is_array($user['permisos'] ?? null) ? $user['permisos'] : [];
+}
+
+function auth_user_has_all_permissions(): bool {
+    if (auth_get_user_role() === 'root') {
+        return true;
+    }
+    $override = auth_get_user_override_permissions();
+    if (!empty($override['all'])) {
+        return true;
+    }
+    $roleCfg = auth_get_role_config();
+    return !empty($roleCfg['all']);
+}
+
+function auth_get_permission_value(string $permiso) {
+    $override = auth_get_user_override_permissions();
+    if (array_key_exists($permiso, $override)) {
+        return $override[$permiso];
+    }
+    $roleCfg = auth_get_role_config();
+    return $roleCfg[$permiso] ?? null;
+}
+
+function auth_can($permiso) {
+    if (auth_user_has_all_permissions()) {
+        return true;
+    }
+    $value = auth_get_permission_value($permiso);
+    if (is_array($value)) {
+        return count($value) > 0;
+    }
+    return !empty($value);
 }
 
 function auth_get_user_id() {

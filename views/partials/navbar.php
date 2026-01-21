@@ -49,7 +49,7 @@ $role = auth_get_user_role();
         <?php if (!empty($_SESSION['user']['nombre'])): ?>
           <span class="text-white-50 small d-none d-sm-inline">Hola, <strong><?= $h($_SESSION['user']['nombre']) ?></strong></span>
         <?php endif; ?>
-        <a class="btn btn-outline-light btn-sm" href="/redmine/logout.php"><i class="bi bi-box-arrow-right"></i> Cerrar Sesión;n</a>
+        <a class="btn btn-outline-light btn-sm" href="/redmine/logout.php"><i class="bi bi-box-arrow-right"></i> Cerrar Sesión</a>
       </div>
     </div>
   </div>
@@ -214,7 +214,7 @@ window.addEventListener('load', () => {
           remaining = parseInt(data.remaining ?? data.timeout ?? baseTimeout, 10) || baseTimeout;
           modalShown = false;
           extendPwd.value = '';
-          if (extendMsg) extendMsg.textContent = 'Sesión;n extendida.';
+          if (extendMsg) extendMsg.textContent = 'Sesión extendida.';
           if (tickHandle) clearTimeout(tickHandle);
           tick();
           if (modal) setTimeout(() => modal.hide(), 400);
@@ -222,7 +222,7 @@ window.addEventListener('load', () => {
           if (extendMsg) extendMsg.textContent = data.msg || 'Contraseña incorrecta.';
         }
       } catch (e) {
-        if (extendMsg) extendMsg.textContent = 'No se pudo extender la Sesión;n.';
+        if (extendMsg) extendMsg.textContent = 'No se pudo extender la Sesión.';
       }
     });
   }

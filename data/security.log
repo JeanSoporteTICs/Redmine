@@ -1,0 +1,8 @@
+[21-01-2026 10:26:20] CSRF_ALERT - Token=NULL session=NULL
+[21-01-2026 10:26:26] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[21-01-2026 10:27:43] LOGIN_FAILURE - Intento con "117"
+[21-01-2026 10:27:51] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[21-01-2026 10:28:03] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[21-01-2026 10:28:52] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[21-01-2026 10:29:00] LOGIN_SUCCESS - User root root (1)
+[21-01-2026 10:29:17] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
