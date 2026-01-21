@@ -5,6 +5,8 @@ function security_log_file() {
 
 function log_security_event(string $tag, string $details) {
     $file = security_log_file();
-    $line = sprintf("[%s] %s - %s\n", date('Y-m-d H:i:s'), $tag, $details);
+    $timestamp = (new DateTimeImmutable('now', new DateTimeZone('America/Santiago')))
+        ->format('d-m-Y H:i:s');
+    $line = sprintf("[%s] %s - %s\n", $timestamp, $tag, $details);
     file_put_contents($file, $line, FILE_APPEND | LOCK_EX);
 }

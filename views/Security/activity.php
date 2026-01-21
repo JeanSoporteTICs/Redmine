@@ -24,6 +24,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $h = fn($v) => htmlspecialchars($v ?? '', ENT_QUOTES, 'UTF-8');
+$formatSecurityTimestamp = fn($ts) => (function($value) {
+    $value = trim((string)$value);
+    if ($value === '') return '';
+    try {
+        $dt = new DateTimeImmutable($value);
+    } catch (Throwable $_) {
+        return $value;
+    }
+    return $dt->setTimezone(new DateTimeZone('America/Santiago'))->format('d-m-Y H:i:s');
+})($ts);
 $events = security_load_events(50);
 $activeNav = 'security';
 $csrf = csrf_token();
@@ -80,7 +90,7 @@ $csrf = csrf_token();
               <tbody>
                 <?php foreach ($events as $evt): ?>
                   <tr>
-                    <td class="text-muted"><?= $h($evt['ts']) ?: '----' ?></td>
+                    <td class="text-muted"><?= $h($formatSecurityTimestamp($evt['ts'])) ?: '----' ?></td>
                     <td><span class="badge bg-secondary"><?= $h($evt['tag']) ?></span></td>
                     <td><?= $h($evt['details']) ?></td>
                   </tr>

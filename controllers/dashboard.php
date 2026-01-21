@@ -146,10 +146,98 @@ function build_redmine_issue_payload(array $message, array $cfg, array $catMap, 
         if ($value === '') continue;
         $customFields[] = ['id' => $cfId, 'value' => $value];
     }
+    $cfHoraExtra = $cfg['cf_hora_extra'] ?? null;
+    if ($cfHoraExtra) {
+        $customFields[] = ['id' => $cfHoraExtra, 'value' => normalize_hour_extra_value($message['hora_extra'] ?? '')];
+    }
     if (!empty($customFields)) {
         $issue['custom_fields'] = $customFields;
     }
     return $issue;
+}
+
+function normalize_hour_extra_value($value): string {
+    $val = strtolower(trim((string)$value));
+    $truthy = ['1','si','sí','s','true','yes'];
+    return in_array($val, $truthy, true) ? '1' : '0';
+}
+
+function message_has_hora_extra(array $message): bool {
+    return normalize_hour_extra_value($message['hora_extra'] ?? '') === '1';
+}
+
+function horas_extra_base_path(): string {
+    return __DIR__ . '/../data/horasExtras';
+}
+
+function horas_extra_month_name(DateTimeInterface $dt): string {
+    static $meses = [
+        1 => 'enero', 2 => 'febrero', 3 => 'marzo', 4 => 'abril',
+        5 => 'mayo', 6 => 'junio', 7 => 'julio', 8 => 'agosto',
+        9 => 'septiembre', 10 => 'octubre', 11 => 'noviembre', 12 => 'diciembre',
+    ];
+    return $meses[(int)$dt->format('n')] ?? $dt->format('m');
+}
+
+function append_hours_extra_record(array $message): void {
+    if (!message_has_hora_extra($message)) return;
+    $dt = parse_message_timestamp($message) ?? new DateTimeImmutable();
+    $year = $dt->format('Y');
+    $baseDir = horas_extra_base_path();
+    $yearDir = $baseDir . '/' . $year;
+    ensure_dir($yearDir);
+    $monthName = horas_extra_month_name($dt);
+    $filePath = $yearDir . '/' . $monthName . '.json';
+    $groups = [];
+    if (file_exists($filePath)) {
+        $parsed = json_decode(@file_get_contents($filePath), true);
+        if (is_array($parsed)) {
+            $groups = $parsed;
+        }
+    }
+    foreach ($groups as $idx => $group) {
+        if (!is_array($group)) {
+            $groups[$idx] = ['fecha' => '', 'hora_inicio' => '', 'hora_fin' => '', 'reports' => []];
+        } else {
+            if (!isset($group['reports']) || !is_array($group['reports'])) {
+                $group['reports'] = [];
+            }
+            $groups[$idx] = $group;
+        }
+    }
+    $targetDate = $dt->format('Y-m-d');
+    $horaIni = trim((string)($message['hora_inicio'] ?? $message['hora'] ?? ''));
+    $horaFin = trim((string)($message['hora_fin'] ?? $message['hora'] ?? ''));
+    $groupIndex = null;
+    foreach ($groups as $idx => $group) {
+        if (($group['fecha'] ?? '') === $targetDate) {
+            $groupIndex = $idx;
+            break;
+        }
+    }
+    if ($groupIndex === null) {
+        $groupIndex = count($groups);
+        $groups[] = [
+            'fecha' => $targetDate,
+            'hora_inicio' => $horaIni,
+            'hora_fin' => $horaFin,
+            'reports' => [],
+        ];
+    } else {
+        if ($horaIni !== '') {
+            $groups[$groupIndex]['hora_inicio'] = $horaIni;
+        }
+        if ($horaFin !== '') {
+            $groups[$groupIndex]['hora_fin'] = $horaFin;
+        }
+    }
+    $reports = $groups[$groupIndex]['reports'];
+    $messageId = $message['id'] ?? '';
+    $reports = array_values(array_filter($reports, fn($row) => !is_array($row) || ($row['id'] ?? '') !== $messageId));
+    $message['hora_extra'] = 'SI';
+    $reports[] = $message;
+    $groups[$groupIndex]['reports'] = $reports;
+    file_put_contents($filePath, json_encode($groups, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
 function append_redmine_log(array $entry): void {
@@ -244,6 +332,7 @@ function send_selected_messages(array &$messages, array $ids, array $cfg, string
             $message['procesado_ts'] = (new DateTimeImmutable())->format(DateTime::ATOM);
             $errors[] = sprintf('No se pudo enviar %s: %s', $message['id'] ?? 'sin-id', $result['error'] ?: $result['body']);
         }
+        append_hours_extra_record($message);
     }
     unset($message);
     save_messages($messages);
@@ -383,8 +472,9 @@ function handle_request(): array {
                     'tipo','estado','asunto','prioridad','categoria',
                     'asignado_a','solicitante','unidad','unidad_solicitante',
                     'hora_extra','fecha_inicio','fecha_fin','tiempo_estimado',
-                'fecha','hora','numero','descripcion'
+                    'fecha','hora','numero','descripcion'
                 ];
+                $updatedMessage = null;
                 foreach ($messages as &$message) {
                     if (($message['id'] ?? '') !== $id) {
                         continue;
@@ -395,11 +485,15 @@ function handle_request(): array {
                         }
                     }
                     $updated = true;
+                    $updatedMessage = $message;
                     break;
                 }
                 unset($message);
                 if ($updated) {
                     save_messages($messages);
+                    if (is_array($updatedMessage)) {
+                        append_hours_extra_record($updatedMessage);
+                    }
                     $flashMsg = 'Mensaje actualizado.';
                 } else {
                     $flashMsg = 'No se encontró el mensaje.';

@@ -4,8 +4,9 @@
     "project_id": 47,
     "tracker_id": 3,
     "priority_id": 2,
-    "cf_solicitante": "3",
-    "cf_unidad": "5",
+    "cf_solicitante": null,
+    "cf_unidad": null,
+    "cf_hora_extra": null,
     "status_id": 1,
     "category_id": null,
     "retencion_horas": 1,
@@ -77,7 +78,7 @@
         }
     ],
     "project_name": "Backlog Soporte TI",
-    "cf_unidad_solicitante": "11",
+    "cf_unidad_solicitante": null,
     "categories_url": "https:\/\/coresalud.cl\/gp\/projects\/backlog-soporte-ti\/issue_categories.json",
     "unidades_url": "https:\/\/coresalud.cl\/gp\/custom_fields.json"
 }

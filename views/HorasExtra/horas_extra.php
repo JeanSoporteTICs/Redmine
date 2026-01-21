@@ -17,6 +17,28 @@ function load_hours_extra_all(): array {
         if (!is_array($groups)) {
             continue;
         }
+        if (!empty($groups) && is_array($groups) && is_array($groups[0]) && !isset($groups[0]['reports'])) {
+            $tmp = [];
+            foreach ($groups as $msg) {
+                if (!is_array($msg)) {
+                    continue;
+                }
+                $dateKey = $msg['fecha'] ?? $msg['fecha_inicio'] ?? '';
+                if ($dateKey === '') {
+                    continue;
+                }
+                if (!isset($tmp[$dateKey])) {
+                    $tmp[$dateKey] = [
+                        'fecha' => $dateKey,
+                        'hora_inicio' => $msg['hora_inicio'] ?? $msg['hora'] ?? '',
+                        'hora_fin' => $msg['hora_fin'] ?? $msg['hora'] ?? '',
+                        'reports' => [],
+                    ];
+                }
+                $tmp[$dateKey]['reports'][] = $msg;
+            }
+            $groups = array_values($tmp);
+        }
         foreach ($groups as $g) {
             if (!is_array($g)) {
                 continue;
@@ -53,6 +75,17 @@ function normalize_date_key($fecha) {
         if ($dt instanceof DateTime) return $dt->format('Y-m-d');
     }
     return $fecha;
+}
+
+function sanitize_time_value($value) {
+    $value = trim((string)$value);
+    if ($value === '') return '';
+    if (preg_match('/^(\d{2}):(\d{2})(?::\d{2})?$/', $value, $m)) {
+        $hh = str_pad($m[1], 2, '0', STR_PAD_LEFT);
+        $mm = str_pad($m[2], 2, '0', STR_PAD_LEFT);
+        return "$hh:$mm";
+    }
+    return $value;
 }
 
 function update_hours_by_date($fecha, $horaIni, $horaFin) {
@@ -334,7 +367,7 @@ function hhmm($mins) {
       </div>
       <form method="post">
         <input type="hidden" name="action" value="update_extra">
-        <input type="hidden" name="csrf" value="<?= $csrf ?>">
+        <input type="hidden" name="csrf_token" value="<?= $csrf ?>">
         <div class="modal-body">
           <div class="mb-3">
             <label class="form-label">Fecha</label>

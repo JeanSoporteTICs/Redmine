@@ -32,6 +32,7 @@
             "cfg_prioridades": true,
             "cfg_estados": true,
             "cfg_roles": true,
+            "cfg_usuarios": true,
             "actividad": true
         }
     },
@@ -54,8 +55,8 @@
             "historico_acciones": false,
             "historico_scope": "asignados",
             "configuracion": false,
-            "estadisticas": false,
-            "estadisticas_manual": false,
+            "estadisticas": true,
+            "estadisticas_manual": true,
             "usuarios": false,
             "categorias": false,
             "unidades": false,

@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/auth.php';
 // Mantenedor de configuración de envío a Redmine (incluye opciones de tracker/prioridad/estado)
 $CONFIG_FILE = __DIR__ . '/../data/configuracion.json';
 
@@ -14,6 +15,7 @@ function ensure_config_file($path) {
             'cf_solicitante' => null,
             'cf_unidad' => null,
             'cf_unidad_solicitante' => 11,
+            'cf_hora_extra' => 12,
             'categories_url' => null,
             'unidades_url' => null,
             'status_id' => 1,
@@ -52,6 +54,9 @@ function load_config($path) {
     if (!array_key_exists('cf_unidad_solicitante', $data)) {
         $data['cf_unidad_solicitante'] = 11;
     }
+    if (!array_key_exists('cf_hora_extra', $data)) {
+        $data['cf_hora_extra'] = 12;
+    }
     foreach (['trackers','prioridades','estados'] as $k) {
         if (!isset($data[$k]) || !is_array($data[$k])) $data[$k] = [];
     }
@@ -63,11 +68,30 @@ function save_config($path, $cfg) {
     file_put_contents($path, json_encode($cfg, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
+function config_set_flash(string $message): void {
+    auth_start_session();
+    $_SESSION['config_flash'] = $message;
+}
+
+function config_consume_flash(): ?string {
+    auth_start_session();
+    $message = $_SESSION['config_flash'] ?? null;
+    unset($_SESSION['config_flash']);
+    return $message;
+}
+
+function config_redirect_back(): void {
+    $location = $_SERVER['REQUEST_URI'] ?? '/redmine/views/Configuracion/configuracion.php';
+    header('Location: ' . $location);
+    exit;
+}
+
 function handle_configuracion() {
     global $CONFIG_FILE;
     $cfg = load_config($CONFIG_FILE);
-    $flash = null;
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $flash = config_consume_flash();
+    $action = $_POST['action'] ?? '';
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && $action === '') {
         if (function_exists('csrf_validate')) csrf_validate();
         $cfg['platform_url'] = trim($_POST['platform_url'] ?? $cfg['platform_url'] ?? '');
         $cfg['platform_token'] = trim($_POST['platform_token'] ?? $cfg['platform_token'] ?? '');
@@ -80,6 +104,7 @@ function handle_configuracion() {
         $cfg['cf_solicitante'] = ($_POST['cf_solicitante'] ?? '') === '' ? null : $_POST['cf_solicitante'];
         $cfg['cf_unidad'] = ($_POST['cf_unidad'] ?? '') === '' ? null : $_POST['cf_unidad'];
         $cfg['cf_unidad_solicitante'] = ($_POST['cf_unidad_solicitante'] ?? '') === '' ? null : $_POST['cf_unidad_solicitante'];
+        $cfg['cf_hora_extra'] = ($_POST['cf_hora_extra'] ?? '') === '' ? null : $_POST['cf_hora_extra'];
         $cfg['status_id'] = is_numeric($_POST['status_id'] ?? '') ? (int)$_POST['status_id'] : ($cfg['status_id'] ?? 1);
         $cfg['retencion_horas'] = max(1, (int)($_POST['retencion_horas'] ?? ($cfg['retencion_horas'] ?? 24)));
         $cfg['session_timeout'] = max(60, (int)($_POST['session_timeout'] ?? ($cfg['session_timeout'] ?? 300)));
@@ -132,7 +157,8 @@ function handle_configuracion() {
             }
         }
         save_config($CONFIG_FILE, $cfg);
-        $flash = 'Configuración guardada';
+        config_set_flash('Configuración guardada');
+        config_redirect_back();
     }
     $opts = [
         'trackers' => $cfg['trackers'] ?? [],

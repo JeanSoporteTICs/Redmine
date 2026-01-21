@@ -765,5 +765,30 @@
         "procesado_ts": "2026-01-20T21:33:26+01:00",
         "_archivado_por": "retencion",
         "_archivado_en": "2026-01-20T21:33:26+01:00"
+    },
+    {
+        "id": "181b5891-2a1e-4940-a9b0-9885417da275",
+        "numero": "+56973712780",
+        "mensaje": "revisión de licitación huelleros, informática, Daniel",
+        "fecha": "20-01-2026",
+        "hora": "22:42:28",
+        "fecha_inicio": "20-01-2026",
+        "fecha_fin": "20-01-2026",
+        "tipo": "Soporte",
+        "prioridad": "NORMAL",
+        "estado": "procesado",
+        "hora_extra": "1",
+        "tiempo_estimado": "1",
+        "categoria": "Huelleros",
+        "unidad": "informática",
+        "unidad_solicitante": "HBV",
+        "solicitante": "Daniel",
+        "asunto": "revisión de licitación huelleros \/ informática",
+        "asignado_a": "42",
+        "asignado_nombre": "Jean Cortés Lorca",
+        "redmine_id": 112501,
+        "procesado_ts": "2026-01-21T02:42:53+01:00",
+        "_archivado_por": "retencion",
+        "_archivado_en": "2026-01-21T02:42:53+01:00"
     }
 ]

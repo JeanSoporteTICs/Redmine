@@ -1,6 +1,10 @@
 ﻿<?php
 require_once __DIR__ . '/../../controllers/auth.php';
-auth_require_role(['root','administrador','gestor'], '/redmine/login.php');
+auth_require_login('/redmine/login.php');
+if (!auth_can('simulador')) {
+    header('Location: /redmine/views/Dashboard/dashboard.php');
+    exit;
+}
 require_once __DIR__ . '/../../controllers/simulador.php';
 
 $h = fn($v) => htmlspecialchars($v ?? '', ENT_QUOTES, 'UTF-8');

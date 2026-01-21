@@ -279,7 +279,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $rolesData[$selectedRole] = [
           'mensajes' => ($_POST['mensajes_scope'] ?? 'asignados'),
           'mensajes_acceso' => isset($_POST['perm_mensajes']),
-          'horas_extra' => ($_POST['horas_scope'] ?? 'asignados'),
+          'horas_extra' => isset($_POST['perm_horas_extra']) ? ($_POST['horas_scope'] ?? 'asignados') : '',
           'historico' => isset($_POST['perm_historico']),
           'historico_scope' => ($_POST['historico_scope'] ?? 'asignados'),
           'historico_acciones' => isset($_POST['perm_historico_acciones']),
@@ -331,7 +331,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $cfgUser = [
         'mensajes' => ($_POST['u_mensajes_scope'] ?? 'asignados'),
         'mensajes_acceso' => isset($_POST['u_perm_mensajes']),
-        'horas_extra' => ($_POST['u_horas_scope'] ?? 'asignados'),
+        'horas_extra' => isset($_POST['u_perm_horas_extra']) ? ($_POST['u_horas_scope'] ?? 'asignados') : '',
         'historico' => isset($_POST['u_perm_historico']),
         'historico_acciones' => isset($_POST['u_perm_historico_acciones']),
         'historico_scope' => ($_POST['u_historico_scope'] ?? 'asignados'),
@@ -771,6 +771,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             <label class="form-label">CF Unidad solicitante (ID)</label>
             <input name="cf_unidad_solicitante" class="form-control" value="<?= $h($cfg['cf_unidad_solicitante'] ?? '') ?>" placeholder="Ej: 11">
           </div>
+          <div class="col-md-4">
+            <label class="form-label">CF Horas extra (ID)</label>
+            <input name="cf_hora_extra" class="form-control" value="<?= $h($cfg['cf_hora_extra'] ?? '') ?>" placeholder="Ej: 12">
+          </div>
           <div class="col-12 d-flex justify-content-end">
             <button class="btn btn-primary">Guardar</button>
           </div>
@@ -974,6 +978,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
               </div>
               <div class="col-md-4">
                 <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="u_perm_horas_extra" id="u_perm_horas_extra_chk" <?= !empty($uCfg['horas_extra']) ? 'checked' : '' ?>>
+                  <label class="form-check-label" for="u_perm_horas_extra_chk">Horas extra</label>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-check">
                   <input class="form-check-input" type="checkbox" name="u_perm_estadisticas" id="u_perm_estadisticas_chk" <?= $uHas('estadisticas') ? 'checked' : '' ?>>
                   <label class="form-check-label" for="u_perm_estadisticas_chk">Estad&iacute;sticas</label>
                 </div>
@@ -1162,6 +1172,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" name="perm_mensajes" id="permMsg" <?= !empty($selCfg['mensajes_acceso']) ? 'checked' : '' ?>>
                   <label class="form-check-label" for="permMsg">Reportes</label>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="perm_horas_extra" id="permHorasExtra" <?= !empty($selCfg['horas_extra']) ? 'checked' : '' ?>>
+                  <label class="form-check-label" for="permHorasExtra">Horas extra</label>
                 </div>
               </div>
               <div class="col-md-4">

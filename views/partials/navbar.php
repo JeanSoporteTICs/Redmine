@@ -49,7 +49,7 @@ $role = auth_get_user_role();
         <?php if (!empty($_SESSION['user']['nombre'])): ?>
           <span class="text-white-50 small d-none d-sm-inline">Hola, <strong><?= $h($_SESSION['user']['nombre']) ?></strong></span>
         <?php endif; ?>
-        <a class="btn btn-outline-light btn-sm" href="/redmine/logout.php"><i class="bi bi-box-arrow-right"></i> Cerrar sesi&oacute;n</a>
+        <a class="btn btn-outline-light btn-sm" href="/redmine/logout.php"><i class="bi bi-box-arrow-right"></i> Cerrar Sesión;n</a>
       </div>
     </div>
   </div>
@@ -145,7 +145,7 @@ window.addEventListener('load', () => {
     });
   })();
 
-  // Temporizador de sesi&oacute;n
+  // Temporizador de Sesión;n
   const el = document.getElementById('session-timer');
   const textEl = document.getElementById('session-timer-text') || el;
   const baseTimeout = el ? (parseInt(el.getAttribute('data-timeout'), 10) || 300) : 300;
@@ -200,7 +200,7 @@ window.addEventListener('load', () => {
       if (extendMsg) extendMsg.textContent = '';
       const pwd = extendPwd.value.trim();
       if (!pwd) {
-        if (extendMsg) extendMsg.textContent = 'Ingresa tu contrase&ntilde;a.';
+        if (extendMsg) extendMsg.textContent = 'Ingresa tu Contraseña.';
         return;
       }
       try {
@@ -214,15 +214,15 @@ window.addEventListener('load', () => {
           remaining = parseInt(data.remaining ?? data.timeout ?? baseTimeout, 10) || baseTimeout;
           modalShown = false;
           extendPwd.value = '';
-          if (extendMsg) extendMsg.textContent = 'Sesi&oacute;n extendida.';
+          if (extendMsg) extendMsg.textContent = 'Sesión;n extendida.';
           if (tickHandle) clearTimeout(tickHandle);
           tick();
           if (modal) setTimeout(() => modal.hide(), 400);
         } else {
-          if (extendMsg) extendMsg.textContent = data.msg || 'Contrase&ntilde;a incorrecta.';
+          if (extendMsg) extendMsg.textContent = data.msg || 'Contraseña incorrecta.';
         }
       } catch (e) {
-        if (extendMsg) extendMsg.textContent = 'No se pudo extender la sesi&oacute;n.';
+        if (extendMsg) extendMsg.textContent = 'No se pudo extender la Sesión;n.';
       }
     });
   }
@@ -234,20 +234,20 @@ window.addEventListener('load', () => {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Sesi&oacute;n por expirar</h5>
+        <h5 class="modal-title">Sesión por expirar</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>Tu sesi&oacute;n expira pronto. &iquest;Deseas continuar?</p>
+        <p>Tu Sesión expira pronto. &iquest;Deseas continuar?</p>
         <div class="mb-3">
-          <label class="form-label">Contrase&ntilde;a</label>
+          <label class="form-label">Contraseña</label>
           <input type="password" id="session-password" class="form-control" autocomplete="current-password">
           <div class="form-text text-danger" id="session-msg"></div>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" id="btn-logout-session">Cerrar sesi&oacute;n</button>
-        <button type="button" class="btn btn-primary" id="btn-extend-session">Continuar sesi&oacute;n</button>
+        <button type="button" class="btn btn-outline-secondary" id="btn-logout-session">Cerrar Sesión</button>
+        <button type="button" class="btn btn-primary" id="btn-extend-session">Continuar Sesión</button>
       </div>
     </div>
   </div>
