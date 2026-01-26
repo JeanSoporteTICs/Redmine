@@ -30,3 +30,8 @@
 [21-01-2026 16:40:41] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
 [22-01-2026 15:16:02] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
 [23-01-2026 15:38:47] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[24-01-2026 11:46:43] CSRF_ALERT - Token=NULL session=NULL
+[24-01-2026 11:50:34] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[24-01-2026 14:00:05] CSRF_ALERT - Token=NULL session=NULL
+[24-01-2026 14:00:08] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[26-01-2026 10:19:47] LOGIN_SUCCESS - User Jean Cortés Lorca (42)

@@ -1901,3 +1901,627 @@
     },
     "message_id": "d5761c3d-a846-4f16-9aad-eb1cb9591b1f"
 }
+{
+    "ts": "2026-01-24T15:53:26+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112793,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"assigned_to\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"problema con impresora \/ pediátrico quirúrgico (5tp piso)\",\"description\":\"\",\"start_date\":\"2026-01-22\",\"due_date\":\"2026-01-22\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":null,\"total_estimated_hours\":null,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"barbara\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"pediátrico quirúrgico (5to piso)\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"CIRUGIA INFANTIL\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-24T14:53:27Z\",\"updated_on\":\"2026-01-24T14:53:27Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema con impresora \/ pediátrico quirúrgico (5tp piso)",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-22",
+            "due_date": "2026-01-22",
+            "assigned_to_id": "117",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "barbara"
+                },
+                {
+                    "id": "5",
+                    "value": "pediátrico quirúrgico (5to piso)"
+                },
+                {
+                    "id": "11",
+                    "value": "CIRUGIA INFANTIL"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "96641a49-c909-4430-b996-f880b5e3bbdd"
+}
+{
+    "ts": "2026-01-24T15:53:27+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112794,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"assigned_to\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"instalar equipos \/ laboratorio\",\"description\":\"\",\"start_date\":\"2026-01-22\",\"due_date\":\"2026-01-22\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":null,\"total_estimated_hours\":null,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"veronica gallardo\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"laboratorio\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"LABORATORIO\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-24T14:53:28Z\",\"updated_on\":\"2026-01-24T14:53:28Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "instalar equipos \/ laboratorio",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-22",
+            "due_date": "2026-01-22",
+            "assigned_to_id": "117",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "veronica gallardo"
+                },
+                {
+                    "id": "5",
+                    "value": "laboratorio"
+                },
+                {
+                    "id": "11",
+                    "value": "LABORATORIO"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "4e9dbdd9-8858-4e50-adea-2c4eb7376088"
+}
+{
+    "ts": "2026-01-24T15:53:28+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112795,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"assigned_to\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"instalar y configurar equipo \/ ex poli pediatria\",\"description\":\"\",\"start_date\":\"2026-01-22\",\"due_date\":\"2026-01-22\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":null,\"total_estimated_hours\":null,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"susana\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"ex poli pediatria\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"PEDIATRIA\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-24T14:53:29Z\",\"updated_on\":\"2026-01-24T14:53:29Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "instalar y configurar equipo \/ ex poli pediatria",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-22",
+            "due_date": "2026-01-22",
+            "assigned_to_id": "117",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "susana"
+                },
+                {
+                    "id": "5",
+                    "value": "ex poli pediatria"
+                },
+                {
+                    "id": "11",
+                    "value": "PEDIATRIA"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "ab03aecf-8087-4659-a032-362375bfa31d"
+}
+{
+    "ts": "2026-01-24T15:53:28+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112796,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"assigned_to\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"category\":{\"id\":244,\"name\":\"sema\"},\"subject\":\"retirar equipo para revisar el findesemana \/ pediatría\",\"description\":\"\",\"start_date\":\"2026-01-22\",\"due_date\":\"2026-01-22\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":null,\"total_estimated_hours\":null,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"bárbara\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"pediatría\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"PEDIATRIA\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-24T14:53:29Z\",\"updated_on\":\"2026-01-24T14:53:29Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "retirar equipo para revisar el findesemana \/ pediatría",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-22",
+            "due_date": "2026-01-22",
+            "assigned_to_id": "117",
+            "category_id": 244,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "bárbara"
+                },
+                {
+                    "id": "5",
+                    "value": "pediatría"
+                },
+                {
+                    "id": "11",
+                    "value": "PEDIATRIA"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "6415ed9f-43d1-4834-afe8-4c52e4e5d16f"
+}
+{
+    "ts": "2026-01-24T15:53:29+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112797,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"assigned_to\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"category\":{\"id\":101,\"name\":\"Impresoras\"},\"subject\":\"instalacion de impresora \/ donald canter\",\"description\":\"\",\"start_date\":\"2026-01-22\",\"due_date\":\"2026-01-22\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":null,\"total_estimated_hours\":null,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"karol  oyarzun\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"donald canter\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"DENTAL (DC)\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-24T14:53:30Z\",\"updated_on\":\"2026-01-24T14:53:30Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "instalacion de impresora \/ donald canter",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-22",
+            "due_date": "2026-01-22",
+            "assigned_to_id": "117",
+            "category_id": 101,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "karol  oyarzun"
+                },
+                {
+                    "id": "5",
+                    "value": "donald canter"
+                },
+                {
+                    "id": "11",
+                    "value": "DENTAL (DC)"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "bc93b5fe-bdae-4744-b442-c6032e40cd4a"
+}
+{
+    "ts": "2026-01-24T15:53:30+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112798,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"assigned_to\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"problema con impresora \/ uti1\",\"description\":\"\",\"start_date\":\"2026-01-22\",\"due_date\":\"2026-01-22\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":null,\"total_estimated_hours\":null,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"antonieta\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"uti1\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"UTI QUIRURGICA\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-24T14:53:31Z\",\"updated_on\":\"2026-01-24T14:53:31Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema con impresora \/ uti1",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-22",
+            "due_date": "2026-01-22",
+            "assigned_to_id": "117",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "antonieta"
+                },
+                {
+                    "id": "5",
+                    "value": "uti1"
+                },
+                {
+                    "id": "11",
+                    "value": "UTI QUIRURGICA"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "6107bb88-1690-4427-90c6-4646927b7ee1"
+}
+{
+    "ts": "2026-01-24T15:53:30+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112799,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"assigned_to\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"configurar scanner \/ laboratorio\",\"description\":\"\",\"start_date\":\"2026-01-22\",\"due_date\":\"2026-01-22\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":null,\"total_estimated_hours\":null,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"veronica\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"laboratorio\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"LABORATORIO\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-24T14:53:31Z\",\"updated_on\":\"2026-01-24T14:53:31Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "configurar scanner \/ laboratorio",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-22",
+            "due_date": "2026-01-22",
+            "assigned_to_id": "117",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "veronica"
+                },
+                {
+                    "id": "5",
+                    "value": "laboratorio"
+                },
+                {
+                    "id": "11",
+                    "value": "LABORATORIO"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "2fa2ffd3-98b9-4357-a8b2-5e6726746246"
+}
+{
+    "ts": "2026-01-24T16:04:12+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112800,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"assigned_to\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"equipo no enciende \/ poli cardio\",\"description\":\"\",\"start_date\":\"2026-01-23\",\"due_date\":\"2026-01-23\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":null,\"total_estimated_hours\":null,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"javiera\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"poli cardio\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"POLI CARDIOLOGIA\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-24T15:04:13Z\",\"updated_on\":\"2026-01-24T15:04:13Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "equipo no enciende \/ poli cardio",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-23",
+            "due_date": "2026-01-23",
+            "assigned_to_id": "117",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "javiera"
+                },
+                {
+                    "id": "5",
+                    "value": "poli cardio"
+                },
+                {
+                    "id": "11",
+                    "value": "POLI CARDIOLOGIA"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "b00cb2c7-c83e-4cfe-a218-6d7af96c75fc"
+}
+{
+    "ts": "2026-01-24T16:04:13+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112801,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"assigned_to\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"category\":{\"id\":102,\"name\":\"Internet\"},\"subject\":\"problema internet \/ cae\",\"description\":\"\",\"start_date\":\"2026-01-23\",\"due_date\":\"2026-01-23\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":null,\"total_estimated_hours\":null,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"paola\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"cae\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"CONSULTORIO ADOSADO ESPECIAL.\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-24T15:04:13Z\",\"updated_on\":\"2026-01-24T15:04:13Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema internet \/ cae",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-23",
+            "due_date": "2026-01-23",
+            "assigned_to_id": "117",
+            "category_id": 102,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "paola"
+                },
+                {
+                    "id": "5",
+                    "value": "cae"
+                },
+                {
+                    "id": "11",
+                    "value": "CONSULTORIO ADOSADO ESPECIAL."
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "39df30b1-e1d3-4c4b-9f6f-33916018a4ae"
+}
+{
+    "ts": "2026-01-24T16:04:13+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112802,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"assigned_to\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"problema impresora y configurar pc a la red \/ poli aro\",\"description\":\"\",\"start_date\":\"2026-01-23\",\"due_date\":\"2026-01-23\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":null,\"total_estimated_hours\":null,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"catalina\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"poli aro\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"POLI GINECOLOGIA\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-24T15:04:14Z\",\"updated_on\":\"2026-01-24T15:04:14Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema impresora y configurar pc a la red \/ poli aro",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-23",
+            "due_date": "2026-01-23",
+            "assigned_to_id": "117",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "catalina"
+                },
+                {
+                    "id": "5",
+                    "value": "poli aro"
+                },
+                {
+                    "id": "11",
+                    "value": "POLI GINECOLOGIA"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "5c0c579c-039b-435b-887f-29aaf4d49507"
+}
+{
+    "ts": "2026-01-24T16:04:14+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112803,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"assigned_to\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"problema equipo \/ poli oftalmología\",\"description\":\"\",\"start_date\":\"2026-01-23\",\"due_date\":\"2026-01-23\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":null,\"total_estimated_hours\":null,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"marcela guzmán\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"poli oftalmología\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"OFTALMOLOGIA\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-24T15:04:15Z\",\"updated_on\":\"2026-01-24T15:04:15Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema equipo \/ poli oftalmología",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-23",
+            "due_date": "2026-01-23",
+            "assigned_to_id": "117",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "marcela guzmán"
+                },
+                {
+                    "id": "5",
+                    "value": "poli oftalmología"
+                },
+                {
+                    "id": "11",
+                    "value": "OFTALMOLOGIA"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "a1cd05de-c727-4e1f-a3eb-e36f842484fc"
+}
+{
+    "ts": "2026-01-24T16:04:15+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112804,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"assigned_to\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"retirar equipo para remasterizar este findesemana \/ poli oftalmología\",\"description\":\"\",\"start_date\":\"2026-01-23\",\"due_date\":\"2026-01-23\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":null,\"total_estimated_hours\":null,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"marcela guzmán\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"poli oftalmología\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"OFTALMOLOGIA\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-24T15:04:15Z\",\"updated_on\":\"2026-01-24T15:04:15Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "retirar equipo para remasterizar este findesemana \/ poli oftalmología",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-23",
+            "due_date": "2026-01-23",
+            "assigned_to_id": "117",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "marcela guzmán"
+                },
+                {
+                    "id": "5",
+                    "value": "poli oftalmología"
+                },
+                {
+                    "id": "11",
+                    "value": "OFTALMOLOGIA"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "14849182-20be-4ce3-8291-167ba5305920"
+}
+{
+    "ts": "2026-01-24T16:04:15+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112805,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"assigned_to\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"category\":{\"id\":200,\"name\":\"proxy\"},\"subject\":\"acceso a youtube (evaluar posible proxy desactivado) \/ operaciones\",\"description\":\"\",\"start_date\":\"2026-01-23\",\"due_date\":\"2026-01-23\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":null,\"total_estimated_hours\":null,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"jose miguel sancho\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"operaciones\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"DEPARTAMENTO OPERACIONES\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-24T15:04:16Z\",\"updated_on\":\"2026-01-24T15:04:16Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "acceso a youtube (evaluar posible proxy desactivado) \/ operaciones",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-23",
+            "due_date": "2026-01-23",
+            "assigned_to_id": "117",
+            "category_id": 200,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "jose miguel sancho"
+                },
+                {
+                    "id": "5",
+                    "value": "operaciones"
+                },
+                {
+                    "id": "11",
+                    "value": "DEPARTAMENTO OPERACIONES"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "d1556198-9936-4e92-be47-9f10bc1ac868"
+}
+{
+    "ts": "2026-01-24T16:04:16+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112806,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"assigned_to\":{\"id\":117,\"name\":\"Hernan Ulloa\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"configuración de scanner \/ equipos médicos\",\"description\":\"\",\"start_date\":\"2026-01-23\",\"due_date\":\"2026-01-23\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":null,\"total_estimated_hours\":null,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"diego\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"equipos médicos\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"EQUIPOS MEDICOS\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"0\"}],\"created_on\":\"2026-01-24T15:04:17Z\",\"updated_on\":\"2026-01-24T15:04:17Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "configuración de scanner \/ equipos médicos",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-23",
+            "due_date": "2026-01-23",
+            "assigned_to_id": "117",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "diego"
+                },
+                {
+                    "id": "5",
+                    "value": "equipos médicos"
+                },
+                {
+                    "id": "11",
+                    "value": "EQUIPOS MEDICOS"
+                },
+                {
+                    "id": "12",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    "message_id": "d2acbe5b-fe3b-4889-a216-616bf0e11dd0"
+}
+{
+    "ts": "2026-01-26T14:20:16+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112856,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":368,\"name\":\"hdmi \"},\"subject\":\"instalación face plate hdmi y canalización \/ sda\",\"description\":\"\",\"start_date\":\"2026-01-24\",\"due_date\":\"2026-01-24\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":null,\"total_estimated_hours\":null,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"mauricio\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"sda\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"HBV\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"1\"}],\"created_on\":\"2026-01-26T13:20:16Z\",\"updated_on\":\"2026-01-26T13:20:16Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "instalación face plate hdmi y canalización \/ sda",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-24",
+            "due_date": "2026-01-24",
+            "assigned_to_id": "42",
+            "category_id": 368,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "mauricio"
+                },
+                {
+                    "id": "5",
+                    "value": "sda"
+                },
+                {
+                    "id": "11",
+                    "value": "HBV"
+                },
+                {
+                    "id": "12",
+                    "value": "1"
+                }
+            ]
+        }
+    },
+    "message_id": "b4b36278-96be-492d-affb-5f61fad3ff0b"
+}
+{
+    "ts": "2026-01-26T14:20:16+01:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":112857,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"problemas páginas web \/ contabilidad\",\"description\":\"\",\"start_date\":\"2026-01-24\",\"due_date\":\"2026-01-24\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":null,\"total_estimated_hours\":null,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"marco\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"contabilidad\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"HBV\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"1\"}],\"created_on\":\"2026-01-26T13:20:17Z\",\"updated_on\":\"2026-01-26T13:20:17Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problemas páginas web \/ contabilidad",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-01-24",
+            "due_date": "2026-01-24",
+            "assigned_to_id": "42",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "marco"
+                },
+                {
+                    "id": "5",
+                    "value": "contabilidad"
+                },
+                {
+                    "id": "11",
+                    "value": "HBV"
+                },
+                {
+                    "id": "12",
+                    "value": "1"
+                }
+            ]
+        }
+    },
+    "message_id": "8ecde0e0-9a6c-4e76-a8de-146998824fe2"
+}

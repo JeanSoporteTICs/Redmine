@@ -28,5 +28,111 @@
                 "procesado_ts": "2026-01-21T02:42:53+01:00"
             }
         ]
+    },
+    {
+        "fecha": "2026-01-24",
+        "hora_inicio": "13:29:40",
+        "hora_fin": "13:29:40",
+        "reports": [
+            {
+                "id": "b4b36278-96be-492d-affb-5f61fad3ff0b",
+                "numero": "+56973712780",
+                "mensaje": "instalación face plate hdmi y canalización, sda, mauricio",
+                "fecha": "24-01-2026",
+                "hora": "13:29:30",
+                "fecha_inicio": "24-01-2026",
+                "fecha_fin": "24-01-2026",
+                "tipo": "Soporte",
+                "prioridad": "NORMAL",
+                "estado": "pendiente",
+                "hora_extra": "SI",
+                "tiempo_estimado": "",
+                "categoria": "hdmi ",
+                "unidad": "sda",
+                "unidad_solicitante": "HBV",
+                "solicitante": "mauricio",
+                "asunto": "instalación face plate hdmi y canalización \/ sda",
+                "asignado_a": "42",
+                "asignado_nombre": "Jean Cortés Lorca",
+                "descripcion": ""
+            },
+            {
+                "id": "8ecde0e0-9a6c-4e76-a8de-146998824fe2",
+                "numero": "+56973712780",
+                "mensaje": "problemas páginas web, contabilidad, marco",
+                "fecha": "24-01-2026",
+                "hora": "13:29:40",
+                "fecha_inicio": "24-01-2026",
+                "fecha_fin": "24-01-2026",
+                "tipo": "Soporte",
+                "prioridad": "NORMAL",
+                "estado": "pendiente",
+                "hora_extra": "SI",
+                "tiempo_estimado": "",
+                "categoria": "Equipos",
+                "unidad": "contabilidad",
+                "unidad_solicitante": "HBV",
+                "solicitante": "marco",
+                "asunto": "problemas páginas web \/ contabilidad",
+                "asignado_a": "42",
+                "asignado_nombre": "Jean Cortés Lorca",
+                "descripcion": ""
+            }
+        ]
+    },
+    {
+        "fecha": "2026-01-26",
+        "hora_inicio": "13:29:40",
+        "hora_fin": "13:29:40",
+        "reports": [
+            {
+                "id": "b4b36278-96be-492d-affb-5f61fad3ff0b",
+                "numero": "+56973712780",
+                "mensaje": "instalación face plate hdmi y canalización, sda, mauricio",
+                "fecha": "24-01-2026",
+                "hora": "13:29:30",
+                "fecha_inicio": "24-01-2026",
+                "fecha_fin": "24-01-2026",
+                "tipo": "Soporte",
+                "prioridad": "NORMAL",
+                "estado": "procesado",
+                "hora_extra": "SI",
+                "tiempo_estimado": "",
+                "categoria": "hdmi ",
+                "unidad": "sda",
+                "unidad_solicitante": "HBV",
+                "solicitante": "mauricio",
+                "asunto": "instalación face plate hdmi y canalización \/ sda",
+                "asignado_a": "42",
+                "asignado_nombre": "Jean Cortés Lorca",
+                "descripcion": "",
+                "redmine_id": 112856,
+                "procesado_ts": "2026-01-26T14:20:16+01:00"
+            },
+            {
+                "id": "8ecde0e0-9a6c-4e76-a8de-146998824fe2",
+                "numero": "+56973712780",
+                "mensaje": "problemas páginas web, contabilidad, marco",
+                "fecha": "24-01-2026",
+                "hora": "13:29:40",
+                "fecha_inicio": "24-01-2026",
+                "fecha_fin": "24-01-2026",
+                "tipo": "Soporte",
+                "prioridad": "NORMAL",
+                "estado": "procesado",
+                "hora_extra": "SI",
+                "tiempo_estimado": "",
+                "categoria": "Equipos",
+                "unidad": "contabilidad",
+                "unidad_solicitante": "HBV",
+                "solicitante": "marco",
+                "asunto": "problemas páginas web \/ contabilidad",
+                "asignado_a": "42",
+                "asignado_nombre": "Jean Cortés Lorca",
+                "descripcion": "",
+                "redmine_id": 112857,
+                "procesado_ts": "2026-01-26T14:20:16+01:00"
+            }
+        ]
     }
 ]
