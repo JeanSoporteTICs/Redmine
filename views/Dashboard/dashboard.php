@@ -352,6 +352,7 @@ $csrf = csrf_token();
                   data-prioridad="<?= $h($m['prioridad'] ?? '') ?>"
 
                   data-categoria="<?= $h($m['categoria'] ?? '') ?>"
+                  data-descripcion="<?= $h($m['descripcion'] ?? $m['mensaje'] ?? '') ?>"
 
                   data-asignado_a="<?= $h($m['asignado_a'] ?? '') ?>"
                   data-asignado_nombre="<?= $h($asignadoNombre) ?>"
@@ -671,10 +672,7 @@ $csrf = csrf_token();
 
   set('md-numero', 'data-numero');
 
-  const mensajeField = document.getElementById('md-mensaje');
-  if (mensajeField) {
-    mensajeField.value = '';
-  }
+  set('md-mensaje', 'data-descripcion');
 
 
 
