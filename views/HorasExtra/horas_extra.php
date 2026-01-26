@@ -145,10 +145,14 @@ function deduplicate_groups_by_start_date(array $groups): array {
 function sanitize_time_value($value) {
     $value = trim((string)$value);
     if ($value === '') return '';
-    if (preg_match('/^(\d{2}):(\d{2})(?::\d{2})?$/', $value, $m)) {
+    if (preg_match('/^(\d{1,2}):(\d{2})(?::(\d{2}))?$/', $value, $m)) {
         $hh = str_pad($m[1], 2, '0', STR_PAD_LEFT);
         $mm = str_pad($m[2], 2, '0', STR_PAD_LEFT);
-        return "$hh:$mm";
+        if (!isset($m[3]) || $m[3] === '') {
+            return "$hh:$mm";
+        }
+        $ss = str_pad($m[3], 2, '0', STR_PAD_LEFT);
+        return "$hh:$mm:$ss";
     }
     return $value;
 }
@@ -231,7 +235,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'updat
     } else {
         $flash = 'No se encontraron registros para esa fecha';
     }
-    $grupos = load_hours_extra_all();
+    $grupos = deduplicate_groups_by_start_date(load_hours_extra_all());
     if ($fecha !== '' && $selMes === '' && $selAnio === '') {
         $dtTmp = DateTime::createFromFormat('Y-m-d', $fecha) ?: DateTime::createFromFormat('d-m-Y', $fecha);
         if ($dtTmp instanceof DateTime) {
@@ -443,11 +447,11 @@ function hhmm($mins) {
           </div>
           <div class="mb-3">
             <label class="form-label">Hora de inicio</label>
-            <input type="time" class="form-control" name="hora_ini" id="md-hora-ini" step="60">
+            <input type="time" class="form-control" name="hora_ini" id="md-hora-ini" step="1">
           </div>
           <div class="mb-3">
             <label class="form-label">Hora de t&eacute;rmino</label>
-            <input type="time" class="form-control" name="hora_fin" id="md-hora-fin" step="60">
+            <input type="time" class="form-control" name="hora_fin" id="md-hora-fin" step="1">
           </div>
           <div class="mb-2 text-muted small" id="md-total-horas"></div>
           <p class="text-muted small mb-0">Las horas se aplican a todos los reportes de esa fecha.</p>
@@ -468,21 +472,31 @@ const totalHorasEl = document.getElementById('md-total-horas');
 const horaIniInput = document.getElementById('md-hora-ini');
 const horaFinInput = document.getElementById('md-hora-fin');
 
+function parseTimeInput(value) {
+  if (!value) return null;
+  const parts = value.split(':');
+  if (parts.length === 3) {
+    const date = new Date(`1970-01-01T${value}`);
+    return isNaN(date) ? null : date;
+  }
+  if (parts.length === 2) {
+    const date = new Date(`1970-01-01T${value}:00`);
+    return isNaN(date) ? null : date;
+  }
+  return null;
+}
+
 function updateTotalHorasPreview() {
   if (!totalHorasEl || !horaIniInput || !horaFinInput) return;
-  const ini = horaIniInput.value;
-  const fin = horaFinInput.value;
-  if (ini && fin) {
-    const d1 = new Date(`1970-01-01T${ini}:00`);
-    const d2 = new Date(`1970-01-01T${fin}:00`);
-    if (!isNaN(d1) && !isNaN(d2) && d2 > d1) {
-      const diffMs = d2 - d1;
-      const mins = Math.floor(diffMs / 60000);
-      const hh = String(Math.floor(mins / 60)).padStart(2,'0');
-      const mm = String(mins % 60).padStart(2,'0');
-      totalHorasEl.textContent = `Total de horas: ${hh}:${mm}`;
-      return;
-    }
+  const d1 = parseTimeInput(horaIniInput.value);
+  const d2 = parseTimeInput(horaFinInput.value);
+  if (d1 && d2 && d2 > d1) {
+    const diffMs = d2 - d1;
+    const mins = Math.floor(diffMs / 60000);
+    const hh = String(Math.floor(mins / 60)).padStart(2,'0');
+    const mm = String(mins % 60).padStart(2,'0');
+    totalHorasEl.textContent = `Total de horas: ${hh}:${mm}`;
+    return;
   }
   totalHorasEl.textContent = '';
 }
