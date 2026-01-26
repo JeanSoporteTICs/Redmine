@@ -74,7 +74,72 @@ function normalize_date_key($fecha) {
         $dt = DateTime::createFromFormat($fmt, $fecha);
         if ($dt instanceof DateTime) return $dt->format('Y-m-d');
     }
-    return $fecha;
+}
+
+function deduplicate_groups_by_start_date(array $groups): array {
+    $out = [];
+    foreach ($groups as $group) {
+        if (!is_array($group) || empty($group['reports']) || !is_array($group['reports'])) {
+            continue;
+        }
+        $groupFecha = normalize_date_key($group['fecha'] ?? '');
+        foreach ($group['reports'] as $report) {
+            if (!is_array($report)) {
+                continue;
+            }
+            $startDate = normalize_date_key($report['fecha_inicio'] ?? $report['fecha'] ?? $groupFecha);
+            if ($startDate === '') {
+                continue;
+            }
+            if (!isset($out[$startDate])) {
+                $out[$startDate] = [
+                    'fecha' => $startDate,
+                    'hora_inicio' => $group['hora_inicio'] ?? '',
+                    'hora_fin' => $group['hora_fin'] ?? '',
+                    'reports' => [],
+                    '__order' => [],
+                ];
+            }
+            if ($groupFecha === $startDate) {
+                if (!empty($group['hora_inicio'])) {
+                    $out[$startDate]['hora_inicio'] = $group['hora_inicio'];
+                }
+                if (!empty($group['hora_fin'])) {
+                    $out[$startDate]['hora_fin'] = $group['hora_fin'];
+                }
+            }
+            $reportKey = $report['id'] ?? null;
+            if ($reportKey === null) {
+                $reportKey = ($report['numero'] ?? '') . '|' . ($report['hora'] ?? '') . '|' . ($report['asunto'] ?? '');
+            }
+            if ($reportKey === '') {
+                continue;
+            }
+            if (!isset($out[$startDate]['reports'][$reportKey])) {
+                $out[$startDate]['reports'][$reportKey] = $report;
+                $out[$startDate]['__order'][] = $reportKey;
+                continue;
+            }
+            foreach ($report as $key => $value) {
+                if ($value === null || $value === '') {
+                    continue;
+                }
+                $out[$startDate]['reports'][$reportKey][$key] = $value;
+            }
+        }
+    }
+    foreach ($out as &$entry) {
+        $reports = [];
+        foreach ($entry['__order'] as $key) {
+            if (isset($entry['reports'][$key])) {
+                $reports[] = $entry['reports'][$key];
+            }
+        }
+        $entry['reports'] = $reports;
+        unset($entry['__order']);
+    }
+    unset($entry);
+    return array_values($out);
 }
 
 function sanitize_time_value($value) {
@@ -141,6 +206,7 @@ function update_hours_by_date($fecha, $horaIni, $horaFin) {
 }
 
 $grupos = load_hours_extra_all();
+$grupos = deduplicate_groups_by_start_date($grupos);
 // Filtrar por usuario para roles usuario/administrador/gestor
 $role = auth_get_user_role();
 $uid = auth_get_user_id();
@@ -334,9 +400,11 @@ function hhmm($mins) {
                   </td>
                 </tr>
                 <?php if (isset($g['reports']) && is_array($g['reports'])):
-                  foreach ($g['reports'] as $r): ?>
+                  foreach ($g['reports'] as $r):
+                    $detalleFecha = $r['fecha_inicio'] ?? $r['fecha'] ?? $fechaKey;
+                  ?>
                   <tr class="detail-row" data-detalle="<?= $h($r['asunto'] ?? '') ?>" data-ticket="<?= $h($r['redmine_id'] ?? '') ?>">
-                    <td><?= $h(fmt_fecha($r['fecha'] ?? $fechaKey)) ?></td>
+                    <td><?= $h(fmt_fecha($detalleFecha)) ?></td>
                     <td style="white-space:pre-line;"><?= $h($r['asunto'] ?? '') ?></td>
                     <td class="text-center"><?= $h($r['redmine_id'] ?? '') ?></td>
                   </tr>
