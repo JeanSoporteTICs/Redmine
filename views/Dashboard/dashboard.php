@@ -352,7 +352,7 @@ $csrf = csrf_token();
                   data-prioridad="<?= $h($m['prioridad'] ?? '') ?>"
 
                   data-categoria="<?= $h($m['categoria'] ?? '') ?>"
-                  data-descripcion="<?= $h($m['descripcion'] ?? $m['mensaje'] ?? '') ?>"
+                  data-descripcion="<?= $h($m['descripcion'] ?? '') ?>"
 
                   data-asignado_a="<?= $h($m['asignado_a'] ?? '') ?>"
                   data-asignado_nombre="<?= $h($asignadoNombre) ?>"
