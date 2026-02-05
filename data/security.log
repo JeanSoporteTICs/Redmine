@@ -35,3 +35,31 @@
 [24-01-2026 14:00:05] CSRF_ALERT - Token=NULL session=NULL
 [24-01-2026 14:00:08] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
 [26-01-2026 10:19:47] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[26-01-2026 10:34:52] CSRF_ALERT - Token=NULL session=NULL
+[26-01-2026 10:34:55] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[26-01-2026 11:38:23] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[26-01-2026 11:39:06] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[26-01-2026 11:50:31] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[26-01-2026 11:58:11] CSRF_ALERT - Token=NULL session=NULL
+[26-01-2026 11:58:16] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[28-01-2026 11:43:32] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[28-01-2026 16:26:31] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[30-01-2026 11:05:01] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[30-01-2026 17:03:03] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[31-01-2026 12:45:20] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[31-01-2026 12:56:32] CSRF_ALERT - Token=NULL session=NULL
+[31-01-2026 12:56:36] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[31-01-2026 13:59:36] CSRF_ALERT - Token=NULL session=NULL
+[31-01-2026 13:59:40] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[02-02-2026 10:16:34] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[02-02-2026 10:27:43] CSRF_ALERT - Token=NULL session=NULL
+[02-02-2026 10:27:47] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[02-02-2026 10:44:39] CSRF_ALERT - Token=NULL session=NULL
+[02-02-2026 10:44:48] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[02-02-2026 10:57:37] CSRF_ALERT - Token=NULL session=NULL
+[02-02-2026 10:57:40] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[04-02-2026 08:45:12] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[04-02-2026 17:29:20] CSRF_ALERT - Token=NULL session=NULL
+[04-02-2026 18:34:25] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[04-02-2026 18:34:26] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[04-02-2026 18:34:45] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
