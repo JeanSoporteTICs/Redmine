@@ -57,8 +57,10 @@ $h = fn($v) => htmlspecialchars($v ?? '', ENT_QUOTES, 'UTF-8');
 $csrf = csrf_token();
 setlocale(LC_TIME, 'es_CL.UTF-8', 'es_ES.UTF-8', 'es_ES', 'Spanish');
 
-$selMes = isset($_GET['mes']) ? trim($_GET['mes']) : '';
-$selAnio = isset($_GET['anio']) ? trim($_GET['anio']) : '';
+$mesActual = (new DateTime())->format('n');
+$selMes = array_key_exists('mes', $_GET) ? trim($_GET['mes']) : $mesActual;
+$anioActual = (new DateTime())->format('Y');
+$selAnio = array_key_exists('anio', $_GET) ? trim($_GET['anio']) : $anioActual;
 $flash = null;
 $meses = [
     1=>'enero',2=>'febrero',3=>'marzo',4=>'abril',5=>'mayo',6=>'junio',
@@ -272,6 +274,21 @@ $grupos = array_values(array_filter($grupos, function ($g) use ($selMes, $selAni
     return true;
 }));
 
+usort($grupos, function ($a, $b) {
+    $fa = normalize_date_key($a['fecha'] ?? '');
+    $fb = normalize_date_key($b['fecha'] ?? '');
+    if ($fa === $fb) {
+        return 0;
+    }
+    if ($fa === '') {
+        return 1;
+    }
+    if ($fb === '') {
+        return -1;
+    }
+    return $fb <=> $fa; // mostrar primero las fechas más recientes
+});
+
 function fmt_fecha($fecha) {
     $dt = DateTime::createFromFormat('Y-m-d', $fecha) ?: DateTime::createFromFormat('d-m-Y', $fecha);
     return $dt ? $dt->format('d-m-Y') : $fecha;
@@ -395,7 +412,7 @@ function hhmm($mins) {
                 if ($minsGrupo !== null) $totalHorasTablaMins += $minsGrupo;
                 $totalGrupo = hhmm($minsGrupo);
               ?>
-                <tr class="group-row" data-fecha="<?= $h($fechaKey) ?>" data-horaini="<?= $h($horaIni) ?>" data-horafin="<?= $h($horaFin) ?>" data-total="<?= $h($totalGrupo) ?>">
+                <tr class="group-row" data-fecha="<?= $h(fmt_fecha($fechaKey)) ?>" data-horaini="<?= $h($horaIni) ?>" data-horafin="<?= $h($horaFin) ?>" data-total="<?= $h($totalGrupo) ?>">
                   <td colspan="3">
                     <div class="d-flex justify-content-between align-items-center w-100">
                       <span><strong><?= $h(fmt_fecha($fechaKey)) ?></strong> &middot; Hora inicio: <?= $h($horaIni) ?> | Hora término: <?= $h($horaFin) ?><?= $totalGrupo ? ' | Total de horas: ' . $h($totalGrupo) : '' ?></span>
