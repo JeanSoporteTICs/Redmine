@@ -144,5 +144,42 @@
             "cfg_usuarios": false,
             "actividad": false
         }
+    },
+    {
+        "id": "122",
+        "rut_sin_dv": "20641750",
+        "nombre": "Camilo",
+        "apellido": "Urrutia",
+        "rut": "20.641.750-1",
+        "numero_celular": "+56929637786",
+        "estamento": "tecnico",
+        "rol": "usuario",
+        "api": "d7a73fd607ae24b7383baafa16b5af1a02272878",
+        "password": "$2y$10$KPJ4zXjkGzz1.I8rbm9m9u4ov8BPNQ1OxWpUyc.5FX4J239eBNGK6",
+        "permisos": {
+            "mensajes": "asignados",
+            "mensajes_acceso": true,
+            "horas_extra": "asignados",
+            "historico": true,
+            "historico_scope": "asignados",
+            "historico_acciones": false,
+            "configuracion": false,
+            "estadisticas": false,
+            "estadisticas_manual": false,
+            "usuarios": false,
+            "categorias": false,
+            "unidades": false,
+            "simulador": true,
+            "cfg_conexion": false,
+            "cfg_proyecto": false,
+            "cfg_retencion": false,
+            "cfg_sesion": false,
+            "cfg_trackers": false,
+            "cfg_prioridades": false,
+            "cfg_estados": false,
+            "cfg_roles": false,
+            "cfg_usuarios": false,
+            "actividad": false
+        }
     }
 ]
