@@ -120,6 +120,10 @@
         "nombre": "Ciberseguridad"
     },
     {
+        "id": "670",
+        "nombre": "claves de equipo"
+    },
+    {
         "id": "248",
         "nombre": "compra materiales"
     },
@@ -212,6 +216,10 @@
         "nombre": "deco"
     },
     {
+        "id": "656",
+        "nombre": "Desbloqueo Paginas"
+    },
+    {
         "id": "343",
         "nombre": "despacho a servicio"
     },
@@ -238,6 +246,10 @@
     {
         "id": "341",
         "nombre": "ECM"
+    },
+    {
+        "id": "668",
+        "nombre": "ECONECTA"
     },
     {
         "id": "556",
@@ -384,6 +396,10 @@
         "nombre": "Impresora comodato"
     },
     {
+        "id": "671",
+        "nombre": "impresora de credenciales "
+    },
+    {
         "id": "158",
         "nombre": "Impresora etiquetas"
     },
@@ -397,7 +413,7 @@
     },
     {
         "id": "294",
-        "nombre": "impresoras con problermas"
+        "nombre": "Impresoras con problemas"
     },
     {
         "id": "191",
@@ -640,6 +656,10 @@
         "nombre": "Petición"
     },
     {
+        "id": "655",
+        "nombre": "Pie de Firma"
+    },
+    {
         "id": "305",
         "nombre": "Pizarra Interactiva."
     },
@@ -764,6 +784,10 @@
         "nombre": "renovacion equipos intesis "
     },
     {
+        "id": "673",
+        "nombre": "renuncia de funcionario "
+    },
+    {
         "id": "300",
         "nombre": "reparacion cable poder"
     },
@@ -802,6 +826,10 @@
     {
         "id": "255",
         "nombre": "revision equipo nuevo"
+    },
+    {
+        "id": "654",
+        "nombre": "RNI"
     },
     {
         "id": "380",
