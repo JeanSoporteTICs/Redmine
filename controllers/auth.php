@@ -89,6 +89,10 @@ function auth_find_user_by_id($id) {
 function auth_login($username, $password) {
     auth_start_session();
     $user = auth_find_user($username);
+    if ($user && strtolower((string)($user['estado_usuario'] ?? 'activo')) === 'baneado') {
+        log_security_event('LOGIN_BLOCKED_BANNED', sprintf('Usuario baneado "%s"', $username));
+        return false;
+    }
     // usamos campo api como contrasena; si existe 'password' tambien lo aceptamos
     $apiField = $user['api'] ?? null;
     $passField = $user['password'] ?? null;

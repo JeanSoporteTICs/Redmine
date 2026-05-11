@@ -133,6 +133,17 @@ window.addEventListener('load', () => {
     const resetTransitionState = () => {
       pageContent.classList.remove('is-loading', 'is-leaving', 'is-entering');
     };
+    const syncFavicon = (doc) => {
+      if (!doc) return;
+      const incoming = Array.from(doc.querySelectorAll('link[rel~="icon"], link[rel="shortcut icon"]'));
+      if (incoming.length === 0) return;
+      document.querySelectorAll('link[rel~="icon"], link[rel="shortcut icon"]').forEach(link => link.remove());
+      incoming.forEach(link => {
+        const clone = document.createElement('link');
+        Array.from(link.attributes).forEach(attr => clone.setAttribute(attr.name, attr.value));
+        document.head.appendChild(clone);
+      });
+    };
     const loadPage = async (url, push) => {
       if (isNavigating) return;
       const targetPath = (new URL(url, window.location.href)).pathname.toLowerCase();
@@ -168,6 +179,7 @@ window.addEventListener('load', () => {
           }
         });
         if (doc.title) document.title = doc.title;
+        syncFavicon(doc);
         if (push) history.pushState({ url }, '', url);
         setActive(url);
         window.scrollTo(0, 0);

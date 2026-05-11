@@ -53,7 +53,14 @@ $csrf = csrf_token();
           <input id="user-search" class="form-control" placeholder="Buscar usuario" aria-label="Buscar usuario">
           <span class="badge bg-light text-dark border ms-2">Total: <?= count($usuarios) ?></span>
         </div>
-        <div class="d-flex gap-2">
+        <div class="d-flex gap-2 flex-wrap">
+          <form method="post" class="m-0" data-app-confirm="Importar miembros desde Redmine? Los usuarios nuevos quedaran baneados por defecto." data-app-confirm-title="Importar usuarios" data-app-confirm-text="Importar">
+            <input type="hidden" name="csrf_token" value="<?= $h($csrf) ?>">
+            <input type="hidden" name="action" value="import_redmine">
+            <button class="btn btn-outline-primary btn-icon" type="submit">
+              <i class="bi bi-cloud-arrow-down"></i> Importar Redmine
+            </button>
+          </form>
           <button class="btn btn-primary btn-icon" data-bs-toggle="modal" data-bs-target="#createUserModal">
             <i class="bi bi-person-plus"></i> Nuevo usuario
           </button>
@@ -68,8 +75,8 @@ $csrf = csrf_token();
               <th scope="col">Apellido</th>
               <th scope="col">RUT</th>
               <th scope="col">Celular</th>
-              <th scope="col">Estamento</th>
               <th scope="col">Rol</th>
+              <th scope="col">Estado</th>
               <th scope="col">API</th>
               <th scope="col" style="width:240px;">Acciones</th>
             </tr>
@@ -83,8 +90,11 @@ $csrf = csrf_token();
               <td data-col="apellido"><?= $h($u['apellido']) ?></td>
               <td data-col="rut"><?= $h($u['rut']) ?></td>
               <td data-col="celular"><?= $h($u['numero_celular']) ?></td>
-              <td data-col="estamento"><?= $h($u['estamento']) ?></td>
               <td data-col="rol"><?= $h($u['rol'] ?? 'usuario') ?></td>
+              <td data-col="estado">
+                <?php $estadoUsuario = strtolower((string)($u['estado_usuario'] ?? 'activo')); ?>
+                <span class="badge <?= $estadoUsuario === 'baneado' ? 'bg-danger' : 'bg-success' ?>"><?= $h($estadoUsuario === 'baneado' ? 'Baneado' : 'Activo') ?></span>
+              </td>
               <td data-col="api"><?= $h($u['api']) ?></td>
               <td class="d-flex gap-2 flex-wrap">
                 <button type="button" class="btn btn-sm btn-outline-primary btn-icon" data-bs-toggle="modal" data-bs-target="#editModal"
@@ -93,8 +103,8 @@ $csrf = csrf_token();
                   data-nombre="<?= $h($u['nombre']) ?>"
                   data-apellido="<?= $h($u['apellido']) ?>"
                   data-numero_celular="<?= $h($u['numero_celular']) ?>"
-                  data-estamento="<?= $h($u['estamento']) ?>"
                   data-rol="<?= $h($u['rol'] ?? 'usuario') ?>"
+                  data-estado_usuario="<?= $h($u['estado_usuario'] ?? 'activo') ?>"
                   data-api="<?= $h($u['api']) ?>"
                   aria-label="Editar usuario">
                   <i class="bi bi-pencil-square"></i> Editar
@@ -135,15 +145,6 @@ $csrf = csrf_token();
             <div class="col-md-4"><label class="form-label">Nombre</label><input name="nombre" id="em-nombre" class="form-control" required></div>
             <div class="col-md-4"><label class="form-label">Apellido</label><input name="apellido" id="em-apellido" class="form-control" required></div>
             <div class="col-md-4">
-              <label class="form-label">Estamento</label>
-              <select name="estamento" id="em-estamento" class="form-select">
-                <!-- <option value="">Estamento</option> -->
-                <option value="administrativo">Administrativo</option>
-                <option value="tecnico">Técnico</option>
-                <option value="profesional">Profesional</option>
-              </select>
-            </div>
-            <div class="col-md-4">
               <label class="form-label">Rol</label>
               <select name="rol" id="em-rol" class="form-select">
                 <option value="usuario">Usuario</option>
@@ -151,6 +152,14 @@ $csrf = csrf_token();
                 <option value="gestor">Gestor</option>
                 <option value="root">Root</option>
               </select>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Estado</label>
+              <select name="estado_usuario" id="em-estado_usuario" class="form-select">
+                <option value="activo">Activo</option>
+                <option value="baneado">Baneado</option>
+              </select>
+              <div class="form-text">Los usuarios baneados no pueden iniciar sesion.</div>
             </div>
             <div class="col-md-8"><label class="form-label">API</label><input name="api" id="em-api" class="form-control" placeholder="API"></div>
             <div class="col-md-6"><label class="form-label">Nueva Contraseña</label><input type="password" name="password" id="em-password" class="form-control" placeholder="Opcional"></div>
@@ -185,15 +194,6 @@ $csrf = csrf_token();
             <div class="col-md-4"><label class="form-label">Nombre</label><input name="nombre" class="form-control" placeholder="Nombre" required></div>
             <div class="col-md-4"><label class="form-label">Apellido</label><input name="apellido" class="form-control" placeholder="Apellido" required></div>
             <div class="col-md-4">
-              <label class="form-label">Estamento</label>
-              <select name="estamento" class="form-select">
-                <!-- <option value="">Estamento</option> -->
-                <option value="administrativo">Administrativo</option>
-                <option value="tecnico">Técnico</option>
-                <option value="profesional">Profesional</option>
-              </select>
-            </div>
-            <div class="col-md-4">
               <label class="form-label">Rol</label>
               <select name="rol" class="form-select">
                 <option value="usuario" selected>Usuario</option>
@@ -202,9 +202,16 @@ $csrf = csrf_token();
                 <option value="root">Root</option>
               </select>
             </div>
+            <div class="col-md-4">
+              <label class="form-label">Estado</label>
+              <select name="estado_usuario" class="form-select">
+                <option value="activo" selected>Activo</option>
+                <option value="baneado">Baneado</option>
+              </select>
+            </div>
             <div class="col-md-8"><label class="form-label">API</label><input name="api" class="form-control" placeholder="API"></div>
-            <div class="col-md-6"><label class="form-label">Contraseña;a</label><input type="password" name="password" class="form-control" placeholder="Contraseña;a"></div>
-            <div class="col-md-6"><label class="form-label">Repetir Contraseña;a</label><input type="password" name="password_confirm" class="form-control" placeholder="Repetir Contraseña;a"></div>
+            <div class="col-md-6"><label class="form-label">Contraseña</label><input type="password" name="password" class="form-control" placeholder="Contraseña"></div>
+            <div class="col-md-6"><label class="form-label">Repetir Contraseña</label><input type="password" name="password_confirm" class="form-control" placeholder="Repetir contraseña"></div>
           </div>
           <div class="text-end mt-3">
             <button class="btn btn-primary btn-icon"><i class="bi bi-check-lg"></i> Guardar</button>
@@ -291,8 +298,8 @@ function setupEditModal() {
     set('em-numero_celular', 'data-numero_celular');
     const phoneEl = document.getElementById('em-numero_celular');
     if (phoneEl) phoneEl.setAttribute('data-original-phone', btn.getAttribute('data-numero_celular') || '');
-    set('em-estamento', 'data-estamento');
     set('em-rol', 'data-rol');
+    set('em-estado_usuario', 'data-estado_usuario');
     set('em-api', 'data-api');
     const rutInput = document.getElementById('em-rut');
     if (rutInput) rutInput.setAttribute('data-original-rut', btn.getAttribute('data-rut') || '');
@@ -455,9 +462,3 @@ if (phoneEdit) phoneEdit.addEventListener('input', checkPhoneDuplicateEdit);
 </div> <!-- #page-content -->
 </body>
 </html>
-
-
-
-
-
-

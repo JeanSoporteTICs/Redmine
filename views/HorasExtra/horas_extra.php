@@ -61,6 +61,12 @@ $mesActual = (new DateTime())->format('n');
 $selMes = array_key_exists('mes', $_GET) ? trim($_GET['mes']) : $mesActual;
 $anioActual = (new DateTime())->format('Y');
 $selAnio = array_key_exists('anio', $_GET) ? trim($_GET['anio']) : $anioActual;
+if ($selMes !== '' && (!ctype_digit((string)$selMes) || (int)$selMes < 1 || (int)$selMes > 12)) {
+    $selMes = $mesActual;
+}
+if ($selAnio !== '' && !preg_match('/^\d{4}$/', (string)$selAnio)) {
+    $selAnio = $anioActual;
+}
 $flash = null;
 $meses = [
     1=>'enero',2=>'febrero',3=>'marzo',4=>'abril',5=>'mayo',6=>'junio',
@@ -249,6 +255,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'updat
 }
 
 $aniosDisponibles = [];
+$aniosDisponibles[$anioActual] = true;
 foreach ($grupos as $g) {
     $fechaBase = $g['fecha'] ?? '';
     if ($fechaBase) {
@@ -334,7 +341,8 @@ function hhmm($mins) {
     include __DIR__ . '/../partials/hero.php';
   ?>
 
-  <form class="card shadow-sm mb-3" method="get">
+  <form class="card shadow-sm mb-3" method="get" action="/redmine/">
+    <input type="hidden" name="page" value="horas-extra">
     <div class="card-body row g-3 align-items-end">
       <div class="col-md-4 col-lg-3">
         <label class="form-label">Mes</label>
@@ -350,7 +358,7 @@ function hhmm($mins) {
         <select name="anio" class="form-select">
           <option value="">Todos</option>
           <?php foreach ($aniosDisponibles as $an): ?>
-            <option value="<?= $h($an) ?>" <?= ($selAnio !== '' && $selAnio === $an) ? 'selected' : '' ?>><?= $h($an) ?></option>
+            <option value="<?= $h($an) ?>" <?= ($selAnio !== '' && (string)$selAnio === (string)$an) ? 'selected' : '' ?>><?= $h($an) ?></option>
           <?php endforeach; ?>
         </select>
       </div>

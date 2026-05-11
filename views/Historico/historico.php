@@ -70,8 +70,26 @@ function norm_date(string $str): string {
   $str = trim($str);
   if ($str === '') return '';
   if (preg_match('/^(\d{2})-(\d{2})-(\d{4})$/', $str, $m)) return "{$m[3]}-{$m[2]}-{$m[1]}";
+  if (preg_match('/^(\d{2})\/(\d{2})\/(\d{4})$/', $str, $m)) return "{$m[3]}-{$m[2]}-{$m[1]}";
   if (preg_match('/^(\d{4})-(\d{2})-(\d{2})$/', $str)) return $str;
   return '';
+}
+
+function display_date_dmy(string $str): string {
+  $date = norm_date($str);
+  if ($date === '') return $str;
+  $dt = DateTime::createFromFormat('Y-m-d', $date);
+  return $dt ? $dt->format('d-m-Y') : $str;
+}
+
+function source_meta(string $source): array {
+  if ($source === 'reportes') {
+    return ['label' => 'Reportes', 'icon' => 'bi-inbox', 'class' => 'hist-source-reportes'];
+  }
+  if ($source === 'horas_extra') {
+    return ['label' => 'Horas extra', 'icon' => 'bi-alarm', 'class' => 'hist-source-horas'];
+  }
+  return ['label' => 'Otros', 'icon' => 'bi-chat-square-text', 'class' => 'hist-source-otros'];
 }
 
 function load_reportes(string $base): array {
@@ -192,6 +210,40 @@ ksort($uniSel);
 <html lang="es">
 <head>
   <?php $pageTitle = 'Historico'; $includeTheme = true; include __DIR__ . '/../partials/bootstrap-head.php'; ?>
+  <style>
+    .hist-row { border-left: 4px solid transparent; }
+    .hist-source-reportes { border-left-color: #2563eb; }
+    .hist-source-horas { border-left-color: #f59e0b; }
+    .hist-source-otros { border-left-color: #14b8a6; }
+    .hist-source-reportes { --hist-bg: rgba(37, 99, 235, .08); }
+    .hist-source-horas { --hist-bg: rgba(245, 158, 11, .10); }
+    .hist-source-otros { --hist-bg: rgba(20, 184, 166, .10); }
+    .hist-row:hover { background: var(--hist-bg) !important; }
+    .hist-source-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      border-radius: 999px;
+      padding: .38rem .7rem;
+      font-weight: 800;
+      border: 1px solid transparent;
+    }
+    .hist-source-reportes .hist-source-badge {
+      color: #1d4ed8;
+      background: rgba(37, 99, 235, .12);
+      border-color: rgba(37, 99, 235, .2);
+    }
+    .hist-source-horas .hist-source-badge {
+      color: #92400e;
+      background: rgba(245, 158, 11, .15);
+      border-color: rgba(245, 158, 11, .25);
+    }
+    .hist-source-otros .hist-source-badge {
+      color: #0f766e;
+      background: rgba(20, 184, 166, .14);
+      border-color: rgba(20, 184, 166, .25);
+    }
+  </style>
 </head>
 <body class="bg-light">
 <?php $activeNav = 'historico'; include __DIR__ . '/../partials/navbar.php'; ?>
@@ -212,75 +264,89 @@ ksort($uniSel);
     </div>
   <?php endif; ?>
 
-  <form id="filter-form" class="card card-body shadow-sm mb-3" method="get" aria-live="polite">
-    <div class="row g-3 align-items-end">
-      <?php
-        $filterFields = [
-          ['label' => 'Desde', 'name' => 'desde', 'type' => 'date', 'value' => $f_desde, 'col' => 3, 'aria_label' => 'Fecha desde'],
-          ['label' => 'Hasta', 'name' => 'hasta', 'type' => 'date', 'value' => $f_hasta, 'col' => 3, 'aria_label' => 'Fecha hasta'],
-          ['label' => 'Fuente', 'name' => 'fuente', 'type' => 'select', 'options' => ['' => 'Todas', 'reportes' => 'Reportes', 'horas_extra' => 'Horas extra', 'otros' => 'Otros'], 'value' => $f_fuente, 'col' => 2],
-        ];
-        if (!$scopeBloqueado) {
+  <div class="proc-board">
+    <div class="proc-board-head">
+      <div class="proc-board-title">
+        <span class="proc-board-icon"><i class="bi bi-clock-history"></i></span>
+        <div>
+          <h2>Registros históricos</h2>
+          <p><?= count($filtered) ?> registro(s) encontrados</p>
+        </div>
+      </div>
+      <div class="proc-board-actions">
+        <span class="badge badge-soft badge-soft-primary"><i class="bi bi-database"></i> <?= count($items) ?> total</span>
+      </div>
+    </div>
+
+    <form id="filter-form" class="p-3 border-bottom" method="get" action="/redmine/" aria-live="polite">
+      <input type="hidden" name="page" value="historico">
+      <div class="row g-3 align-items-end">
+        <?php
+          $filterFields = [
+            ['label' => 'Desde', 'name' => 'desde', 'type' => 'date', 'value' => $f_desde, 'col' => 3, 'aria_label' => 'Fecha desde'],
+            ['label' => 'Hasta', 'name' => 'hasta', 'type' => 'date', 'value' => $f_hasta, 'col' => 3, 'aria_label' => 'Fecha hasta'],
+            ['label' => 'Fuente', 'name' => 'fuente', 'type' => 'select', 'options' => ['' => 'Todas', 'reportes' => 'Reportes', 'horas_extra' => 'Horas extra', 'otros' => 'Otros'], 'value' => $f_fuente, 'col' => 2],
+          ];
+          if (!$scopeBloqueado) {
+            $filterFields[] = [
+              'label' => 'Asignado',
+              'name' => 'usuario',
+              'type' => 'select',
+              'options' => ['' => 'Todos'] + $usuariosSel,
+              'value' => $f_usuario,
+              'col' => 2,
+            ];
+          }
           $filterFields[] = [
-            'label' => 'Asignado',
-            'name' => 'usuario',
+            'label' => 'Categoría',
+            'name' => 'categoria',
             'type' => 'select',
-            'options' => ['' => 'Todos'] + $usuariosSel,
-            'value' => $f_usuario,
+            'options' => ['' => 'Todas'] + $catsSel,
+            'value' => $f_categoria,
             'col' => 2,
           ];
-        }
-        $filterFields[] = [
-          'label' => 'Categoría',
-          'name' => 'categoria',
-          'type' => 'select',
-          'options' => ['' => 'Todas'] + $catsSel,
-          'value' => $f_categoria,
-          'col' => 2,
-        ];
-        $filterFields[] = [
-          'label' => 'Unidad solicitante',
-          'name' => 'unidad',
-          'type' => 'select',
-          'options' => ['' => 'Todas'] + $uniSel,
-          'value' => $f_unidad,
-          'col' => 2,
-        ];
-      ?>
-      <?php foreach ($filterFields as $field): ?>
-        <?php include __DIR__ . '/../partials/filter-field.php'; ?>
-      <?php endforeach; ?>
-      <div class="col-md-2">
-        <button
-          type="submit"
-          id="btn-apply"
-          class="btn btn-primary w-100"
-          data-bs-spinner="true"
-          aria-label="Aplicar filtros"
-          aria-pressed="false">
-          <i class="bi bi-funnel"></i> Filtrar
-        </button>
+          $filterFields[] = [
+            'label' => 'Unidad solicitante',
+            'name' => 'unidad',
+            'type' => 'select',
+            'options' => ['' => 'Todas'] + $uniSel,
+            'value' => $f_unidad,
+            'col' => 2,
+          ];
+        ?>
+        <?php foreach ($filterFields as $field): ?>
+          <?php include __DIR__ . '/../partials/filter-field.php'; ?>
+        <?php endforeach; ?>
+        <div class="col-md-2">
+          <button
+            type="submit"
+            id="btn-apply"
+            class="btn btn-primary w-100"
+            data-bs-spinner="true"
+            aria-label="Aplicar filtros"
+            aria-pressed="false">
+            <i class="bi bi-funnel"></i> Filtrar
+          </button>
+        </div>
+        <div class="col-md-2">
+          <a
+            class="btn btn-outline-secondary w-100"
+            id="btn-clear"
+            href="/redmine/?page=historico"
+            aria-label="Limpiar filtros"
+            aria-pressed="false">
+            <i class="bi bi-x-circle"></i> Limpiar
+          </a>
+        </div>
       </div>
-      <div class="col-md-2">
-        <a
-          class="btn btn-outline-secondary w-100"
-          id="btn-clear"
-          href="/redmine/?page=historico"
-          aria-label="Limpiar filtros"
-          aria-pressed="false">
-          <i class="bi bi-x-circle"></i> Limpiar
-        </a>
+      <div id="filter-feedback" class="d-none mt-3 alert alert-info d-flex align-items-center" role="status" aria-live="polite">
+        <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>
+        Aplicando filtros...
       </div>
-    </div>
-    <div id="filter-feedback" class="d-none mt-3 alert alert-info d-flex align-items-center" role="status" aria-live="polite">
-      <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>
-      Aplicando filtros...
-    </div>
-  </form>
+    </form>
 
-  <div class="card shadow-sm">
-    <div class="card-body p-0 position-relative">
-      <div class="table-responsive position-relative">
+    <div class="p-3 position-relative">
+      <div class="table-responsive position-relative mb-0">
         <div id="table-loader" class="loader-overlay d-none" role="status" aria-live="polite">
           <div class="d-flex align-items-center gap-2">
             <span class="spinner-border spinner-border-lg text-primary" role="status" aria-hidden="true"></span>
@@ -308,8 +374,9 @@ ksort($uniSel);
               <tr><td colspan="<?= $tableColspan ?>" class="text-center text-muted py-4">Sin registros para el criterio seleccionado.</td></tr>
             <?php else: ?>
               <?php foreach ($filtered as $row): ?>
-                <tr>
-                  <td><?= $h($row['_fecha_norm'] ?? '') ?></td>
+                <?php $sourceMeta = source_meta((string)($row['_fuente'] ?? '')); ?>
+                <tr class="hist-row <?= $h($sourceMeta['class']) ?>">
+                  <td><span class="badge badge-soft badge-soft-muted"><?= $h(display_date_dmy($row['_fecha_norm'] ?? '')) ?></span></td>
                   <td class="text-truncate" style="max-width: 250px;" title="<?= $h($row['asunto'] ?? '') ?>"><?= $h($row['asunto'] ?? '') ?></td>
                   <td class="text-truncate" style="max-width: 140px;" title="<?= $h($row['asignado_nombre'] ?? ($row['asignado_a'] ?? '')) ?>"><?= $h($row['asignado_nombre'] ?? ($row['asignado_a'] ?? '')) ?></td>
                   <td class="text-truncate" style="max-width: 140px;" title="<?= $h($row['categoria'] ?? '') ?>"><?= $h($row['categoria'] ?? '') ?></td>
@@ -317,10 +384,9 @@ ksort($uniSel);
                   <td><?= $h($row['estado'] ?? '') ?></td>
                   <td><?= $h($row['redmine_id'] ?? '') ?></td>
                   <?php
-                    $fuenteLabel = $row['_fuente'] ?? '';
-                    if ($fuenteLabel === 'mensajes') $fuenteLabel = 'otros';
+                    $fuenteLabel = $sourceMeta['label'];
                   ?>
-                  <td><span class="badge bg-secondary"><?= $h($fuenteLabel) ?></span></td>
+                  <td><span class="hist-source-badge"><i class="bi <?= $h($sourceMeta['icon']) ?>"></i><?= $h($fuenteLabel) ?></span></td>
                   <?php if ($showActions): ?>
                     <td>
                       <?php if (($row['_fuente'] ?? '') !== 'mensajes'): ?>
