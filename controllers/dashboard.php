@@ -180,9 +180,13 @@ function horas_extra_month_name(DateTimeInterface $dt): string {
     return $meses[(int)$dt->format('n')] ?? $dt->format('m');
 }
 
+function report_archive_month_name(DateTimeInterface $dt): string {
+    return horas_extra_month_name($dt);
+}
+
 function append_hours_extra_record(array $message): void {
     if (!message_has_hora_extra($message)) return;
-    $dt = parse_message_timestamp($message) ?? new DateTimeImmutable();
+    $dt = parse_message_event_timestamp($message) ?? new DateTimeImmutable();
     $year = $dt->format('Y');
     $baseDir = horas_extra_base_path();
     $yearDir = $baseDir . '/' . $year;
@@ -350,16 +354,30 @@ function retention_archive_base(): string {
 }
 
 function parse_message_timestamp(array $message): ?DateTimeImmutable {
+    return parse_message_processed_timestamp($message);
+}
+
+function parse_message_processed_timestamp(array $message): ?DateTimeImmutable {
     $processed = trim((string)($message['procesado_ts'] ?? ''));
     if ($processed !== '') {
+        if (ctype_digit($processed)) {
+            return (new DateTimeImmutable())->setTimestamp((int)$processed);
+        }
         try {
             return new DateTimeImmutable($processed);
         } catch (Exception $e) {
             // fallback to other fields
         }
     }
+    return parse_message_event_timestamp($message);
+}
+
+function parse_message_event_timestamp(array $message): ?DateTimeImmutable {
     $dateParts = trim((string)($message['fecha'] ?? $message['fecha_inicio'] ?? ''));
     $timeParts = trim((string)($message['hora'] ?? $message['hora_inicio'] ?? ''));
+    if ($timeParts !== '' && !preg_match('/^\d{1,2}:\d{2}(?::\d{2})?$/', $timeParts)) {
+        $timeParts = '';
+    }
     if ($dateParts === '') {
         return null;
     }
@@ -389,15 +407,19 @@ function ensure_dir(string $path): void {
 }
 
 function archive_message_record(array $message): void {
-    $dt = parse_message_timestamp($message) ?? new DateTimeImmutable();
+    $dt = parse_message_event_timestamp($message) ?? parse_message_processed_timestamp($message) ?? new DateTimeImmutable();
     $yearDir = retention_archive_base() . '/' . $dt->format('Y');
     ensure_dir($yearDir);
-    $destFile = $yearDir . '/retencion.json';
+    $destFile = $yearDir . '/' . report_archive_month_name($dt) . '.json';
     $payload = json_decode(@file_get_contents($destFile), true);
     if (!is_array($payload)) {
         $payload = [];
     }
-    $message['_archivado_por'] = 'retencion';
+    $messageId = (string)($message['id'] ?? '');
+    if ($messageId !== '') {
+        $payload = array_values(array_filter($payload, fn($row) => !is_array($row) || (string)($row['id'] ?? '') !== $messageId));
+    }
+    $message['_archivado_por'] = 'procesado';
     $message['_archivado_en'] = $dt->format('c');
     $payload[] = $message;
     file_put_contents($destFile, json_encode(array_values($payload), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
@@ -411,7 +433,7 @@ function apply_retention_archive(array &$messages): bool {
         if ($estado === 'pendiente' || $estado === '' || $estado === 'error') {
             continue;
         }
-        $ts = parse_message_timestamp($message);
+        $ts = parse_message_processed_timestamp($message);
         if ($ts === null || $ts > $threshold) {
             continue;
         }
