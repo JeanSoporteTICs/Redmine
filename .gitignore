@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+
+build/
+dist/
+*.spec
+
+data/backups/
+data/logs/*.log
+data/security.log
+data/envio_errores.log
+
+tmp*.txt
+temp_*.py
+temp_*.txt
+* copy.json

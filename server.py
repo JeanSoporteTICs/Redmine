@@ -16,6 +16,7 @@ app = FastAPI()
 out_dir = Path("data")
 out_dir.mkdir(parents=True, exist_ok=True)
 out_file = out_dir / "mensaje.json"
+config_file = out_dir / "configuracion.json"
 
 # Helpers
 
@@ -155,6 +156,42 @@ def save_messages(data):
     out_file.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def load_maintenance_settings() -> dict:
+    if not config_file.exists():
+        return {"enabled": False, "until": "", "until_text": ""}
+    try:
+        cfg = json.loads(config_file.read_text(encoding="utf-8") or "{}")
+    except Exception:
+        return {"enabled": False, "until": "", "until_text": ""}
+    if not isinstance(cfg, dict):
+        return {"enabled": False, "until": "", "until_text": ""}
+    until = str(cfg.get("maintenance_until") or "").strip()
+    return {
+        "enabled": bool(cfg.get("maintenance_mode")),
+        "until": until,
+        "until_text": format_maintenance_until(until),
+    }
+
+
+def format_maintenance_until(until: str) -> str:
+    if not until:
+        return "sin fecha y hora de termino definida"
+    for fmt in ("%Y-%m-%dT%H:%M", "%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M"):
+        try:
+            return datetime.strptime(until, fmt).strftime("%d-%m-%Y %H:%M")
+        except ValueError:
+            continue
+    return until
+
+
+def maintenance_response_message(settings: dict) -> str:
+    return (
+        "La plataforma esta en mantencion. "
+        "El mensaje no fue recibido ni almacenado. "
+        f"Fecha y hora de termino: {settings.get('until_text') or 'sin fecha y hora de termino definida'}."
+    )
+
+
 @app.post("/webhook")
 async def webhook(req: Request):
     raw = await req.body()
@@ -186,6 +223,26 @@ async def webhook(req: Request):
             numero = num_match.group(1).strip()
         if msg_match:
             texto = msg_match.group(1).strip()
+
+    maintenance = load_maintenance_settings()
+    if maintenance.get("enabled"):
+        message = maintenance_response_message(maintenance)
+        notification_error = ""
+        if isinstance(texto, str) and texto and numero:
+            try:
+                await send_text(numero, message)
+            except HTTPException as exc:
+                notification_error = str(exc.detail)
+        response = {
+            "status": "maintenance",
+            "stored": False,
+            "message": message,
+            "maintenance_until": maintenance.get("until", ""),
+            "maintenance_until_text": maintenance.get("until_text", ""),
+        }
+        if notification_error:
+            response["notification_error"] = notification_error
+        return response
 
     try:
         ts = float(ts_raw) if ts_raw is not None else datetime.now().timestamp()

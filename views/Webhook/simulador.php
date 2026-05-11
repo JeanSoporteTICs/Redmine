@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../../controllers/auth.php';
 auth_require_login('/redmine/login.php');
 if (!auth_can('simulador')) {
-    header('Location: /redmine/views/Dashboard/dashboard.php');
+    header('Location: /redmine/?page=dashboard');
     exit;
 }
 require_once __DIR__ . '/../../controllers/simulador.php';
@@ -32,15 +32,8 @@ if (!empty($_SESSION['user']['id']) && is_array($users)) {
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Simular Webhook</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="/redmine/assets/theme.css" rel="stylesheet">
+  <?php $pageTitle = 'Simular Webhook'; $includeTheme = true; include __DIR__ . '/../partials/bootstrap-head.php'; ?>
   <style>
-    body { background: #f6f8fb; }
-    .card { border: none; box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
     .btn-icon { display: inline-flex; align-items: center; gap: .35rem; }
     .btn-spinner .spin-icon { animation: spin 1s linear infinite; font-size: 1rem; }
     @keyframes spin { 100% { transform: rotate(360deg); } }
@@ -135,20 +128,7 @@ if (!empty($_SESSION['user']['id']) && is_array($users)) {
   <?php endif; ?>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  const userSelect = document.getElementById('usuario-select');
-  const numeroInput = document.getElementById('numero');
-  if (userSelect && numeroInput) {
-    userSelect.addEventListener('change', () => {
-      const num = userSelect.selectedOptions[0]?.dataset.numero || '';
-      if (num) numeroInput.value = num;
-    });
-  }
-</script>
-</div> <!-- #page-content -->
-</body>
-</html>
+<?php include __DIR__ . '/../partials/bootstrap-scripts.php'; ?>
 <script>
   (() => {
     const userSelect = document.getElementById('usuario-select');
@@ -175,3 +155,6 @@ if (!empty($_SESSION['user']['id']) && is_array($users)) {
     }
   })();
 </script>
+</div> <!-- #page-content -->
+</body>
+</html>

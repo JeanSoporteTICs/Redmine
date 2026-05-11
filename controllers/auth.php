@@ -260,7 +260,7 @@ function auth_require_role(array $rolesAllowed, $redirect = '/redmine/login.php'
         return;
     }
     if (!in_array($role, $rolesAllowed, true)) {
-        header('Location: /redmine/views/Dashboard/dashboard.php');
+        header('Location: /redmine/?page=dashboard');
         exit;
     }
 }

@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/auth.php';
+require_once __DIR__ . '/maintenance.php';
 
 function usuarios_set_flash(string $message): void {
     auth_start_session();
@@ -14,12 +15,14 @@ function usuarios_consume_flash(): ?string {
 }
 
 function usuarios_redirect_back(): void {
-    $location = $_SERVER['REQUEST_URI'] ?? '/redmine/views/Usuarios/usuarios.php';
+    $location = $_SERVER['REQUEST_URI'] ?? '/redmine/?page=usuarios';
     header('Location: ' . $location);
     exit;
 }
 // CRUD básico para usuarios usando data/usuarios.json
-$DATA_FILE = __DIR__ . '/../data/usuarios.json';
+function usuarios_data_file(): string {
+    return __DIR__ . '/../data/usuarios.json';
+}
 
 function rut_base($rut) {
     $clean = preg_replace('/[^0-9kK]/', '', $rut ?? '');
@@ -29,6 +32,9 @@ function rut_base($rut) {
 }
 
 function ensure_usr_file($path) {
+    if (!$path) {
+        throw new RuntimeException('Ruta de usuarios no configurada');
+    }
     if (!file_exists($path)) {
         file_put_contents($path, json_encode([], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
     }
@@ -147,11 +153,12 @@ function format_rut_value(string $rut): string {
 }
 
 function handle_usuarios() {
-    global $DATA_FILE;
+    $DATA_FILE = usuarios_data_file();
     $rows = load_usuarios($DATA_FILE);
     $flash = usuarios_consume_flash();
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (function_exists('csrf_validate')) csrf_validate();
+        if (function_exists('maintenance_mode_block_if_enabled')) maintenance_mode_block_if_enabled();
         $action = $_POST['action'] ?? '';
         $rut_input = preg_replace('/[^0-9kK]/', '', $_POST['rut'] ?? '');
         $rut_sin_dv = rut_base($rut_input);

@@ -1,5 +1,6 @@
 <?php
 // Envia un payload de prueba al webhook FastAPI para simular la llegada de un mensaje
+require_once __DIR__ . '/maintenance.php';
 
 const DEFAULT_WEBHOOK_URL = 'http://localhost:8000/webhook';
 
@@ -44,6 +45,7 @@ function handle_simulador() {
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (function_exists('csrf_validate')) csrf_validate();
+        if (function_exists('maintenance_mode_block_if_enabled')) maintenance_mode_block_if_enabled();
         $webhookUrl = trim($_POST['webhook_url'] ?? $defaultUrl) ?: $defaultUrl;
         $numero = trim($_POST['numero'] ?? '');
         $mensaje = trim($_POST['mensaje'] ?? '');

@@ -9,18 +9,8 @@ $csrf = csrf_token();
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Usuarios</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="/redmine/assets/theme.css" rel="stylesheet">
+  <?php $pageTitle = 'Usuarios'; $includeTheme = true; include __DIR__ . '/../partials/bootstrap-head.php'; ?>
   <style>
-    body { background: #f6f8fb; }
-    /* Ajustes de spacing para que el navbar quede pegado arriba sin gap */
-    body { margin: 0; padding-top: 0 !important; }
-    .navbar { margin-top: 0 !important; margin-bottom: 0; }
-    .card { border: none; box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
     .btn-icon { display: inline-flex; align-items: center; gap: .35rem; }
     .table thead th { font-weight: 600; text-transform: uppercase; font-size: .78rem; letter-spacing: .02em; }
     .form-icon-feedback {
@@ -109,7 +99,7 @@ $csrf = csrf_token();
                   aria-label="Editar usuario">
                   <i class="bi bi-pencil-square"></i> Editar
                 </button>
-                <form method="post" onsubmit="return confirm('&iquest;Eliminar este usuario?')" class="m-0">
+                <form method="post" data-app-confirm="Eliminar este usuario?" data-app-confirm-title="Confirmar eliminacion" data-app-confirm-text="Eliminar" class="m-0">
                   <input type="hidden" name="id" value="<?= $h($u['id']) ?>">
                   <input type="hidden" name="action" value="delete">
                   <input type="hidden" name="csrf_token" value="<?= $h($csrf) ?>">
@@ -226,7 +216,7 @@ $csrf = csrf_token();
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<?php include __DIR__ . '/../partials/bootstrap-scripts.php'; ?>
 <script>
 const userFilterInput = document.getElementById('user-search');
 if (userFilterInput) {

@@ -1,5 +1,5 @@
 <?php
-// Vista principal redirige a Mensajes
-header("Location: views/Dashboard/dashboard.php");
-exit;
-?>
+require_once __DIR__ . '/app/bootstrap.php';
+
+$routes = require APP_BASE_PATH . '/config/routes.php';
+(new App\Core\Router($routes))->dispatch($_GET['page'] ?? null);

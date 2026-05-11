@@ -237,3 +237,11 @@
 [08-05-2026 09:16:15] CSRF_ALERT - Token=NULL session=NULL
 [08-05-2026 09:16:17] LOGIN_SUCCESS - User Hernan Ulloa (117)
 [09-05-2026 09:43:24] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[10-05-2026 16:58:21] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[10-05-2026 20:44:06] CSRF_ALERT - Token=NULL session=NULL
+[10-05-2026 20:44:11] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[10-05-2026 21:57:47] CSRF_ALERT - Token=NULL session=NULL
+[10-05-2026 21:57:52] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[11-05-2026 07:47:49] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[11-05-2026 08:24:00] CSRF_ALERT - Token=NULL session=NULL
+[11-05-2026 08:24:03] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
