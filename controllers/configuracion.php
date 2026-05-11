@@ -1,9 +1,15 @@
 <?php
 require_once __DIR__ . '/auth.php';
+require_once __DIR__ . '/maintenance.php';
 // Mantenedor de configuración de envío a Redmine (incluye opciones de tracker/prioridad/estado)
-$CONFIG_FILE = __DIR__ . '/../data/configuracion.json';
+function configuracion_config_file(): string {
+    return __DIR__ . '/../data/configuracion.json';
+}
 
 function ensure_config_file($path) {
+    if (!$path) {
+        throw new RuntimeException('Ruta de configuracion no configurada');
+    }
     if (!file_exists($path)) {
         $default = [
             'platform_url' => 'https://coresalud.cl/gp/projects/backlog-soporte-ti/issues.json',
@@ -65,6 +71,9 @@ function load_config($path) {
 }
 
 function save_config($path, $cfg) {
+    if (!$path) {
+        throw new RuntimeException('Ruta de configuracion no configurada');
+    }
     file_put_contents($path, json_encode($cfg, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
@@ -81,18 +90,19 @@ function config_consume_flash(): ?string {
 }
 
 function config_redirect_back(): void {
-    $location = $_SERVER['REQUEST_URI'] ?? '/redmine/views/Configuracion/configuracion.php';
+    $location = $_SERVER['REQUEST_URI'] ?? '/redmine/?page=configuracion';
     header('Location: ' . $location);
     exit;
 }
 
 function handle_configuracion() {
-    global $CONFIG_FILE;
+    $CONFIG_FILE = configuracion_config_file();
     $cfg = load_config($CONFIG_FILE);
     $flash = config_consume_flash();
     $action = $_POST['action'] ?? '';
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && $action === '') {
         if (function_exists('csrf_validate')) csrf_validate();
+        if (function_exists('maintenance_mode_block_if_enabled')) maintenance_mode_block_if_enabled();
         $cfg['platform_url'] = trim($_POST['platform_url'] ?? $cfg['platform_url'] ?? '');
         $cfg['platform_token'] = trim($_POST['platform_token'] ?? $cfg['platform_token'] ?? '');
         $cfg['categories_url'] = trim($_POST['categories_url'] ?? ($cfg['categories_url'] ?? ''));

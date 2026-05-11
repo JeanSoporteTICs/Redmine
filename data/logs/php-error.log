@@ -1,0 +1,147 @@
+[11-May-2026 02:44:36 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in C:\xampp\htdocs\Redmine\controllers\usuarios.php:34
+Stack trace:
+#0 C:\xampp\htdocs\Redmine\controllers\usuarios.php(34): file_put_contents('', '[]')
+#1 C:\xampp\htdocs\Redmine\controllers\usuarios.php(59): ensure_usr_file(NULL)
+#2 C:\xampp\htdocs\Redmine\controllers\usuarios.php(152): load_usuarios(NULL)
+#3 C:\xampp\htdocs\Redmine\views\Usuarios\usuarios.php(5): handle_usuarios()
+#4 C:\xampp\htdocs\Redmine\app\Controllers\PageController.php(23): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Redmine\app\Core\Router.php(29): App\Controllers\PageController->show(Array)
+#6 C:\xampp\htdocs\Redmine\index.php(5): App\Core\Router->dispatch('usuarios')
+#7 {main}
+  thrown in C:\xampp\htdocs\Redmine\controllers\usuarios.php on line 34
+[11-May-2026 02:44:36 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in C:\xampp\htdocs\Redmine\controllers\usuarios.php:34
+Stack trace:
+#0 C:\xampp\htdocs\Redmine\controllers\usuarios.php(34): file_put_contents('', '[]')
+#1 C:\xampp\htdocs\Redmine\controllers\usuarios.php(59): ensure_usr_file(NULL)
+#2 C:\xampp\htdocs\Redmine\controllers\usuarios.php(152): load_usuarios(NULL)
+#3 C:\xampp\htdocs\Redmine\views\Usuarios\usuarios.php(5): handle_usuarios()
+#4 C:\xampp\htdocs\Redmine\app\Controllers\PageController.php(23): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Redmine\app\Core\Router.php(29): App\Controllers\PageController->show(Array)
+#6 C:\xampp\htdocs\Redmine\index.php(5): App\Core\Router->dispatch('usuarios')
+#7 {main}
+  thrown in C:\xampp\htdocs\Redmine\controllers\usuarios.php on line 34
+[11-May-2026 02:44:41 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in C:\xampp\htdocs\Redmine\controllers\configuracion.php:44
+Stack trace:
+#0 C:\xampp\htdocs\Redmine\controllers\configuracion.php(44): file_put_contents('', '{\n    "platform...')
+#1 C:\xampp\htdocs\Redmine\controllers\configuracion.php(49): ensure_config_file(NULL)
+#2 C:\xampp\htdocs\Redmine\controllers\configuracion.php(92): load_config(NULL)
+#3 C:\xampp\htdocs\Redmine\views\Configuracion\configuracion.php(7): handle_configuracion()
+#4 C:\xampp\htdocs\Redmine\app\Controllers\PageController.php(23): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Redmine\app\Core\Router.php(29): App\Controllers\PageController->show(Array)
+#6 C:\xampp\htdocs\Redmine\index.php(5): App\Core\Router->dispatch('configuracion')
+#7 {main}
+  thrown in C:\xampp\htdocs\Redmine\controllers\configuracion.php on line 44
+[11-May-2026 02:44:41 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in C:\xampp\htdocs\Redmine\controllers\configuracion.php:44
+Stack trace:
+#0 C:\xampp\htdocs\Redmine\controllers\configuracion.php(44): file_put_contents('', '{\n    "platform...')
+#1 C:\xampp\htdocs\Redmine\controllers\configuracion.php(49): ensure_config_file(NULL)
+#2 C:\xampp\htdocs\Redmine\controllers\configuracion.php(92): load_config(NULL)
+#3 C:\xampp\htdocs\Redmine\views\Configuracion\configuracion.php(7): handle_configuracion()
+#4 C:\xampp\htdocs\Redmine\app\Controllers\PageController.php(23): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Redmine\app\Core\Router.php(29): App\Controllers\PageController->show(Array)
+#6 C:\xampp\htdocs\Redmine\index.php(5): App\Core\Router->dispatch('configuracion')
+#7 {main}
+  thrown in C:\xampp\htdocs\Redmine\controllers\configuracion.php on line 44
+[11-May-2026 02:44:45 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in C:\xampp\htdocs\Redmine\controllers\usuarios.php:34
+Stack trace:
+#0 C:\xampp\htdocs\Redmine\controllers\usuarios.php(34): file_put_contents('', '[]')
+#1 C:\xampp\htdocs\Redmine\controllers\usuarios.php(59): ensure_usr_file(NULL)
+#2 C:\xampp\htdocs\Redmine\controllers\usuarios.php(152): load_usuarios(NULL)
+#3 C:\xampp\htdocs\Redmine\views\Usuarios\usuarios.php(5): handle_usuarios()
+#4 C:\xampp\htdocs\Redmine\app\Controllers\PageController.php(23): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Redmine\app\Core\Router.php(29): App\Controllers\PageController->show(Array)
+#6 C:\xampp\htdocs\Redmine\index.php(5): App\Core\Router->dispatch('usuarios')
+#7 {main}
+  thrown in C:\xampp\htdocs\Redmine\controllers\usuarios.php on line 34
+[11-May-2026 02:44:45 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in C:\xampp\htdocs\Redmine\controllers\usuarios.php:34
+Stack trace:
+#0 C:\xampp\htdocs\Redmine\controllers\usuarios.php(34): file_put_contents('', '[]')
+#1 C:\xampp\htdocs\Redmine\controllers\usuarios.php(59): ensure_usr_file(NULL)
+#2 C:\xampp\htdocs\Redmine\controllers\usuarios.php(152): load_usuarios(NULL)
+#3 C:\xampp\htdocs\Redmine\views\Usuarios\usuarios.php(5): handle_usuarios()
+#4 C:\xampp\htdocs\Redmine\app\Controllers\PageController.php(23): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Redmine\app\Core\Router.php(29): App\Controllers\PageController->show(Array)
+#6 C:\xampp\htdocs\Redmine\index.php(5): App\Core\Router->dispatch('usuarios')
+#7 {main}
+  thrown in C:\xampp\htdocs\Redmine\controllers\usuarios.php on line 34
+[11-May-2026 02:47:27 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in C:\xampp\htdocs\Redmine\controllers\configuracion.php:44
+Stack trace:
+#0 C:\xampp\htdocs\Redmine\controllers\configuracion.php(44): file_put_contents('', '{\n    "platform...')
+#1 C:\xampp\htdocs\Redmine\controllers\configuracion.php(49): ensure_config_file(NULL)
+#2 C:\xampp\htdocs\Redmine\controllers\configuracion.php(92): load_config(NULL)
+#3 C:\xampp\htdocs\Redmine\views\Configuracion\configuracion.php(7): handle_configuracion()
+#4 C:\xampp\htdocs\Redmine\app\Controllers\PageController.php(23): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Redmine\app\Core\Router.php(29): App\Controllers\PageController->show(Array)
+#6 C:\xampp\htdocs\Redmine\index.php(5): App\Core\Router->dispatch('configuracion')
+#7 {main}
+  thrown in C:\xampp\htdocs\Redmine\controllers\configuracion.php on line 44
+[11-May-2026 02:47:27 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in C:\xampp\htdocs\Redmine\controllers\configuracion.php:44
+Stack trace:
+#0 C:\xampp\htdocs\Redmine\controllers\configuracion.php(44): file_put_contents('', '{\n    "platform...')
+#1 C:\xampp\htdocs\Redmine\controllers\configuracion.php(49): ensure_config_file(NULL)
+#2 C:\xampp\htdocs\Redmine\controllers\configuracion.php(92): load_config(NULL)
+#3 C:\xampp\htdocs\Redmine\views\Configuracion\configuracion.php(7): handle_configuracion()
+#4 C:\xampp\htdocs\Redmine\app\Controllers\PageController.php(23): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Redmine\app\Core\Router.php(29): App\Controllers\PageController->show(Array)
+#6 C:\xampp\htdocs\Redmine\index.php(5): App\Core\Router->dispatch('configuracion')
+#7 {main}
+  thrown in C:\xampp\htdocs\Redmine\controllers\configuracion.php on line 44
+[11-May-2026 02:47:37 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in C:\xampp\htdocs\Redmine\controllers\configuracion.php:44
+Stack trace:
+#0 C:\xampp\htdocs\Redmine\controllers\configuracion.php(44): file_put_contents('', '{\n    "platform...')
+#1 C:\xampp\htdocs\Redmine\controllers\configuracion.php(49): ensure_config_file(NULL)
+#2 C:\xampp\htdocs\Redmine\controllers\configuracion.php(92): load_config(NULL)
+#3 C:\xampp\htdocs\Redmine\views\Configuracion\configuracion.php(7): handle_configuracion()
+#4 C:\xampp\htdocs\Redmine\app\Controllers\PageController.php(23): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Redmine\app\Core\Router.php(29): App\Controllers\PageController->show(Array)
+#6 C:\xampp\htdocs\Redmine\index.php(5): App\Core\Router->dispatch('configuracion')
+#7 {main}
+  thrown in C:\xampp\htdocs\Redmine\controllers\configuracion.php on line 44
+[11-May-2026 02:47:40 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in C:\xampp\htdocs\Redmine\controllers\configuracion.php:44
+Stack trace:
+#0 C:\xampp\htdocs\Redmine\controllers\configuracion.php(44): file_put_contents('', '{\n    "platform...')
+#1 C:\xampp\htdocs\Redmine\controllers\configuracion.php(49): ensure_config_file(NULL)
+#2 C:\xampp\htdocs\Redmine\controllers\configuracion.php(92): load_config(NULL)
+#3 C:\xampp\htdocs\Redmine\views\Configuracion\configuracion.php(7): handle_configuracion()
+#4 C:\xampp\htdocs\Redmine\app\Controllers\PageController.php(23): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Redmine\app\Core\Router.php(29): App\Controllers\PageController->show(Array)
+#6 C:\xampp\htdocs\Redmine\index.php(5): App\Core\Router->dispatch('configuracion')
+#7 {main}
+  thrown in C:\xampp\htdocs\Redmine\controllers\configuracion.php on line 44
+[11-May-2026 02:47:40 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in C:\xampp\htdocs\Redmine\controllers\configuracion.php:44
+Stack trace:
+#0 C:\xampp\htdocs\Redmine\controllers\configuracion.php(44): file_put_contents('', '{\n    "platform...')
+#1 C:\xampp\htdocs\Redmine\controllers\configuracion.php(49): ensure_config_file(NULL)
+#2 C:\xampp\htdocs\Redmine\controllers\configuracion.php(92): load_config(NULL)
+#3 C:\xampp\htdocs\Redmine\views\Configuracion\configuracion.php(7): handle_configuracion()
+#4 C:\xampp\htdocs\Redmine\app\Controllers\PageController.php(23): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Redmine\app\Core\Router.php(29): App\Controllers\PageController->show(Array)
+#6 C:\xampp\htdocs\Redmine\index.php(5): App\Core\Router->dispatch('configuracion')
+#7 {main}
+  thrown in C:\xampp\htdocs\Redmine\controllers\configuracion.php on line 44
+[11-May-2026 02:47:49 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in C:\xampp\htdocs\Redmine\controllers\configuracion.php:44
+Stack trace:
+#0 C:\xampp\htdocs\Redmine\controllers\configuracion.php(44): file_put_contents('', '{\n    "platform...')
+#1 C:\xampp\htdocs\Redmine\controllers\configuracion.php(49): ensure_config_file(NULL)
+#2 C:\xampp\htdocs\Redmine\controllers\configuracion.php(92): load_config(NULL)
+#3 C:\xampp\htdocs\Redmine\views\Configuracion\configuracion.php(7): handle_configuracion()
+#4 C:\xampp\htdocs\Redmine\app\Controllers\PageController.php(23): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Redmine\app\Core\Router.php(29): App\Controllers\PageController->show(Array)
+#6 C:\xampp\htdocs\Redmine\index.php(5): App\Core\Router->dispatch('configuracion')
+#7 {main}
+  thrown in C:\xampp\htdocs\Redmine\controllers\configuracion.php on line 44
+[11-May-2026 02:47:49 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in C:\xampp\htdocs\Redmine\controllers\configuracion.php:44
+Stack trace:
+#0 C:\xampp\htdocs\Redmine\controllers\configuracion.php(44): file_put_contents('', '{\n    "platform...')
+#1 C:\xampp\htdocs\Redmine\controllers\configuracion.php(49): ensure_config_file(NULL)
+#2 C:\xampp\htdocs\Redmine\controllers\configuracion.php(92): load_config(NULL)
+#3 C:\xampp\htdocs\Redmine\views\Configuracion\configuracion.php(7): handle_configuracion()
+#4 C:\xampp\htdocs\Redmine\app\Controllers\PageController.php(23): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Redmine\app\Core\Router.php(29): App\Controllers\PageController->show(Array)
+#6 C:\xampp\htdocs\Redmine\index.php(5): App\Core\Router->dispatch('configuracion')
+#7 {main}
+  thrown in C:\xampp\htdocs\Redmine\controllers\configuracion.php on line 44
+[11-May-2026 03:57:47 Europe/Berlin] PHP Warning:  Undefined variable $token in C:\xampp\htdocs\Redmine\controllers\auth.php on line 138
+[11-May-2026 03:57:47 Europe/Berlin] PHP Warning:  Undefined variable $sess in C:\xampp\htdocs\Redmine\controllers\auth.php on line 138
+[11-May-2026 14:24:00 Europe/Berlin] PHP Warning:  Undefined variable $token in C:\xampp\htdocs\Redmine\controllers\auth.php on line 138
+[11-May-2026 14:24:00 Europe/Berlin] PHP Warning:  Undefined variable $sess in C:\xampp\htdocs\Redmine\controllers\auth.php on line 138

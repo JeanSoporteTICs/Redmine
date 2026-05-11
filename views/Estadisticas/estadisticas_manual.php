@@ -1,8 +1,9 @@
 <?php
 require_once __DIR__ . '/../../controllers/auth.php';
+require_once __DIR__ . '/../../controllers/maintenance.php';
 auth_require_login('/redmine/login.php');
 if (!auth_can('estadisticas_manual')) {
-  header('Location: /redmine/views/Dashboard/dashboard.php');
+  header('Location: /redmine/?page=dashboard');
   exit;
 }
 
@@ -112,6 +113,10 @@ if (!$issuesUrl || !$projectId) $error = 'Falta platform_url o project_id en con
 if ($doFetchRequest && !$apiKey) $error = 'Falta token API (usuario o plataforma).';
 if ($doFetchRequest && (!$customStart || !$customEnd)) $error = 'Selecciona un rango de fechas.';
 if ($doFetchRequest && !$cfUnitId) $error = 'Falta CF de unidad (cf_unidad o cf_unidad_solicitante) en configuración.';
+
+if (($doFetchRequest || $savingCats) && function_exists('maintenance_mode_block_if_enabled')) {
+  maintenance_mode_block_if_enabled();
+}
 
 // Helpers de Redmine
 function build_status_parts($status) {
@@ -667,12 +672,8 @@ if (!empty($trackerTop)) {
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <?php $pageTitle = 'Estadisticas Redmine API'; $includeTheme = true; include __DIR__ . '/../partials/bootstrap-head.php'; ?>
   <title>Estadísticas (manual)</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="/redmine/assets/theme.css" rel="stylesheet">
   <style>
     .stat-card { border: none; box-shadow: 0 10px 24px rgba(0,0,0,0.08); border-radius: 14px; cursor: default; }
     .clickable-card { cursor: pointer; transition: transform .08s ease, box-shadow .08s ease; }
@@ -1329,7 +1330,7 @@ if (!empty($trackerTop)) {
   </div>
 </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <?php include __DIR__ . '/../partials/bootstrap-scripts.php'; ?>
   <script>
   const loaderProgressBar = document.querySelector('.loading-progress-bar');
   const loadingModalElement = document.getElementById('loading-modal');

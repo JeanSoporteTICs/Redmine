@@ -1,9 +1,10 @@
 <?php
 require_once __DIR__ . '/../../controllers/auth.php';
 require_once __DIR__ . '/../../controllers/security.php';
+require_once __DIR__ . '/../../controllers/maintenance.php';
 auth_require_role(['root', 'administrador', 'gestor'], '/redmine/login.php');
 if (!auth_can('actividad')) {
-  header('Location: /redmine/views/Dashboard/dashboard.php');
+  header('Location: /redmine/?page=dashboard');
   exit;
 }
 
@@ -15,11 +16,12 @@ unset($_SESSION['security_flash']);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     csrf_validate();
+    if (function_exists('maintenance_mode_block_if_enabled')) maintenance_mode_block_if_enabled();
     if (($_POST['action'] ?? '') === 'clear_activity') {
         security_clear_events();
         $_SESSION['security_flash'] = 'Actividad reciente borrada.';
     }
-    header('Location: /redmine/views/Security/activity.php');
+    header('Location: /redmine/?page=actividad');
     exit;
 }
 
@@ -41,12 +43,7 @@ $csrf = csrf_token();
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Actividad de seguridad</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="/redmine/assets/theme.css" rel="stylesheet">
+  <?php $pageTitle = 'Actividad de seguridad'; $includeTheme = true; include __DIR__ . '/../partials/bootstrap-head.php'; ?>
 </head>
 <body class="bg-light">
 <?php $activeNav = 'security'; include __DIR__ . '/../partials/navbar.php'; ?>
@@ -67,7 +64,7 @@ $csrf = csrf_token();
       <div class="card-body">
         <p class="text-muted mb-3">Se registran los últimos intentos de inicio de sesión y alertas de seguridad. Si ves fallas repetidas en poco tiempo, considera rotar tokens API o revisar accesos.</p>
         <div class="d-flex justify-content-end mb-3">
-          <form method="post" class="mb-0">
+          <form method="post" class="mb-0" data-app-confirm="Limpiar la actividad reciente?" data-app-confirm-title="Confirmar limpieza" data-app-confirm-text="Limpiar">
             <input type="hidden" name="csrf_token" value="<?= $h($csrf) ?>">
             <input type="hidden" name="action" value="clear_activity">
             <button type="submit" class="btn btn-outline-danger btn-sm">
@@ -103,6 +100,6 @@ $csrf = csrf_token();
     </div>
   </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<?php include __DIR__ . '/../partials/bootstrap-scripts.php'; ?>
 </body>
 </html>

@@ -1,10 +1,23 @@
 <?php
+require_once __DIR__ . '/maintenance.php';
+
 // Sincroniza categorías usando data/categorias.json y la API de Redmine
-$DATA_FILE = __DIR__ . '/../data/categorias.json';
-$CONFIG_FILE = __DIR__ . '/../data/configuracion.json';
-$USERS_FILE = __DIR__ . '/../data/usuarios.json';
+function categorias_data_file(): string {
+    return __DIR__ . '/../data/categorias.json';
+}
+
+function categorias_config_file(): string {
+    return __DIR__ . '/../data/configuracion.json';
+}
+
+function categorias_users_file(): string {
+    return __DIR__ . '/../data/usuarios.json';
+}
 
 function ensure_cat_file($path) {
+    if (!$path) {
+        throw new RuntimeException('Ruta de categorias no configurada');
+    }
     if (!file_exists($path)) {
         file_put_contents($path, json_encode([], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
     }
@@ -56,7 +69,7 @@ function sync_categorias_desde_api($configPath, $dataPath) {
     $cfg = file_exists($configPath) ? json_decode(file_get_contents($configPath), true) : [];
     $platformUrl = $cfg['platform_url'] ?? '';
     $apiKey = $cfg['platform_token'] ?? '';
-    $userToken = user_api_token_fallback($GLOBALS['USERS_FILE']);
+    $userToken = user_api_token_fallback(categorias_users_file());
     if (!$apiKey && $userToken) $apiKey = $userToken;
     $url = !empty($cfg['categories_url']) ? $cfg['categories_url'] : categorias_api_url($platformUrl);
     if (!$url) {
@@ -103,12 +116,14 @@ function sync_categorias_desde_api($configPath, $dataPath) {
 
 
 function handle_categorias() {
-    global $DATA_FILE, $CONFIG_FILE;
+    $DATA_FILE = categorias_data_file();
+    $CONFIG_FILE = categorias_config_file();
     $cats = load_categorias($DATA_FILE);
     $flash = null;
     $error = null;
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (function_exists('csrf_validate')) csrf_validate();
+        if (function_exists('maintenance_mode_block_if_enabled')) maintenance_mode_block_if_enabled();
         $action = $_POST['action'] ?? '';
         if ($action === 'sync_remote') {
             $res = sync_categorias_desde_api($CONFIG_FILE, $DATA_FILE);

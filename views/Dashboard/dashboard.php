@@ -207,15 +207,7 @@ $csrf = csrf_token();
 
 <head>
 
-  <meta charset="utf-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Reportes</title>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="/redmine/assets/theme.css" rel="stylesheet">
+  <?php $pageTitle = 'Reportes'; $includeTheme = true; include __DIR__ . '/../partials/bootstrap-head.php'; ?>
 
 </head>
 
@@ -224,49 +216,173 @@ $csrf = csrf_token();
 <?php $activeNav = 'mensajes'; include __DIR__ . '/../partials/navbar.php'; ?>
 
 <div id="page-content">
+<style>
+  .dashboard-shell { display: grid; gap: 1.25rem; }
+  .dashboard-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; width: 100%; }
+  .dashboard-stat {
+    position: relative;
+    min-height: 128px;
+    padding: 1.2rem 1.35rem;
+    border-radius: 24px;
+    background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(248,250,255,.88));
+    border: 1px solid rgba(15, 23, 42, .08);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, .08);
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .dashboard-stat.is-active {
+    border-color: rgba(37, 99, 235, .28);
+    box-shadow: 0 26px 54px rgba(37, 99, 235, .18);
+    transform: translateY(-2px);
+  }
+  .dashboard-stat::after {
+    content: '';
+    position: absolute;
+    right: -24px;
+    top: -24px;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.75);
+  }
+  .dashboard-stat__top { position: relative; z-index: 1; display: flex; align-items: center; gap: 1rem; }
+  .dashboard-stat__icon {
+    flex: 0 0 auto;
+    width: 72px;
+    height: 72px;
+    border-radius: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.7rem;
+    box-shadow: 0 14px 28px rgba(15, 23, 42, .14);
+  }
+  .dashboard-stat__value { font-size: 2.2rem; font-weight: 700; line-height: 1; margin-bottom: .3rem; }
+  .dashboard-stat__label { color: var(--text-muted); font-weight: 600; font-size: 1rem; }
+  .dashboard-stat--pending .dashboard-stat__icon { background: linear-gradient(135deg, #f59e0b, #f97316); }
+  .dashboard-stat--processed .dashboard-stat__icon { background: linear-gradient(135deg, #10b981, #22c55e); }
+  .dashboard-stat--error .dashboard-stat__icon { background: linear-gradient(135deg, #ef4444, #fb7185); }
+  .dashboard-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.05rem 1.2rem 0; }
+  .dashboard-toolbar__actions { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
+  .dashboard-selection,
+  .dashboard-table-count {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    padding: .55rem .9rem;
+    border-radius: 999px;
+    font-weight: 700;
+  }
+  .dashboard-selection { background: rgba(15,23,42,.06); color: var(--text-primary); }
+  .dashboard-table-count { background: rgba(56,189,248,.12); color: #0f4c81; }
+  .dashboard-table-card .card-body { padding: 0; }
+  .dashboard-table-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.05rem 1.2rem 0; }
+  .dashboard-table-header h3 { margin: 0; font-size: 1.05rem; font-weight: 700; }
+  .dashboard-table-subtitle { color: var(--text-muted); font-size: .9rem; margin-top: .2rem; }
+  .dashboard-table { margin-top: 1rem; }
+  .dashboard-table__subject { font-weight: 600; color: var(--text-primary); max-width: 460px; min-width: 280px; }
+  .dashboard-table__meta { display: block; color: var(--text-muted); font-size: .78rem; margin-top: .2rem; }
+  .dashboard-status-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: .9rem;
+    box-shadow: 0 10px 22px rgba(15, 23, 42, .12);
+  }
+  .dashboard-status-icon--pending { background: linear-gradient(135deg, #f59e0b, #f97316); }
+  .dashboard-status-icon--processed { background: linear-gradient(135deg, #10b981, #22c55e); }
+  .dashboard-status-icon--error { background: linear-gradient(135deg, #ef4444, #fb7185); }
+  .dashboard-row-actions { display: flex; flex-wrap: nowrap; align-items: center; gap: .35rem; white-space: nowrap; }
+  .dashboard-row-actions form { margin: 0; display: inline-flex; }
+  .dashboard-row-actions .btn { min-height: 30px; width: 30px; padding: 0; border-radius: 10px; font-size: .9rem; line-height: 1; display: inline-flex; align-items: center; justify-content: center; }
+  .dashboard-row-actions .btn i { margin-right: 0; }
+  @media (max-width: 991px) { .dashboard-stats { grid-template-columns: 1fr; } }
+  @media (max-width: 767px) {
+    .dashboard-toolbar, .dashboard-table-header { flex-direction: column; align-items: stretch; }
+    .dashboard-toolbar__actions { width: 100%; }
+    .dashboard-toolbar__actions .btn { flex: 1 1 100%; }
+  }
+</style>
 <div class="container-fluid py-4">
+<div class="dashboard-shell">
 
   <?php
     $heroIcon = 'bi-speedometer2';
     $heroTitle = 'Reportes';
-    $heroSubtitle = 'Panel de estados locales (pendiente / procesado / error)';
+    $heroSubtitle = 'Panel de estados locales';
     $heroExtras = '<span class="badge bg-white bg-opacity-25 text-white border border-white"><i class="bi bi-clock-history"></i> Retención automática: ' . $h($retencionHoras) . ' h</span>'
       . '<span class="badge bg-white bg-opacity-25 text-white border border-white"><i class="bi bi-arrow-repeat"></i> Estado Redmine: ' . $h($estadoRedmineNombre ?: 'No definido') . '</span>';
     include __DIR__ . '/../partials/hero.php';
   ?>
 
-    <div class="d-flex flex-wrap align-items-center justify-content-between mb-3 gap-2">
-    <ul class="nav nav-pills mb-0" id="status-filters">
-      <li class="nav-item"><button class="nav-link active" data-filter="pendiente" type="button">Pendientes (<?= count($pendientes) ?>)</button></li>
-      <li class="nav-item"><button class="nav-link" data-filter="procesado" type="button">Procesados (<?= count($procesados) ?>)</button></li>
-      <li class="nav-item"><button class="nav-link" data-filter="error" type="button">Errores (<?= count($errores) ?>)</button></li>
-    </ul>
-    <div class="d-flex gap-2 align-items-center">
-      <button type="button" id="process-btn" class="btn btn-success btn-sm btn-icon d-none">
-        <i class="bi bi-check2-circle"></i> Enviar reportes a Redmine
-      </button>
-      <button type="button" id="archive-btn" class="btn btn-warning btn-sm btn-icon d-none">
-        <i class="bi bi-archive"></i> Archivar
-      </button>
-      <button type="button" id="reset-errors-btn" class="btn btn-secondary btn-sm btn-icon d-none">
-        <i class="bi bi-arrow-counterclockwise"></i> Reintentar errores (marcar pendientes)
-      </button>
-    </div>
-  </div>
-
   <?php if ($flash): ?>
     <div class="alert alert-success" id="flash-msg"><?= $h($flash) ?></div>
   <?php endif; ?>
 
+  <div class="dashboard-stats" id="status-filters">
+    <section class="dashboard-stat dashboard-stat--pending is-active" data-filter="pendiente" role="button" tabindex="0">
+      <div class="dashboard-stat__top">
+        <span class="dashboard-stat__icon"><i class="bi bi-hourglass-split"></i></span>
+        <div>
+          <div class="dashboard-stat__value"><?= count($pendientes) ?></div>
+          <div class="dashboard-stat__label">Pendientes por revisar</div>
+        </div>
+      </div>
+    </section>
+    <section class="dashboard-stat dashboard-stat--processed" data-filter="procesado" role="button" tabindex="0">
+      <div class="dashboard-stat__top">
+        <span class="dashboard-stat__icon"><i class="bi bi-check2-circle"></i></span>
+        <div>
+          <div class="dashboard-stat__value"><?= count($procesados) ?></div>
+          <div class="dashboard-stat__label">Procesados correctamente</div>
+        </div>
+      </div>
+    </section>
+    <section class="dashboard-stat dashboard-stat--error" data-filter="error" role="button" tabindex="0">
+      <div class="dashboard-stat__top">
+        <span class="dashboard-stat__icon"><i class="bi bi-exclamation-octagon"></i></span>
+        <div>
+          <div class="dashboard-stat__value"><?= count($errores) ?></div>
+          <div class="dashboard-stat__label">Errores pendientes</div>
+        </div>
+      </div>
+    </section>
+  </div>
 
-
-  <div class="card">
+  <div class="card dashboard-table-card">
 
     <div class="card-body">
+      <div class="dashboard-table-header">
+        <div>
+          <h3>Solicitudes activas</h3>
+          <div class="dashboard-table-subtitle">Gestiona la cola actual con mejor visibilidad del estado y de las acciones disponibles.</div>
+        </div>
+        <div class="dashboard-table-count"><i class="bi bi-table"></i> Filas visibles: <span id="visible-count">0</span></div>
+      </div>
+
+      <div class="dashboard-toolbar">
+        <div class="dashboard-selection"><i class="bi bi-check2-square"></i> Seleccionados: <span id="selection-count">0</span></div>
+        <div class="dashboard-toolbar__actions">
+          <button type="button" id="process-btn" class="btn btn-success btn-sm btn-icon d-none">
+            <i class="bi bi-check2-circle"></i> Enviar reportes a Redmine
+          </button>
+          <button type="button" id="archive-btn" class="btn btn-warning btn-sm btn-icon d-none">
+            <i class="bi bi-archive"></i> Archivar
+          </button>
+          <button type="button" id="reset-errors-btn" class="btn btn-secondary btn-sm btn-icon d-none">
+            <i class="bi bi-arrow-counterclockwise"></i> Reintentar errores
+          </button>
+        </div>
+      </div>
 
       <div class="table-responsive">
 
-        <table class="table table-striped align-middle w-100">
+        <table class="table table-hover align-middle w-100 dashboard-table">
 
           <thead class="table-light position-sticky top-0" style="z-index:1;">
 
@@ -320,7 +436,10 @@ $csrf = csrf_token();
               <td><input type="checkbox" class="msg-check" value="<?= $h($m['id'] ?? '') ?>"></td>
               <td><?= $h($m['redmine_id'] ?? '') ?></td>
 
-              <td><?= $h($asunto) ?></td>
+              <td class="dashboard-table__subject">
+                <?= $h($asunto) ?>
+                <span class="dashboard-table__meta"><?= $h($m['numero'] ?? '') ?></span>
+              </td>
 
               <td><?= $h($m['categoria'] ?? '') ?></td>
 
@@ -335,9 +454,14 @@ $csrf = csrf_token();
               <?php
                 $badge = $estado === 'pendiente' ? 'warning' : ($estado === 'procesado' ? 'success' : 'danger');
               ?>
-              <td><span class="badge bg-<?= $badge ?> text-dark"><?= $h($m['estado'] ?? '') ?></span></td>
+              <td>
+                <span class="dashboard-status-icon dashboard-status-icon--<?= $estado === 'procesado' ? 'processed' : ($estado === 'error' ? 'error' : 'pending') ?>" title="<?= $h($m['estado'] ?? '') ?>">
+                  <i class="bi <?= $estado === 'procesado' ? 'bi-check2' : ($estado === 'error' ? 'bi-exclamation' : 'bi-clock') ?>"></i>
+                </span>
+              </td>
 
-              <td class="d-flex gap-1 flex-wrap">
+              <td>
+                <div class="dashboard-row-actions">
 
                 <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#detalleModal"
 
@@ -377,7 +501,8 @@ $csrf = csrf_token();
 
                   data-numero="<?= $h($m['numero'] ?? '') ?>"
 
-                >Detalle / Editar</button>
+                  title="Detalle / Editar" aria-label="Detalle / Editar"
+                ><i class="bi bi-pencil-square"></i></button>
                 <?php if (strtolower($m['estado'] ?? '') === 'error'): ?>
                   <?php
                     $logText = '';
@@ -385,16 +510,17 @@ $csrf = csrf_token();
                         $logText = implode("\n", $logsByMessage[$m['id']]);
                     }
                   ?>
-                  <button type="button" class="btn btn-sm btn-outline-danger log-btn" data-log="<?= $h($logText) ?>" data-bs-toggle="modal" data-bs-target="#logModal">Log</button>
+                  <button type="button" class="btn btn-sm btn-outline-danger log-btn" data-log="<?= $h($logText) ?>" data-bs-toggle="modal" data-bs-target="#logModal" title="Log" aria-label="Log"><i class="bi bi-journal-text"></i></button>
                 <?php endif; ?>
 
-                <form method="post" onsubmit="return confirm('Eliminar este mensaje?')">
+                <form method="post" data-app-confirm="Eliminar este mensaje?" data-app-confirm-title="Confirmar eliminacion" data-app-confirm-text="Eliminar">
                   <input type="hidden" name="csrf_token" value="<?= $h($csrf) ?>">
                   <input type="hidden" name="id" value="<?= $h($m['id'] ?? '') ?>">
                   <input type="hidden" name="action" value="delete">
-                  <button class="btn btn-sm btn-danger">Eliminar</button>
+                  <button class="btn btn-sm btn-danger" title="Eliminar" aria-label="Eliminar"><i class="bi bi-trash"></i></button>
                 </form>
 
+                </div>
               </td>
 
             </tr>
@@ -410,6 +536,8 @@ $csrf = csrf_token();
     </div>
 
   </div>
+
+</div>
 
 </div>
 
@@ -478,7 +606,7 @@ $csrf = csrf_token();
 
     <div class="modal-content">
 
-      <form method="post" action="../Dashboard/dashboard.php">
+      <form method="post" action="/redmine/?page=dashboard">
         <input type="hidden" name="csrf_token" value="<?= $h($csrf) ?>">
 
         <div class="modal-header">
@@ -593,7 +721,7 @@ $csrf = csrf_token();
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<?php include __DIR__ . '/../partials/bootstrap-scripts.php'; ?>
 
 <script>
 
@@ -715,11 +843,33 @@ function setAllChecks(checked) {
 
 }
 
+function getVisibleRows() {
+  return Array.from(document.querySelectorAll('table tbody tr')).filter(tr => tr.style.display !== 'none');
+}
+
+function getSelectedVisibleChecks() {
+  return Array.from(document.querySelectorAll('.msg-check')).filter(cb => {
+    if (!cb.checked || !cb.value) return false;
+    const row = cb.closest('tr');
+    return !!row && row.style.display !== 'none';
+  });
+}
+
+function refreshDashboardCounters() {
+  const visibleCount = document.getElementById('visible-count');
+  const selectionCount = document.getElementById('selection-count');
+  if (visibleCount) visibleCount.textContent = String(getVisibleRows().length);
+  if (selectionCount) selectionCount.textContent = String(getSelectedVisibleChecks().length);
+}
+
 const selAllTop = document.getElementById('sel-all-top');
 
 if (selAllTop) {
 
-  selAllTop.addEventListener('change', () => setAllChecks(selAllTop.checked));
+  selAllTop.addEventListener('change', () => {
+    setAllChecks(selAllTop.checked);
+    refreshDashboardCounters();
+  });
 
 }
 
@@ -736,6 +886,7 @@ if (selAllBtn) {
     setAllChecks(!allChecked);
 
     if (selAllTop) selAllTop.checked = !allChecked;
+    refreshDashboardCounters();
 
   });
 
@@ -768,9 +919,14 @@ if (processForm && processIds) {
 
       e.preventDefault();
 
-      alert('Selecciona al menos un mensaje para procesar.');
+      window.appModal?.show({
+        title: 'Seleccion requerida',
+        message: 'Selecciona al menos un mensaje para procesar.',
+        tone: 'warning'
+      });
 
     }
+    refreshDashboardCounters();
 
   });
 
@@ -783,6 +939,7 @@ function filterRows(filter) {
     const status = (tr.getAttribute('data-status') || '').toLowerCase();
     tr.style.display = (filter === 'all' || status === filter) ? '' : 'none';
   });
+  refreshDashboardCounters();
 }
 
 function applyFilterButtons(filter) {
@@ -799,11 +956,12 @@ function applyFilterButtons(filter) {
   if (resetErrorsBtn) {
     resetErrorsBtn.classList.toggle('d-none', filter !== 'error');
   }
+  refreshDashboardCounters();
 }
 
 if (filterNav) {
 
-  const initialFilter = filterNav.querySelector('.nav-link.active')?.getAttribute('data-filter') || 'pendiente';
+  const initialFilter = filterNav.querySelector('[data-filter].is-active')?.getAttribute('data-filter') || 'pendiente';
   filterRows(initialFilter);
   applyFilterButtons(initialFilter);
 
@@ -817,16 +975,28 @@ if (filterNav) {
 
     const filter = btn.getAttribute('data-filter');
 
-    filterNav.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+    filterNav.querySelectorAll('[data-filter]').forEach(link => link.classList.remove('is-active'));
 
-    btn.classList.add('active');
+    btn.classList.add('is-active');
 
     filterRows(filter);
     applyFilterButtons(filter);
 
   });
 
+  filterNav.addEventListener('keydown', (e) => {
+    const card = e.target.closest('[data-filter]');
+    if (!card) return;
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    e.preventDefault();
+    card.click();
+  });
+
 }
+
+document.querySelectorAll('.msg-check').forEach(cb => {
+  cb.addEventListener('change', refreshDashboardCounters);
+});
 
 const processBtn = document.getElementById('process-btn');
 if (processBtn && processForm) {
@@ -883,6 +1053,8 @@ if (logModal) {
   });
 
 }
+
+refreshDashboardCounters();
 
 </script>
 

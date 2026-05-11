@@ -1,17 +1,20 @@
 <?php
 // CRUD para prioridades usando solo data/configuracion.json
-$CONFIG_FILE = __DIR__ . '/../data/configuracion.json';
+function prioridades_config_file(): string {
+    return __DIR__ . '/../data/configuracion.json';
+}
 
 function prio_load_cfg() {
-    if (!file_exists($GLOBALS['CONFIG_FILE'])) return [];
-    $data = json_decode(file_get_contents($GLOBALS['CONFIG_FILE']), true);
+    $path = prioridades_config_file();
+    if (!file_exists($path)) return [];
+    $data = json_decode(file_get_contents($path), true);
     if (!is_array($data)) $data = [];
     if (!isset($data['prioridades']) || !is_array($data['prioridades'])) $data['prioridades'] = [];
     return $data;
 }
 
 function prio_save_cfg($cfg) {
-    file_put_contents($GLOBALS['CONFIG_FILE'], json_encode($cfg, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+    file_put_contents(prioridades_config_file(), json_encode($cfg, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
 function handle_prioridades() {

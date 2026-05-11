@@ -1,8 +1,9 @@
 <?php
 require_once __DIR__ . '/../../controllers/auth.php';
+require_once __DIR__ . '/../../controllers/maintenance.php';
 auth_require_login('/redmine/login.php');
 if (!auth_can('configuracion')) {
-  header('Location: /redmine/views/Dashboard/dashboard.php');
+  header('Location: /redmine/?page=dashboard');
   exit;
 }
 
@@ -66,6 +67,7 @@ $unidades = load_unidades_local($dataPath);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (function_exists('csrf_validate')) csrf_validate();
+  if (function_exists('maintenance_mode_block_if_enabled')) maintenance_mode_block_if_enabled();
 if (!$apiKey) {
   $error = 'Falta token de API (usuario o plataforma).';
 } elseif (!$cfUrl) {
@@ -127,12 +129,7 @@ $total = is_array($unidades) ? count($unidades) : 0;
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Unidades solicitantes</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="/redmine/assets/theme.css" rel="stylesheet">
+  <?php $pageTitle = 'Unidades solicitantes'; $includeTheme = true; include __DIR__ . '/../partials/bootstrap-head.php'; ?>
 </head>
 <body class="bg-light">
 <?php $activeNav = 'configuracion'; include __DIR__ . '/../partials/navbar.php'; ?>
@@ -162,7 +159,7 @@ $total = is_array($unidades) ? count($unidades) : 0;
             <input type="text" class="form-control" value="<?= $h($apiKey ? '********' : 'No definido') ?>" disabled>
           </div>
           <div class="col-lg-2 d-flex gap-2 justify-content-lg-end">
-            <a class="btn btn-outline-secondary w-100" href="../Configuracion/configuracion.php"><i class="bi bi-arrow-left"></i> Volver</a>
+            <a class="btn btn-outline-secondary w-100" href="/redmine/?page=configuracion"><i class="bi bi-arrow-left"></i> Volver</a>
             <input type="hidden" name="csrf_token" value="<?= $h($csrf) ?>">
             <button class="btn btn-primary w-100" type="submit"><i class="bi bi-arrow-repeat"></i> Actualizar</button>
           </div>
@@ -199,7 +196,7 @@ $total = is_array($unidades) ? count($unidades) : 0;
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<?php include __DIR__ . '/../partials/bootstrap-scripts.php'; ?>
 <script>
   const f = document.getElementById('filter');
   const tbl = document.getElementById('tbl');

@@ -2,11 +2,15 @@
 require_once __DIR__ . '/../../controllers/auth.php';
 auth_require_role(['root','administrador','gestor'], '/redmine/login.php');
 require_once __DIR__ . '/../../controllers/configuracion.php';
+require_once __DIR__ . '/../../controllers/maintenance.php';
+$maintenanceFlash = handle_maintenance_request();
 [$cfg, $flash, $opts] = handle_configuracion();
 $h = fn($v) => htmlspecialchars($v ?? '', ENT_QUOTES, 'UTF-8');
 $role = auth_get_user_role();
 $onlyCatalogs = ($role === 'administrador');
 $csrf = csrf_token();
+$maintenanceMode = maintenance_mode_enabled();
+$maintenanceSettings = maintenance_mode_settings();
 
 $rolesFile = __DIR__ . '/../../data/roles.json';
 $rolesData = auth_load_roles();
@@ -245,6 +249,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $openRolesModal = true;
   } elseif ($action === 'save_roles' && $canManageRoles) {
     if (function_exists('csrf_validate')) csrf_validate();
+    if (function_exists('maintenance_mode_block_if_enabled')) maintenance_mode_block_if_enabled();
     $selectedRole = $newRoleName !== '' ? $newRoleName : trim($_POST['role_select'] ?? $selectedRole);
     if ($selectedRole !== '') {
       if (!isset($rolesData[$selectedRole])) $rolesData[$selectedRole] = [];
@@ -315,6 +320,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $openUsersModal = true;
   } elseif ($action === 'save_user_perms' && $canManageUsers) {
     if (function_exists('csrf_validate')) csrf_validate();
+    if (function_exists('maintenance_mode_block_if_enabled')) maintenance_mode_block_if_enabled();
     $selectedUser = trim($_POST['user_select'] ?? $selectedUser);
     if ($selectedUser !== '' && isset($usuariosIndex[$selectedUser])) {
       $newUserRole = trim($_POST['u_role'] ?? '');
@@ -374,36 +380,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Sync unidades desde modal (visible para roles con configuracion)
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'sync_unidades') {
   if (function_exists('csrf_validate')) csrf_validate();
+  if (function_exists('maintenance_mode_block_if_enabled')) maintenance_mode_block_if_enabled();
   $res = $syncUnidades();
   $msg = isset($res['error']) ? $res['error'] : ('Unidades sincronizadas (' . ($res['ok'] ?? 0) . ' registros).');
-  header('Location: /redmine/views/Configuracion/configuracion.php?synuni=' . urlencode($msg));
+  header('Location: /redmine/?page=configuracion&synuni=' . urlencode($msg));
   exit;
 }
 ?>
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>configuracion</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="/redmine/assets/theme.css" rel="stylesheet">
+  <?php $pageTitle = 'Configuracion'; $includeTheme = true; include __DIR__ . '/../partials/bootstrap-head.php'; ?>
   <style>
-    /* Fallback modal styles si Bootstrap no carga */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1055;
-      inset: 0;
-      align-items: center;
-      justify-content: center;
-      background: rgba(0,0,0,0.5);
-      overflow: hidden;
-    }
-    .modal.show { display: flex; }
+    /* Ajustes de tamano para modales Bootstrap */
     .modal-dialog {
-      margin: 0 auto;
       max-height: calc(100vh - 30px);
     }
     .modal-dialog.modal-dialog-top { margin-top: 12px; }
@@ -416,7 +406,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
       max-height: calc(100vh - 200px);
       overflow-y: auto;
     }
-    .modal-backdrop { display: block; }
     .modal-dialog-scrollable .modal-body {
       max-height: calc(100vh - 220px);
       overflow-y: auto;
@@ -446,6 +435,97 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     .cfg-section { background: #fff; border-radius: 18px; box-shadow: 0 12px 30px rgba(17,24,39,0.08); padding: 18px 20px; }
     .cfg-section h5 { font-weight: 700; }
     .form-check { margin-bottom: 8px; }
+    #rolesModal .modal-body,
+    #usuariosModal .modal-body,
+    #maintenanceModal .modal-body { background: #f6f8fb; }
+    #rolesModal form > .col-md-6,
+    #rolesModal form > .col-md-8,
+    #rolesModal form > .col-md-4,
+    #rolesModal form > .col-12,
+    #usuariosModal form > .col-md-6,
+    #usuariosModal form > .col-md-8,
+    #usuariosModal form > .col-md-4,
+    #usuariosModal form > .col-12 {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 10px 28px rgba(17,24,39,0.06);
+    }
+    #rolesModal form > .col-12 .row.g-2 .form-check,
+    #usuariosModal form > .col-12 .row.g-2 .form-check {
+      min-height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      border: 1px solid #dbe3ef;
+      border-radius: 14px;
+      background: #fff;
+      transition: border-color .18s ease, box-shadow .18s ease, background-color .18s ease;
+    }
+    #rolesModal form > .col-12 .row.g-2 .form-check:has(.form-check-input:checked),
+    #usuariosModal form > .col-12 .row.g-2 .form-check:has(.form-check-input:checked) {
+      border-color: #8fb4ff;
+      background: #f8fbff;
+      box-shadow: 0 10px 24px rgba(78,115,223,0.12);
+    }
+    #rolesModal form > .col-12 .row.g-2 .form-check-label,
+    #usuariosModal form > .col-12 .row.g-2 .form-check-label {
+      color: #111827;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+    #rolesModal form > .col-12 .row.g-2 .form-check-input,
+    #usuariosModal form > .col-12 .row.g-2 .form-check-input,
+    .maintenance-mode-switch .form-check-input {
+      order: 2;
+      position: relative;
+      width: 2.8rem;
+      height: 1.5rem;
+      margin: 0;
+      border: 0;
+      border-radius: 999px;
+      background: #cbd5e1;
+      background-image: none !important;
+      background-color: #cbd5e1 !important;
+      box-shadow: inset 0 0 0 1px rgba(15,23,42,0.08);
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      transition: background-color .18s ease;
+    }
+    #rolesModal form > .col-12 .row.g-2 .form-check-input::before,
+    #usuariosModal form > .col-12 .row.g-2 .form-check-input::before,
+    .maintenance-mode-switch .form-check-input::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(15,23,42,0.24);
+      transition: transform .18s ease;
+    }
+    #rolesModal form > .col-12 .row.g-2 .form-check-input:checked,
+    #usuariosModal form > .col-12 .row.g-2 .form-check-input:checked,
+    .maintenance-mode-switch .form-check-input:checked {
+      background: #4e73df !important;
+      background-color: #4e73df !important;
+      background-image: none !important;
+    }
+    #rolesModal form > .col-12 .row.g-2 .form-check-input:checked::before,
+    #usuariosModal form > .col-12 .row.g-2 .form-check-input:checked::before,
+    .maintenance-mode-switch .form-check-input:checked::before { transform: translateX(22px); }
+    #rolesModal form > .col-12 .row.g-2 .form-check-input:focus,
+    #usuariosModal form > .col-12 .row.g-2 .form-check-input:focus,
+    .maintenance-mode-switch .form-check-input:focus {
+      outline: 3px solid rgba(78,115,223,0.18);
+      outline-offset: 2px;
+    }
     .table thead th { font-weight: 700; text-transform: uppercase; font-size: .78rem; letter-spacing: .02em; }
   </style>
   <style>
@@ -479,6 +559,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     }
     if ($flashRoles) {
       $heroExtras .= ($heroExtras ? '<div class="mt-2"></div>' : '') . '<div class="alert alert-success py-2 px-3 mb-0 mt-2" id="flash-roles">' . $h($flashRoles) . '</div>';
+    }
+    if ($maintenanceFlash) {
+      $heroExtras .= ($heroExtras ? '<div class="mt-2"></div>' : '') . '<div class="alert alert-info py-2 px-3 mb-0 mt-2" id="flash-maintenance">' . $h($maintenanceFlash) . '</div>';
+    }
+    if ($maintenanceMode) {
+      $untilText = maintenance_mode_until_text();
+      $heroExtras .= ($heroExtras ? '<div class="mt-2"></div>' : '') . '<div class="alert alert-warning py-2 px-3 mb-0 mt-2"><i class="bi bi-tools me-1"></i>Modo mantenci&oacute;n activo' . ($untilText !== '' ? ' hasta ' . $h($untilText) : '') . '</div>';
     }
     include __DIR__ . '/../partials/hero.php';
   ?>
@@ -541,6 +628,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         <i class="bi bi-arrow-right-short"></i>
       </button>
     </div>
+    <?php if (!$onlyCatalogs): ?>
+    <div class="col-12 col-md-6 col-lg-4">
+      <button class="cfg-btn d-flex align-items-center justify-content-between gap-2" type="button" data-bs-toggle="modal" data-bs-target="#maintenanceModal">
+        <span class="d-flex align-items-center gap-2"><i class="bi bi-tools text-secondary"></i>Mantenci&oacute;n</span>
+        <i class="bi bi-arrow-right-short"></i>
+      </button>
+    </div>
+    <?php endif; ?>
 <?php if ($canManageRoles || $canManageUsers): ?>
   <?php if ($canManageRoles): ?>
   <div class="col-12 col-md-6 col-lg-4">
@@ -562,6 +657,82 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
   </div>
 
 </div>
+
+<?php if (!$onlyCatalogs): ?>
+<div class="modal fade" id="maintenanceModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <h5 class="modal-title mb-0">Mantenci&oacute;n</h5>
+          <div class="text-muted small">Exporta o importa respaldos operativos en formato JSON.</div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form method="post" class="p-3 border rounded-4 bg-white mb-3">
+          <input type="hidden" name="csrf_token" value="<?= $h($csrf) ?>">
+          <input type="hidden" name="action" value="maintenance_settings">
+          <div class="row g-3 align-items-end">
+            <div class="col-md-5">
+              <label class="form-label">Estado de mantenci&oacute;n</label>
+              <div class="form-check form-switch maintenance-mode-switch d-flex align-items-center justify-content-between gap-3 mb-0">
+                <label class="form-check-label fw-semibold" for="maintenance-mode-check"><?= !empty($maintenanceSettings['enabled']) ? 'Mantenci&oacute;n activa' : 'Mantenci&oacute;n inactiva' ?></label>
+                <input class="form-check-input" type="checkbox" role="switch" name="maintenance_mode" value="1" id="maintenance-mode-check" <?= !empty($maintenanceSettings['enabled']) ? 'checked' : '' ?>>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <label class="form-label">Hora estimada de t&eacute;rmino</label>
+              <input type="datetime-local" name="maintenance_until" class="form-control" value="<?= $h($maintenanceSettings['until'] ?? '') ?>">
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-primary w-100" type="submit">Guardar</button>
+            </div>
+          </div>
+          <div class="form-text mt-2">Cuando est&aacute; activa, las acciones de escritura quedan bloqueadas hasta desactivar la mantenci&oacute;n.</div>
+        </form>
+        <div class="alert alert-warning small">La importaci&oacute;n sobrescribe o fusiona archivos de datos seleccionados. Exporta un respaldo antes de importar cambios.</div>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <form method="post" class="h-100 p-3 border rounded-4 bg-white">
+              <input type="hidden" name="csrf_token" value="<?= $h($csrf) ?>">
+              <input type="hidden" name="action" value="maintenance_export">
+              <h6 class="fw-bold"><i class="bi bi-download text-primary me-1"></i>Exportar</h6>
+              <p class="text-muted small mb-3">Descarga un respaldo de las secciones seleccionadas.</p>
+              <?php foreach (maintenance_sections() as $key => $section): ?>
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" name="maintenance_sections[]" value="<?= $h($key) ?>" id="export-<?= $h($key) ?>" checked>
+                  <label class="form-check-label" for="export-<?= $h($key) ?>"><?= $h($section['label']) ?></label>
+                </div>
+              <?php endforeach; ?>
+              <button class="btn btn-primary w-100 mt-3" type="submit">Exportar respaldo</button>
+            </form>
+          </div>
+          <div class="col-md-6">
+            <form method="post" enctype="multipart/form-data" class="h-100 p-3 border rounded-4 bg-white" data-app-confirm="Importar el respaldo sobrescribira o fusionara datos seleccionados.">
+              <input type="hidden" name="csrf_token" value="<?= $h($csrf) ?>">
+              <input type="hidden" name="action" value="maintenance_import">
+              <h6 class="fw-bold"><i class="bi bi-upload text-success me-1"></i>Importar</h6>
+              <p class="text-muted small mb-3">Carga un respaldo JSON, ZIP o TAR compatible.</p>
+              <input type="file" name="maintenance_file" class="form-control mb-3" accept="application/json,.json,.zip,.tar,.tgz,.gz" required>
+              <?php foreach (maintenance_sections() as $key => $section): ?>
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" name="maintenance_sections[]" value="<?= $h($key) ?>" id="import-<?= $h($key) ?>" checked>
+                  <label class="form-check-label" for="import-<?= $h($key) ?>"><?= $h($section['label']) ?></label>
+                </div>
+              <?php endforeach; ?>
+              <button class="btn btn-success w-100 mt-3" type="submit">Importar respaldo</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<?php endif; ?>
 
 <?php $renderOptionsTable = function($id, $title, $items, $type, $h) use ($csrf) { ?>
 <div class="modal fade" id="<?= $h($id) ?>" tabindex="-1" aria-hidden="true">
@@ -602,7 +773,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                   <td class="d-flex gap-2">
                     <button class="btn btn-success btn-sm">Guardar</button>
                 </form>
-                <form method="post" onsubmit="return confirm('Eliminar?')" class="m-0">
+                <form method="post" data-app-confirm="Eliminar este registro?" data-app-confirm-title="Confirmar eliminacion" data-app-confirm-text="Eliminar" class="m-0">
                   <input type="hidden" name="csrf_token" value="<?= $h($csrf) ?>">
                   <input type="hidden" name="opt_type" value="<?= $h($type) ?>">
                   <input type="hidden" name="opt_action" value="delete">
@@ -646,7 +817,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             <span class="badge bg-light text-dark border">Total: <?= $h(is_array($categoriasData) ? count($categoriasData) : 0) ?></span>
           </div>
           <div class="d-flex gap-2">
-            <form action="../Categorias/categorias.php" method="post" class="m-0 d-inline" id="sync-cat-form">
+            <form action="/redmine/?page=sync-categorias" method="post" class="m-0 d-inline" id="sync-cat-form">
               <input type="hidden" name="csrf_token" value="<?= $h($csrf) ?>">
               <input type="hidden" name="action" value="sync_remote">
               <button class="btn btn-primary btn-icon" type="submit"><i class="bi bi-arrow-repeat"></i> Actualizar desde API</button>
@@ -696,7 +867,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             <span class="badge bg-light text-dark border">Total: <?= $h(is_array($unidadesData) ? count($unidadesData) : 0) ?></span>
           </div>
           <div class="d-flex gap-2">
-            <form action="../Configuracion/configuracion.php" method="post" class="m-0 d-inline" id="sync-uni-form">
+            <form action="/redmine/?page=configuracion" method="post" class="m-0 d-inline" id="sync-uni-form">
               <input type="hidden" name="csrf_token" value="<?= $h($csrf) ?>">
               <input type="hidden" name="action" value="sync_unidades">
               <button class="btn btn-primary btn-icon" type="submit"><i class="bi bi-arrow-repeat"></i> Actualizar desde API</button>
@@ -1315,9 +1486,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 <?php endif; ?>
 <?php endif; ?>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<?php include __DIR__ . '/../partials/bootstrap-scripts.php'; ?>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+  const configMaintenanceMode = <?= $maintenanceMode ? 'true' : 'false' ?>;
+  if (configMaintenanceMode) {
+    document.querySelectorAll('form').forEach(form => {
+      const actionInput = form.querySelector('[name="action"]');
+      const action = actionInput ? actionInput.value : '';
+      const allowed = form.closest('#maintenanceModal') && ['maintenance_settings', 'maintenance_export'].includes(action);
+      if (!allowed) {
+        form.querySelectorAll('input, select, textarea, button').forEach(control => {
+          const isModalClose = control.matches('[data-bs-dismiss="modal"]');
+          const isSearchField = control.matches('#cat-filter, #uni-filter');
+          const isLoadOnlyAction = action === 'load_role' || action === 'load_user_perms';
+          if (isModalClose || isSearchField || isLoadOnlyAction) return;
+          control.disabled = true;
+          control.title = 'Plataforma en mantencion';
+        });
+      }
+    });
+  }
+
+  const maintenanceModeCheck = document.getElementById('maintenance-mode-check');
+  const maintenanceUntilInput = document.querySelector('input[name="maintenance_until"]');
+  if (maintenanceModeCheck && maintenanceUntilInput) {
+    maintenanceModeCheck.addEventListener('change', () => {
+      if (!maintenanceModeCheck.checked) maintenanceUntilInput.value = '';
+    });
+  }
+
   const getModal = (id) => {
     const el = document.getElementById(id);
     if (!el || !window.bootstrap || !window.bootstrap.Modal) return null;

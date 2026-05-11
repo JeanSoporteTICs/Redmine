@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/auth.php';
 require_once __DIR__ . '/security.php';
+require_once __DIR__ . '/maintenance.php';
 
 function dashboard_set_flash(string $message): void {
     auth_start_session();
@@ -16,7 +17,7 @@ function dashboard_consume_flash(): ?string {
 }
 
 function dashboard_redirect_back(): void {
-    $location = $_SERVER['REQUEST_URI'] ?? '/redmine/views/Dashboard/dashboard.php';
+    $location = $_SERVER['REQUEST_URI'] ?? '/redmine/?page=dashboard';
     header('Location: ' . $location);
     exit;
 }
@@ -472,12 +473,13 @@ function handle_request(): array {
     $messages = load_messages();
     $userId = auth_get_user_id();
     $userToken = load_user_api_token($userId);
-    if (apply_retention_archive($messages)) {
+    if ((!function_exists('maintenance_mode_enabled') || !maintenance_mode_enabled()) && apply_retention_archive($messages)) {
         save_messages($messages);
     }
     $flash = dashboard_consume_flash();
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         csrf_validate();
+        if (function_exists('maintenance_mode_block_if_enabled')) maintenance_mode_block_if_enabled();
         $action = $_POST['action'] ?? '';
         $flashMsg = null;
         switch ($action) {

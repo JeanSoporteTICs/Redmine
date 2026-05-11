@@ -1,8 +1,13 @@
-﻿<?php
+<?php
 // CRUD básico para unidades usando data/unidades.json
-$DATA_FILE = __DIR__ . '/../data/unidades.json';
+function unidades_data_file(): string {
+    return __DIR__ . '/../data/unidades.json';
+}
 
 function ensure_uni_file($path) {
+    if (!$path) {
+        throw new RuntimeException('Ruta de unidades no configurada');
+    }
     if (!file_exists($path)) {
         file_put_contents($path, json_encode([], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
     }
@@ -23,7 +28,7 @@ function save_unidades($path, $data) {
     file_put_contents($path, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 function handle_unidades() {
-    global $DATA_FILE;
+    $DATA_FILE = unidades_data_file();
     $rows = load_unidades($DATA_FILE);
     $flash = null;
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -56,4 +61,3 @@ function handle_unidades() {
     return [$rows, $flash];
 }
 ?>
-

@@ -229,6 +229,7 @@ if (in_array($role, ['usuario','administrador','gestor'], true) && $uid !== '') 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'update_extra') {
     if (function_exists('csrf_validate')) csrf_validate();
+    if (function_exists('maintenance_mode_block_if_enabled')) maintenance_mode_block_if_enabled();
     $fecha = trim($_POST['fecha'] ?? '');
     $horaIni = trim($_POST['hora_ini'] ?? '');
     $horaFin = trim($_POST['hora_fin'] ?? '');
@@ -310,12 +311,7 @@ function hhmm($mins) {
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Horas extra</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="/redmine/assets/theme.css" rel="stylesheet">
+  <?php $pageTitle = 'Horas extra'; $includeTheme = true; include __DIR__ . '/../partials/bootstrap-head.php'; ?>
   <style>
   
     .group-row { background:#eef2ff; border-top:2px solid #d6d9f5; border-bottom:2px solid #d6d9f5; }
@@ -360,7 +356,7 @@ function hhmm($mins) {
       </div>
       <div class="col-md-4 col-lg-3 d-flex gap-2">
         <button class="btn btn-primary" type="submit"><i class="bi bi-funnel"></i> Filtrar</button>
-        <a class="btn btn-outline-secondary" href="?"><i class="bi bi-x-circle"></i> Limpiar</a>
+        <a class="btn btn-outline-secondary" href="/redmine/?page=horas-extra"><i class="bi bi-x-circle"></i> Limpiar</a>
       </div>
     </div>
   </form>
@@ -482,7 +478,7 @@ function hhmm($mins) {
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<?php include __DIR__ . '/../partials/bootstrap-scripts.php'; ?>
 <script>
 const editModal = document.getElementById('editModal');
 const totalHorasEl = document.getElementById('md-total-horas');
@@ -543,7 +539,11 @@ if (copyBtn) {
     if (!table) return;
     const groupRows = Array.from(table.querySelectorAll('tbody tr.group-row'));
     if (!groupRows.length) {
-      alert('No hay datos para copiar.');
+      window.appModal?.show({
+        title: 'Sin datos',
+        message: 'No hay datos para copiar.',
+        tone: 'warning'
+      });
       return;
     }
 
@@ -616,17 +616,21 @@ if (copyBtn) {
         'text/plain': new Blob([finalPlain], { type: 'text/plain' })
       });
       navigator.clipboard.write([item]).then(
-        () => alert('Tabla copiada al portapapeles.'),
-        () => { fallbackCopyHtml(htmlString, finalPlain); alert('Tabla copiada al portapapeles.'); }
+        () => window.appModal?.show({ title: 'Tabla copiada', message: 'Tabla copiada al portapapeles.', tone: 'success' }),
+        () => { fallbackCopyHtml(htmlString, finalPlain); window.appModal?.show({ title: 'Tabla copiada', message: 'Tabla copiada al portapapeles.', tone: 'success' }); }
       );
     } else if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(finalPlain).then(
-        () => alert('Tabla copiada al portapapeles.'),
-        () => { fallbackCopyHtml(htmlString, finalPlain); alert('Tabla copiada al portapapeles.'); }
+        () => window.appModal?.show({ title: 'Tabla copiada', message: 'Tabla copiada al portapapeles.', tone: 'success' }),
+        () => { fallbackCopyHtml(htmlString, finalPlain); window.appModal?.show({ title: 'Tabla copiada', message: 'Tabla copiada al portapapeles.', tone: 'success' }); }
       );
     } else {
       fallbackCopyHtml(htmlString, finalPlain);
-      alert('Tabla copiada al portapapeles.');
+      window.appModal?.show({
+        title: 'Tabla copiada',
+        message: 'Tabla copiada al portapapeles.',
+        tone: 'success'
+      });
     }
   });
 }

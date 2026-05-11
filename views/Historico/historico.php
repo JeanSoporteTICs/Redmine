@@ -1,8 +1,9 @@
 ﻿<?php
 require_once __DIR__ . '/../../controllers/auth.php';
+require_once __DIR__ . '/../../controllers/maintenance.php';
 auth_require_login('/redmine/login.php');
 if (!auth_can('historico')) {
-  header('Location: /redmine/views/Dashboard/dashboard.php');
+  header('Location: /redmine/?page=dashboard');
   exit;
 }
 
@@ -49,6 +50,8 @@ function delete_horas_extra(string $base, string $id): bool {
 // --- Eliminar si se solicito ---
 $alert = '';
 if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST' && isset($_POST['action'], $_POST['id'], $_POST['fuente']) && $_POST['action'] === 'delete') {
+  if (function_exists('csrf_validate')) csrf_validate();
+  if (function_exists('maintenance_mode_block_if_enabled')) maintenance_mode_block_if_enabled();
   $id = trim($_POST['id']);
   $src = $_POST['fuente'];
   $ok = false;
@@ -188,12 +191,7 @@ ksort($uniSel);
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Histórico</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="/redmine/assets/theme.css" rel="stylesheet">
+  <?php $pageTitle = 'Historico'; $includeTheme = true; include __DIR__ . '/../partials/bootstrap-head.php'; ?>
 </head>
 <body class="bg-light">
 <?php $activeNav = 'historico'; include __DIR__ . '/../partials/navbar.php'; ?>
@@ -267,7 +265,7 @@ ksort($uniSel);
         <a
           class="btn btn-outline-secondary w-100"
           id="btn-clear"
-          href="historico.php"
+          href="/redmine/?page=historico"
           aria-label="Limpiar filtros"
           aria-pressed="false">
           <i class="bi bi-x-circle"></i> Limpiar
@@ -326,11 +324,11 @@ ksort($uniSel);
                   <?php if ($showActions): ?>
                     <td>
                       <?php if (($row['_fuente'] ?? '') !== 'mensajes'): ?>
-                        <form method="post" class="m-0">
+                        <form method="post" class="m-0" data-app-confirm="Eliminar este registro del historico?" data-app-confirm-title="Confirmar eliminacion" data-app-confirm-text="Eliminar">
                           <input type="hidden" name="action" value="delete">
                           <input type="hidden" name="id" value="<?= $h($row['id'] ?? '') ?>">
                           <input type="hidden" name="fuente" value="<?= $h($row['_fuente'] ?? '') ?>">
-                          <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Eliminar este registro del hist&oacute;rico?')">
+                          <button type="submit" class="btn btn-sm btn-outline-danger">
                             <i class="bi bi-trash"></i>
                           </button>
                         </form>
@@ -347,6 +345,7 @@ ksort($uniSel);
   </div>
 
 
+  <?php include __DIR__ . '/../partials/bootstrap-scripts.php'; ?>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const form = document.getElementById('filter-form');
