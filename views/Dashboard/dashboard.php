@@ -430,7 +430,7 @@ $csrf = csrf_token();
               data-unit="<?= $h(strtolower($m['unidad'] ?? '')) ?>"
               data-user="<?= $h(strtolower($asignadoNombre)) ?>"
               data-horaextra="<?= $h(strtolower($m['hora_extra'] ?? '')) ?>"
-              data-text="<?= $h(strtolower($asunto . ' ' . ($m['solicitante'] ?? '') . ' ' . ($m['numero'] ?? ''))) ?>"
+              data-text="<?= $h(strtolower($asunto . ' ' . ($m['solicitante'] ?? '') . ' ' . $displayAsignado)) ?>"
             >
 
               <td><input type="checkbox" class="msg-check" value="<?= $h($m['id'] ?? '') ?>"></td>
@@ -438,7 +438,6 @@ $csrf = csrf_token();
 
               <td class="dashboard-table__subject">
                 <?= $h($asunto) ?>
-                <span class="dashboard-table__meta"><?= $h($m['numero'] ?? '') ?></span>
               </td>
 
               <td><?= $h($m['categoria'] ?? '') ?></td>

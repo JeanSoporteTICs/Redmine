@@ -62,6 +62,27 @@ function maintenance_mode_until_text(): string {
     return $dt ? $dt->format('d-m-Y H:i') : $until;
 }
 
+function maintenance_format_until_for_log(string $until): string {
+    $until = trim($until);
+    if ($until === '') {
+        return 'sin termino definido';
+    }
+    $dt = DateTimeImmutable::createFromFormat('Y-m-d\TH:i', $until, new DateTimeZone('America/Santiago'));
+    return $dt ? $dt->format('d-m-Y H:i') : $until;
+}
+
+function maintenance_format_started_for_log(string $started): string {
+    $started = trim($started);
+    if ($started === '') {
+        return 'sin inicio registrado';
+    }
+    try {
+        return (new DateTimeImmutable($started))->setTimezone(new DateTimeZone('America/Santiago'))->format('d-m-Y H:i:s');
+    } catch (Throwable $e) {
+        return $started;
+    }
+}
+
 function maintenance_mode_block_message(): string {
     $until = maintenance_mode_until_text();
     return 'La plataforma esta en mantencion. Solo se permite ver datos actuales; no se pueden realizar cambios' . ($until !== '' ? ' hasta ' . $until : '') . '.';
@@ -555,6 +576,8 @@ function handle_maintenance_request(): ?string {
     if ($action === 'maintenance_settings') {
         $cfg = maintenance_load_config();
         $wasEnabled = !empty($cfg['maintenance_mode']);
+        $previousUntil = trim((string)($cfg['maintenance_until'] ?? ''));
+        $previousStartedAt = trim((string)($cfg['maintenance_started_at'] ?? ''));
         $enabled = (string)($_POST['maintenance_mode'] ?? '0') === '1';
         $cfg['maintenance_mode'] = $enabled;
         $cfg['maintenance_until'] = $enabled ? trim((string)($_POST['maintenance_until'] ?? '')) : '';
@@ -564,6 +587,18 @@ function handle_maintenance_request(): ?string {
             unset($cfg['maintenance_started_at']);
         }
         maintenance_save_config($cfg);
+        if (function_exists('log_security_event')) {
+            $userName = trim((string)($_SESSION['user']['nombre'] ?? 'usuario desconocido'));
+            $untilText = $enabled ? maintenance_format_until_for_log($cfg['maintenance_until'] ?? '') : maintenance_format_until_for_log($previousUntil);
+            $startedText = maintenance_format_started_for_log($enabled ? ($cfg['maintenance_started_at'] ?? '') : $previousStartedAt);
+            if ($enabled && !$wasEnabled) {
+                log_security_event('MAINTENANCE_ENABLED', sprintf('Usuario=%s; inicio=%s; termino=%s', $userName, $startedText, $untilText));
+            } elseif (!$enabled && $wasEnabled) {
+                log_security_event('MAINTENANCE_DISABLED', sprintf('Usuario=%s; inicio=%s; termino_configurado=%s', $userName, $startedText, $untilText));
+            } elseif ($enabled && $previousUntil !== ($cfg['maintenance_until'] ?? '')) {
+                log_security_event('MAINTENANCE_UPDATED', sprintf('Usuario=%s; inicio=%s; termino_anterior=%s; termino_nuevo=%s', $userName, $startedText, maintenance_format_until_for_log($previousUntil), $untilText));
+            }
+        }
         maintenance_set_flash($cfg['maintenance_mode'] ? 'Modo mantencion activado.' : 'Modo mantencion desactivado.');
         maintenance_redirect_back();
     }
