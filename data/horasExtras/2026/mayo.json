@@ -1,0 +1,31 @@
+[
+    {
+        "fecha": "2026-05-11",
+        "hora_inicio": "11:03:57",
+        "hora_fin": "11:03:57",
+        "reports": [
+            {
+                "id": "fffc4d9b-d75a-4935-abfd-8882a8fe155e",
+                "numero": "+56973712780",
+                "mensaje": "problema con office, polimatología, maría angélica",
+                "fecha": "11-05-2026",
+                "hora": "11:03:57",
+                "fecha_inicio": "11-05-2026",
+                "fecha_fin": "11-05-2026",
+                "tipo": "Soporte",
+                "prioridad": "NORMAL",
+                "estado": "pendiente",
+                "hora_extra": "SI",
+                "tiempo_estimado": "",
+                "categoria": "office",
+                "unidad": "poli hematología",
+                "unidad_solicitante": "POLI HEMATOLOGIA",
+                "solicitante": "maría angélica",
+                "asunto": "problema con office \/ POLI HEMATOLOGIA",
+                "asignado_a": "42",
+                "asignado_nombre": "Jean Cortés Lorca",
+                "descripcion": ""
+            }
+        ]
+    }
+]

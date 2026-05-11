@@ -245,3 +245,6 @@
 [11-05-2026 07:47:49] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
 [11-05-2026 08:24:00] CSRF_ALERT - Token=NULL session=NULL
 [11-05-2026 08:24:03] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[11-05-2026 09:22:27] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[11-05-2026 09:24:38] LOGIN_SUCCESS - User root root (1)
+[11-05-2026 11:03:11] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
