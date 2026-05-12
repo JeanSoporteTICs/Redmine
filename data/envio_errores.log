@@ -25728,3 +25728,83 @@
     },
     "message_id": "dca2284c-2db7-43ad-99e1-198541ecf063"
 }
+{
+    "ts": "2026-05-12T19:54:49+02:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":122835,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":181,\"name\":\"office\"},\"subject\":\"problema con office \/ POLI HEMATOLOGIA\",\"description\":\"\",\"start_date\":\"2026-05-11\",\"due_date\":\"2026-05-11\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"maría angélica\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"poli hematología\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"POLI HEMATOLOGIA\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"1\"}],\"created_on\":\"2026-05-12T17:54:48Z\",\"updated_on\":\"2026-05-12T17:54:48Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "problema con office \/ POLI HEMATOLOGIA",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-05-11",
+            "due_date": "2026-05-11",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 181,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "maría angélica"
+                },
+                {
+                    "id": "5",
+                    "value": "poli hematología"
+                },
+                {
+                    "id": "11",
+                    "value": "POLI HEMATOLOGIA"
+                },
+                {
+                    "id": "12",
+                    "value": "1"
+                }
+            ]
+        }
+    },
+    "message_id": "fffc4d9b-d75a-4935-abfd-8882a8fe155e"
+}
+{
+    "ts": "2026-05-12T19:54:49+02:00",
+    "http_code": 201,
+    "error": "",
+    "body": "{\"issue\":{\"id\":122836,\"project\":{\"id\":47,\"name\":\"Backlog Soporte TI\"},\"tracker\":{\"id\":3,\"name\":\"Soporte\"},\"status\":{\"id\":1,\"name\":\"Nueva\",\"is_closed\":false},\"priority\":{\"id\":2,\"name\":\"Normal\"},\"author\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"assigned_to\":{\"id\":42,\"name\":\"Jean  Cortés Lorca\"},\"category\":{\"id\":97,\"name\":\"Equipos\"},\"subject\":\"equipos sin internet \/ urgencia ginecología\",\"description\":\"\",\"start_date\":\"2026-05-11\",\"due_date\":\"2026-05-11\",\"done_ratio\":0,\"is_private\":false,\"estimated_hours\":1.0,\"total_estimated_hours\":1.0,\"spent_hours\":0.0,\"total_spent_hours\":0.0,\"custom_fields\":[{\"id\":3,\"name\":\"Solicitante\",\"value\":\"jessica tens\"},{\"id\":4,\"name\":\"Anexo\",\"value\":\"\"},{\"id\":5,\"name\":\"Unidad\",\"value\":\"urgencia ginecología\"},{\"id\":6,\"name\":\"Hora Inicio\",\"value\":\"\"},{\"id\":7,\"name\":\"Apoyo\",\"multiple\":true,\"value\":[]},{\"id\":11,\"name\":\"Unidad Solicitante\",\"value\":\"GINECOLOGIA\"},{\"id\":12,\"name\":\"Hora Extra\",\"value\":\"1\"}],\"created_on\":\"2026-05-12T17:54:49Z\",\"updated_on\":\"2026-05-12T17:54:49Z\",\"closed_on\":null}}",
+    "payload": {
+        "issue": {
+            "project_id": 47,
+            "subject": "equipos sin internet \/ urgencia ginecología",
+            "description": "",
+            "tracker_id": 3,
+            "priority_id": 2,
+            "status_id": 1,
+            "start_date": "2026-05-11",
+            "due_date": "2026-05-11",
+            "estimated_hours": 1,
+            "assigned_to_id": "42",
+            "category_id": 97,
+            "custom_fields": [
+                {
+                    "id": "3",
+                    "value": "jessica tens"
+                },
+                {
+                    "id": "5",
+                    "value": "urgencia ginecología"
+                },
+                {
+                    "id": "11",
+                    "value": "GINECOLOGIA"
+                },
+                {
+                    "id": "12",
+                    "value": "1"
+                }
+            ]
+        }
+    },
+    "message_id": "811f9aa9-305b-4e85-88f6-a5022fb63867"
+}

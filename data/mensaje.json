@@ -9,7 +9,7 @@
         "fecha_fin": "11-05-2026",
         "tipo": "Soporte",
         "prioridad": "NORMAL",
-        "estado": "pendiente",
+        "estado": "procesado",
         "hora_extra": "SI",
         "tiempo_estimado": "1",
         "categoria": "office",
@@ -19,7 +19,9 @@
         "asunto": "problema con office \/ POLI HEMATOLOGIA",
         "asignado_a": "42",
         "asignado_nombre": "Jean Cortés Lorca",
-        "descripcion": ""
+        "descripcion": "",
+        "redmine_id": 122835,
+        "procesado_ts": "2026-05-12T19:54:49+02:00"
     },
     {
         "id": "17746010-18e9-492f-a094-bb4b1b46cda5",
@@ -52,7 +54,7 @@
         "fecha_fin": "11-05-2026",
         "tipo": "Soporte",
         "prioridad": "NORMAL",
-        "estado": "pendiente",
+        "estado": "procesado",
         "hora_extra": "SI",
         "tiempo_estimado": "1",
         "categoria": "Equipos",
@@ -62,7 +64,9 @@
         "asunto": "equipos sin internet \/ urgencia ginecología",
         "asignado_a": "42",
         "asignado_nombre": "Jean Cortés Lorca",
-        "descripcion": ""
+        "descripcion": "",
+        "redmine_id": 122836,
+        "procesado_ts": "2026-05-12T19:54:49+02:00"
     },
     {
         "id": "7846fcd7-c33a-4309-8c81-987e7e33d888",
