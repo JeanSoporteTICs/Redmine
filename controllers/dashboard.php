@@ -245,6 +245,39 @@ function append_hours_extra_record(array $message): void {
     file_put_contents($filePath, json_encode($groups, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
+function remove_hours_extra_record(string $messageId): void {
+    $messageId = trim($messageId);
+    if ($messageId === '') return;
+    $baseDir = horas_extra_base_path();
+    if (!is_dir($baseDir)) return;
+    foreach (glob($baseDir . '/*/*.json') as $filePath) {
+        $groups = json_decode(@file_get_contents($filePath), true);
+        if (!is_array($groups)) continue;
+        $changed = false;
+        $nextGroups = [];
+        foreach ($groups as $group) {
+            if (!is_array($group)) continue;
+            if (!isset($group['reports']) || !is_array($group['reports'])) {
+                $nextGroups[] = $group;
+                continue;
+            }
+            $reports = array_values(array_filter($group['reports'], fn($row) => !is_array($row) || (string)($row['id'] ?? '') !== $messageId));
+            if (count($reports) !== count($group['reports'])) {
+                $changed = true;
+            }
+            if (empty($reports)) {
+                $changed = true;
+                continue;
+            }
+            $group['reports'] = $reports;
+            $nextGroups[] = $group;
+        }
+        if ($changed) {
+            file_put_contents($filePath, json_encode($nextGroups, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+        }
+    }
+}
+
 function append_redmine_log(array $entry): void {
     $path = redmine_log_path();
     file_put_contents($path, json_encode($entry, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . PHP_EOL, FILE_APPEND | LOCK_EX);
@@ -500,11 +533,63 @@ function handle_request(): array {
     }
     $flash = dashboard_consume_flash();
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $action = $_POST['dashboard_action'] ?? ($_POST['action'] ?? '');
+        $isAjax = $action === 'toggle_hours_extra' && (($_POST['ajax'] ?? '') === '1' || ($_SERVER['HTTP_X_REQUESTED_WITH'] ?? '') === 'fetch');
+        if (function_exists('maintenance_mode_enabled') && maintenance_mode_enabled()) {
+            if ($isAjax) {
+                header('Content-Type: application/json; charset=utf-8');
+                echo json_encode(['ok' => false, 'message' => maintenance_mode_block_message()], JSON_UNESCAPED_UNICODE);
+                exit;
+            }
+            if (function_exists('maintenance_mode_block_if_enabled')) maintenance_mode_block_if_enabled();
+            exit;
+        }
         csrf_validate();
         if (function_exists('maintenance_mode_block_if_enabled')) maintenance_mode_block_if_enabled();
-        $action = $_POST['action'] ?? '';
         $flashMsg = null;
+        $ajaxPayload = null;
         switch ($action) {
+            case 'toggle_hours_extra':
+                $id = $_POST['id'] ?? '';
+                if ($id === '') {
+                    $flashMsg = 'Falta el identificador del mensaje.';
+                    break;
+                }
+                $targetValue = normalize_hour_extra_value($_POST['hora_extra'] ?? '') === '1' ? 'SI' : 'NO';
+                $updated = false;
+                $updatedMessage = null;
+                foreach ($messages as &$message) {
+                    if (($message['id'] ?? '') !== $id) {
+                        continue;
+                    }
+                    $message['hora_extra'] = $targetValue;
+                    $message['tiempo_estimado'] = $targetValue === 'SI' ? '1' : '';
+                    $updated = true;
+                    $updatedMessage = $message;
+                    break;
+                }
+                unset($message);
+                if ($updated) {
+                    save_messages($messages);
+                    remove_hours_extra_record((string)$id);
+                    if ($targetValue === 'SI' && is_array($updatedMessage)) {
+                        append_hours_extra_record($updatedMessage);
+                    } else {
+                        remove_hours_extra_record((string)$id);
+                    }
+                    $flashMsg = $targetValue === 'SI' ? 'Hora extra activada.' : 'Hora extra desactivada.';
+                    $ajaxPayload = [
+                        'ok' => true,
+                        'message' => $flashMsg,
+                        'id' => $id,
+                        'hora_extra' => $targetValue,
+                        'tiempo_estimado' => $targetValue === 'SI' ? '1' : '',
+                    ];
+                } else {
+                    $flashMsg = 'No se encontró el mensaje.';
+                    $ajaxPayload = ['ok' => false, 'message' => $flashMsg];
+                }
+                break;
             case 'update':
                 $id = $_POST['id'] ?? '';
                 if ($id === '') {
@@ -528,6 +613,13 @@ function handle_request(): array {
                             $message[$field] = $_POST[$field];
                         }
                     }
+                    if (isset($_POST['hora_extra'])) {
+                        if (message_has_hora_extra($message)) {
+                            $message['tiempo_estimado'] = '1';
+                        } else {
+                            $message['tiempo_estimado'] = '';
+                        }
+                    }
                     $updated = true;
                     $updatedMessage = $message;
                     break;
@@ -536,7 +628,11 @@ function handle_request(): array {
                 if ($updated) {
                     save_messages($messages);
                     if (is_array($updatedMessage)) {
-                        append_hours_extra_record($updatedMessage);
+                        if (message_has_hora_extra($updatedMessage)) {
+                            append_hours_extra_record($updatedMessage);
+                        } else {
+                            remove_hours_extra_record((string)$id);
+                        }
                     }
                     $flashMsg = 'Mensaje actualizado.';
                 } else {
@@ -553,9 +649,30 @@ function handle_request(): array {
                 $messages = array_values(array_filter($messages, fn($m) => ($m['id'] ?? '') !== $id));
                 if ($before !== count($messages)) {
                     save_messages($messages);
+                    remove_hours_extra_record((string)$id);
                     $flashMsg = 'Mensaje eliminado.';
                 } else {
                     $flashMsg = 'No se encontró el mensaje para eliminar.';
+                }
+                break;
+            case 'delete_selected':
+                $ids = isset($_POST['ids']) ? explode(',', $_POST['ids']) : [];
+                $ids = array_values(array_filter(array_map('trim', $ids)));
+                if (empty($ids)) {
+                    $flashMsg = 'No habia mensajes seleccionados para eliminar.';
+                    break;
+                }
+                $before = count($messages);
+                $messages = array_values(array_filter($messages, fn($m) => !in_array((string)($m['id'] ?? ''), $ids, true)));
+                $deleted = $before - count($messages);
+                if ($deleted > 0) {
+                    save_messages($messages);
+                    foreach ($ids as $deletedId) {
+                        remove_hours_extra_record((string)$deletedId);
+                    }
+                    $flashMsg = $deleted . ' mensaje(s) eliminado(s).';
+                } else {
+                    $flashMsg = 'No se encontraron mensajes seleccionados para eliminar.';
                 }
                 break;
             case 'process_selected':
@@ -618,6 +735,11 @@ function handle_request(): array {
                 $flashParts[] = 'Redmine ID(s): ' . implode(', ', $result['redmine_ids']);
             }
             $flashMsg = implode(' ', $flashParts);
+        }
+        if ($isAjax) {
+            header('Content-Type: application/json; charset=utf-8');
+            echo json_encode($ajaxPayload ?? ['ok' => false, 'message' => $flashMsg ?? 'No se pudo actualizar.'], JSON_UNESCAPED_UNICODE);
+            exit;
         }
         dashboard_set_flash($flashMsg ?? '');
         dashboard_redirect_back();

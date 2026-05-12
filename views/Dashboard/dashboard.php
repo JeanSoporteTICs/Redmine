@@ -198,6 +198,7 @@ if (file_exists($cfgPath)) {
 
 $h = fn($v) => htmlspecialchars($v ?? '', ENT_QUOTES, 'UTF-8');
 $csrf = csrf_token();
+$maintenanceActive = function_exists('maintenance_mode_enabled') && maintenance_mode_enabled();
 
 ?>
 
@@ -300,7 +301,45 @@ $csrf = csrf_token();
   .dashboard-row-actions { display: flex; flex-wrap: nowrap; align-items: center; gap: .35rem; white-space: nowrap; }
   .dashboard-row-actions form { margin: 0; display: inline-flex; }
   .dashboard-row-actions .btn { min-height: 30px; width: 30px; padding: 0; border-radius: 10px; font-size: .9rem; line-height: 1; display: inline-flex; align-items: center; justify-content: center; }
-  .dashboard-row-actions .btn i { margin-right: 0; }
+  .dashboard-row-actions .btn i { margin-right: 0; font-size: 1.05rem; }
+  .dashboard-row-actions .btn-extra-toggle {
+    background: #ecfdf5;
+    color: #047857;
+    border: 1px solid rgba(16, 185, 129, .32);
+    box-shadow: 0 8px 18px rgba(16, 185, 129, .12);
+  }
+  .dashboard-row-actions .btn-extra-toggle:hover {
+    background: #d1fae5;
+    color: #065f46;
+    border-color: rgba(5, 150, 105, .42);
+  }
+  .dashboard-row-actions .btn-extra-active {
+    background: linear-gradient(135deg, #10b981, #22c55e);
+    color: #fff;
+    border: 1px solid rgba(16, 185, 129, .42);
+    box-shadow: 0 10px 22px rgba(16, 185, 129, .24);
+  }
+  .dashboard-row-actions .btn-extra-active:hover {
+    background: linear-gradient(135deg, #059669, #16a34a);
+    color: #fff;
+  }
+  .dashboard-toast {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 1200;
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    max-width: min(360px, calc(100vw - 2rem));
+    padding: .85rem 1rem;
+    border-radius: 14px;
+    color: #0f5132;
+    background: rgba(209, 250, 229, .96);
+    border: 1px solid rgba(16, 185, 129, .24);
+    box-shadow: 0 18px 42px rgba(15, 23, 42, .18);
+    font-weight: 700;
+  }
   @media (max-width: 991px) { .dashboard-stats { grid-template-columns: 1fr; } }
   @media (max-width: 767px) {
     .dashboard-toolbar, .dashboard-table-header { flex-direction: column; align-items: stretch; }
@@ -321,7 +360,7 @@ $csrf = csrf_token();
   ?>
 
   <?php if ($flash): ?>
-    <div class="alert alert-success" id="flash-msg"><?= $h($flash) ?></div>
+    <div class="dashboard-toast" id="flash-msg" role="status" aria-live="polite"><i class="bi bi-check2-circle"></i><?= $h($flash) ?></div>
   <?php endif; ?>
 
   <div class="dashboard-stats" id="status-filters">
@@ -368,13 +407,16 @@ $csrf = csrf_token();
       <div class="dashboard-toolbar">
         <div class="dashboard-selection"><i class="bi bi-check2-square"></i> Seleccionados: <span id="selection-count">0</span></div>
         <div class="dashboard-toolbar__actions">
-          <button type="button" id="process-btn" class="btn btn-success btn-sm btn-icon d-none">
+          <button type="button" id="process-btn" class="btn btn-success btn-sm btn-icon d-none" <?= $maintenanceActive ? 'disabled title="Plataforma en mantencion"' : '' ?>>
             <i class="bi bi-check2-circle"></i> Enviar reportes a Redmine
           </button>
-          <button type="button" id="archive-btn" class="btn btn-warning btn-sm btn-icon d-none">
+          <button type="button" id="archive-btn" class="btn btn-warning btn-sm btn-icon d-none" <?= $maintenanceActive ? 'disabled title="Plataforma en mantencion"' : '' ?>>
             <i class="bi bi-archive"></i> Archivar
           </button>
-          <button type="button" id="reset-errors-btn" class="btn btn-secondary btn-sm btn-icon d-none">
+          <button type="button" id="delete-selected-btn" class="btn btn-danger btn-sm btn-icon d-none" <?= $maintenanceActive ? 'disabled title="Plataforma en mantencion"' : '' ?>>
+            <i class="bi bi-trash3"></i> Eliminar seleccionados
+          </button>
+          <button type="button" id="reset-errors-btn" class="btn btn-secondary btn-sm btn-icon d-none" <?= $maintenanceActive ? 'disabled title="Plataforma en mantencion"' : '' ?>>
             <i class="bi bi-arrow-counterclockwise"></i> Reintentar errores
           </button>
         </div>
@@ -502,6 +544,15 @@ $csrf = csrf_token();
 
                   title="Detalle / Editar" aria-label="Detalle / Editar"
                 ><i class="bi bi-pencil-square"></i></button>
+                <?php $isHoraExtra = normalize_hour_extra_value($m['hora_extra'] ?? '') === '1'; ?>
+                <form method="post" action="/redmine/?page=dashboard" class="js-hour-extra-form">
+                  <input type="hidden" name="csrf_token" value="<?= $h($csrf) ?>">
+                  <input type="hidden" name="dashboard_action" value="toggle_hours_extra">
+                  <input type="hidden" name="ajax" value="1">
+                  <input type="hidden" name="id" value="<?= $h($m['id'] ?? '') ?>">
+                  <input type="hidden" name="hora_extra" value="<?= $isHoraExtra ? '0' : '1' ?>">
+                  <button class="btn btn-sm btn-extra-toggle <?= $isHoraExtra ? 'btn-extra-active' : '' ?>" type="submit" title="<?= $isHoraExtra ? 'Quitar hora extra' : 'Marcar hora extra' ?>" aria-label="<?= $isHoraExtra ? 'Quitar hora extra' : 'Marcar hora extra' ?>"><i class="bi <?= $isHoraExtra ? 'bi-stopwatch-fill' : 'bi-stopwatch' ?>"></i></button>
+                </form>
                 <?php if (strtolower($m['estado'] ?? '') === 'error'): ?>
                   <?php
                     $logText = '';
@@ -792,6 +843,10 @@ $csrf = csrf_token();
   set('md-fecha_fin', 'data-fecha_fin');
 
   set('md-tiempo_estimado', 'data-tiempo_estimado');
+  const tiempoEstimadoInput = document.getElementById('md-tiempo_estimado');
+  if (horaSel && tiempoEstimadoInput) {
+    tiempoEstimadoInput.value = horaSel.value === '1' ? '1' : '';
+  }
 
   set('md-fecha', 'data-fecha');
 
@@ -832,6 +887,87 @@ $csrf = csrf_token();
     asignadoHelp.textContent = nombre ? `Actual: ${nombre}` : '';
   }
 
+});
+
+const horaExtraSelect = document.getElementById('md-hora_extra');
+const tiempoEstimadoInput = document.getElementById('md-tiempo_estimado');
+if (horaExtraSelect && tiempoEstimadoInput) {
+  horaExtraSelect.addEventListener('change', () => {
+    tiempoEstimadoInput.value = horaExtraSelect.value === '1' ? '1' : '';
+  });
+}
+
+function showDashboardToast(message, tone = 'success') {
+  const existing = document.getElementById('flash-msg');
+  if (existing) existing.remove();
+  const toast = document.createElement('div');
+  toast.className = 'dashboard-toast';
+  toast.id = 'flash-msg';
+  toast.setAttribute('role', 'status');
+  toast.setAttribute('aria-live', 'polite');
+  if (tone === 'danger') {
+    toast.style.color = '#842029';
+    toast.style.background = 'rgba(248, 215, 218, .96)';
+    toast.style.borderColor = 'rgba(220, 53, 69, .25)';
+  }
+  toast.innerHTML = `<i class="bi ${tone === 'danger' ? 'bi-exclamation-triangle' : 'bi-check2-circle'}"></i>${message}`;
+  document.body.appendChild(toast);
+  setTimeout(() => {
+    toast.style.transition = 'opacity .2s, transform .2s';
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateY(8px)';
+    setTimeout(() => toast.remove(), 220);
+  }, 2000);
+}
+
+document.querySelectorAll('.js-hour-extra-form').forEach(form => {
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    const nextInput = form.querySelector('input[name="hora_extra"]');
+    const row = form.closest('tr');
+    const csrfInput = form.querySelector('input[name="csrf_token"]');
+    const endpoint = form.getAttribute('action') || window.location.href;
+    if (btn) btn.disabled = true;
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'X-Requested-With': 'fetch',
+          'Accept': 'application/json',
+          'X-CSRF-Token': csrfInput ? csrfInput.value : '',
+        },
+        body: new FormData(form),
+      });
+      const contentType = response.headers.get('content-type') || '';
+      if (!contentType.includes('application/json')) {
+        throw new Error('El servidor no devolvió una respuesta JSON.');
+      }
+      const data = await response.json();
+      if (!data.ok) throw new Error(data.message || 'No se pudo actualizar.');
+      const active = data.hora_extra === 'SI';
+      if (nextInput) nextInput.value = active ? '0' : '1';
+      if (row) {
+        row.setAttribute('data-horaextra', active ? 'si' : 'no');
+        const editBtn = row.querySelector('[data-bs-target="#detalleModal"]');
+        if (editBtn) {
+          editBtn.setAttribute('data-hora_extra', active ? 'SI' : 'NO');
+          editBtn.setAttribute('data-tiempo_estimado', data.tiempo_estimado || '');
+        }
+      }
+      if (btn) {
+        btn.classList.toggle('btn-extra-active', active);
+        btn.title = active ? 'Quitar hora extra' : 'Marcar hora extra';
+        btn.setAttribute('aria-label', btn.title);
+        btn.innerHTML = `<i class="bi ${active ? 'bi-stopwatch-fill' : 'bi-stopwatch'}"></i>`;
+      }
+      showDashboardToast(data.message || 'Actualizado.');
+    } catch (error) {
+      showDashboardToast(error.message || 'No se pudo actualizar.', 'danger');
+    } finally {
+      if (btn) btn.disabled = false;
+    }
+  });
 });
 
 
@@ -920,7 +1056,7 @@ if (processForm && processIds) {
 
       window.appModal?.show({
         title: 'Seleccion requerida',
-        message: 'Selecciona al menos un mensaje para procesar.',
+        message: 'Selecciona al menos un mensaje para continuar.',
         tone: 'warning'
       });
 
@@ -950,6 +1086,10 @@ function applyFilterButtons(filter) {
   if (archiveBtn) {
     const showArchive = (filter === 'procesado' || filter === 'pendiente');
     archiveBtn.classList.toggle('d-none', !showArchive);
+  }
+  const deleteSelectedBtn = document.getElementById('delete-selected-btn');
+  if (deleteSelectedBtn) {
+    deleteSelectedBtn.classList.toggle('d-none', !['pendiente', 'procesado', 'error'].includes(filter));
   }
   const resetErrorsBtn = document.getElementById('reset-errors-btn');
   if (resetErrorsBtn) {
@@ -1000,6 +1140,7 @@ document.querySelectorAll('.msg-check').forEach(cb => {
 const processBtn = document.getElementById('process-btn');
 if (processBtn && processForm) {
   processBtn.addEventListener('click', () => {
+    if (processBtn.disabled) return;
     if (processAction) processAction.value = 'process_selected';
     processForm.requestSubmit();
   });
@@ -1008,14 +1149,43 @@ if (processBtn && processForm) {
 const archiveBtn = document.getElementById('archive-btn');
 if (archiveBtn && processForm && processAction) {
   archiveBtn.addEventListener('click', () => {
+    if (archiveBtn.disabled) return;
     processAction.value = 'archive_selected';
     processForm.requestSubmit();
+  });
+}
+
+const deleteSelectedBtn = document.getElementById('delete-selected-btn');
+if (deleteSelectedBtn && processForm && processAction) {
+  deleteSelectedBtn.addEventListener('click', () => {
+    if (deleteSelectedBtn.disabled) return;
+    const selectedCount = getSelectedVisibleChecks().length;
+    if (selectedCount === 0) {
+      processAction.value = 'delete_selected';
+      processForm.requestSubmit();
+      return;
+    }
+    const confirmDelete = window.appModal
+      ? window.appModal.confirm({
+      title: 'Confirmar eliminacion',
+      message: `Eliminar ${selectedCount} mensaje(s) seleccionado(s)? Esta accion no se puede deshacer.`,
+      confirmText: 'Eliminar',
+      cancelText: 'Cancelar',
+      tone: 'danger'
+    })
+      : Promise.resolve(window.confirm(`Eliminar ${selectedCount} mensaje(s) seleccionado(s)?`));
+    confirmDelete.then((accepted) => {
+      if (!accepted) return;
+      processAction.value = 'delete_selected';
+      processForm.requestSubmit();
+    });
   });
 }
 
 const resetErrorsBtn = document.getElementById('reset-errors-btn');
 if (resetErrorsBtn && processForm && processAction) {
   resetErrorsBtn.addEventListener('click', () => {
+    if (resetErrorsBtn.disabled) return;
     processAction.value = 'reset_errors';
     processForm.requestSubmit();
   });
@@ -1025,10 +1195,11 @@ if (resetErrorsBtn && processForm && processAction) {
 if (flash) {
   setTimeout(() => {
     flash.classList.add('fade');
-    flash.style.transition = 'opacity .5s';
+    flash.style.transition = 'opacity .2s, transform .2s';
     flash.style.opacity = '0';
-    setTimeout(() => flash.remove(), 500);
-  }, 5000);
+    flash.style.transform = 'translateY(8px)';
+    setTimeout(() => flash.remove(), 220);
+  }, 2000);
 }
 
 const logModal = document.getElementById('logModal');

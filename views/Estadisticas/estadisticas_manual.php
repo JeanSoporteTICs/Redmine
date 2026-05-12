@@ -833,7 +833,8 @@ if (!empty($trackerTop)) {
       $heroTitle   = 'Estadísticas (consulta manual)';
       $heroSubtitle= 'Consulta Redmine solo cuando presionas el botón de obtener datos.';
       ob_start(); ?>
-      <form id="range-form" class="d-flex flex-wrap gap-2 align-items-end" method="get">
+      <form id="range-form" class="d-flex flex-wrap gap-2 align-items-end" method="get" action="/redmine/">
+        <input type="hidden" name="page" value="estadisticas-api">
         <div>
           <label class="form-label text-white-50 mb-1">Desde</label>
           <input type="date" class="form-control form-control-sm" name="start" id="range-start" value="<?= $h($customStart) ?>">
@@ -1184,7 +1185,7 @@ if (!empty($trackerTop)) {
       <!-- Modal selección de categorías -->
       <div class="modal fade" id="selCatModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-scrollable">
-          <form class="modal-content" method="post" id="sel-cat-form">
+          <form class="modal-content" method="post" id="sel-cat-form" action="/redmine/?page=estadisticas-api">
             <div class="modal-header">
               <h5 class="modal-title">Seleccionar categorías</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>

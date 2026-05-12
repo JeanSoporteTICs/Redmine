@@ -1,8 +1,8 @@
 [
     {
         "fecha": "2026-05-11",
-        "hora_inicio": "11:03:57",
-        "hora_fin": "11:03:57",
+        "hora_inicio": "11:06:03",
+        "hora_fin": "11:06:03",
         "reports": [
             {
                 "id": "fffc4d9b-d75a-4935-abfd-8882a8fe155e",
@@ -16,12 +16,34 @@
                 "prioridad": "NORMAL",
                 "estado": "pendiente",
                 "hora_extra": "SI",
-                "tiempo_estimado": "",
+                "tiempo_estimado": "1",
                 "categoria": "office",
                 "unidad": "poli hematología",
                 "unidad_solicitante": "POLI HEMATOLOGIA",
                 "solicitante": "maría angélica",
                 "asunto": "problema con office \/ POLI HEMATOLOGIA",
+                "asignado_a": "42",
+                "asignado_nombre": "Jean Cortés Lorca",
+                "descripcion": ""
+            },
+            {
+                "id": "811f9aa9-305b-4e85-88f6-a5022fb63867",
+                "numero": "+56973712780",
+                "mensaje": "equipos sin internet, urgencia ginecología, jessica tens",
+                "fecha": "11-05-2026",
+                "hora": "11:06:03",
+                "fecha_inicio": "11-05-2026",
+                "fecha_fin": "11-05-2026",
+                "tipo": "Soporte",
+                "prioridad": "NORMAL",
+                "estado": "pendiente",
+                "hora_extra": "SI",
+                "tiempo_estimado": "1",
+                "categoria": "Equipos",
+                "unidad": "urgencia ginecología",
+                "unidad_solicitante": "GINECOLOGIA",
+                "solicitante": "jessica tens",
+                "asunto": "equipos sin internet \/ urgencia ginecología",
                 "asignado_a": "42",
                 "asignado_nombre": "Jean Cortés Lorca",
                 "descripcion": ""

@@ -9,6 +9,10 @@ function maintenance_sections(): array {
             'label' => 'Archivados',
             'paths' => ['reportes'],
         ],
+        'pendientes' => [
+            'label' => 'Pendientes activos',
+            'paths' => ['mensaje.json'],
+        ],
         'horas_extras' => [
             'label' => 'Horas extra',
             'paths' => ['horasExtras'],

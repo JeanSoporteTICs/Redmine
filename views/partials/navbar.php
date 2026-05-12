@@ -134,6 +134,10 @@ window.addEventListener('load', () => {
       pageContent.classList.remove('is-loading', 'is-leaving', 'is-entering');
     };
     const syncFavicon = (doc) => {
+      if (window.__APP_SYNC_FAVICON__) {
+        window.__APP_SYNC_FAVICON__();
+        return;
+      }
       if (!doc) return;
       const incoming = Array.from(doc.querySelectorAll('link[rel~="icon"], link[rel="shortcut icon"]'));
       if (incoming.length === 0) return;

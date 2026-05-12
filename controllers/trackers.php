@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/maintenance.php';
+
 // CRUD para trackers usando solo data/configuracion.json
 function trackers_config_file(): string {
     return __DIR__ . '/../data/configuracion.json';
@@ -22,6 +24,8 @@ function handle_trackers() {
     $trackers = $cfg['trackers'] ?? [];
     $flash = null;
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (function_exists('csrf_validate')) csrf_validate();
+        if (function_exists('maintenance_mode_block_if_enabled')) maintenance_mode_block_if_enabled();
         $action = $_POST['action'] ?? '';
         if ($action === 'create') {
             $id = trim($_POST['id'] ?? '');

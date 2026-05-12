@@ -138,11 +138,23 @@ function auth_require_login($redirect = '/redmine/login.php') {
     auth_start_session();
     $timeout = auth_config_timeout();
     $last = $_SESSION['last_activity'] ?? 0;
+    $wantsJson = (($_POST['ajax'] ?? '') === '1')
+        || (($_SERVER['HTTP_X_REQUESTED_WITH'] ?? '') === 'fetch')
+        || stripos($_SERVER['HTTP_ACCEPT'] ?? '', 'application/json') !== false;
     if ($last && (time() - $last) > $timeout) {
-        log_security_event('CSRF_ALERT', sprintf('Token=%s session=%s', $token ?: 'NULL', $sess ?: 'NULL'));
+        log_security_event('SESSION_TIMEOUT', 'Sesión expirada por inactividad');
         auth_logout();
     }
     if (empty($_SESSION['user'])) {
+        if ($wantsJson) {
+            http_response_code(401);
+            header('Content-Type: application/json; charset=utf-8');
+            echo json_encode([
+                'ok' => false,
+                'message' => 'La sesión expiró. Recarga la página e inicia sesión nuevamente.',
+            ], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
         header('Location: ' . $redirect);
         exit;
     }
@@ -249,6 +261,18 @@ function csrf_validate() {
     $token = trim($token);
     $sess  = $_SESSION['csrf_token'] ?? '';
     if (!$token || !$sess || !hash_equals($sess, $token)) {
+        $wantsJson = (($_POST['ajax'] ?? '') === '1')
+            || (($_SERVER['HTTP_X_REQUESTED_WITH'] ?? '') === 'fetch')
+            || stripos($_SERVER['HTTP_ACCEPT'] ?? '', 'application/json') !== false;
+        if ($wantsJson) {
+            http_response_code(419);
+            header('Content-Type: application/json; charset=utf-8');
+            echo json_encode([
+                'ok' => false,
+                'message' => 'La sesión expiró. Recarga la página e intenta nuevamente.',
+            ], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
         // Cierra sesiÃ³n para evitar estados inconsistentes y redirige a login
         auth_logout();
         header('Location: /redmine/login.php?err=csrf');
