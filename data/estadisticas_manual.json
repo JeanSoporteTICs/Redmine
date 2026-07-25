@@ -1,167 +1,32 @@
 {
     "start": "2026-01-01",
     "end": "2026-05-12",
-    "total": 3143,
+    "total": 78,
     "tabla": [
         {
             "id": "125",
             "nombre": "Administrativa",
-            "total": 96
-        },
-        {
-            "id": "98",
-            "nombre": "Alfa",
-            "total": 1
-        },
-        {
-            "id": "168",
-            "nombre": "AP",
-            "total": 28
+            "total": 5
         },
         {
             "id": "161",
             "nombre": "Apoyo empresa externa",
-            "total": 2
-        },
-        {
-            "id": "228",
-            "nombre": "asesoria equipos externos",
             "total": 1
-        },
-        {
-            "id": "338",
-            "nombre": "autoconsulta",
-            "total": 1
-        },
-        {
-            "id": "222",
-            "nombre": "brazaletes",
-            "total": 1
-        },
-        {
-            "id": "99",
-            "nombre": "Camaras",
-            "total": 238
         },
         {
             "id": "485",
             "nombre": "cambio nombre de anexo",
-            "total": 6
-        },
-        {
-            "id": "593",
-            "nombre": "Cambio Telefono",
-            "total": 5
-        },
-        {
-            "id": "288",
-            "nombre": "Cambio Vlan",
             "total": 1
-        },
-        {
-            "id": "144",
-            "nombre": "Capacitación usuario",
-            "total": 2
-        },
-        {
-            "id": "202",
-            "nombre": "carpetas compartidas ",
-            "total": 2
-        },
-        {
-            "id": "283",
-            "nombre": "Celular",
-            "total": 1
-        },
-        {
-            "id": "163",
-            "nombre": "chicote",
-            "total": 2
-        },
-        {
-            "id": "500",
-            "nombre": "Ciberseguridad",
-            "total": 1
-        },
-        {
-            "id": "670",
-            "nombre": "claves de equipo",
-            "total": 3
-        },
-        {
-            "id": "248",
-            "nombre": "compra materiales",
-            "total": 1
-        },
-        {
-            "id": "210",
-            "nombre": "compras",
-            "total": 1
-        },
-        {
-            "id": "615",
-            "nombre": "Comunicados",
-            "total": 1
-        },
-        {
-            "id": "555",
-            "nombre": "Conexion a Internet",
-            "total": 43
-        },
-        {
-            "id": "353",
-            "nombre": "configuracion de equipos",
-            "total": 10
-        },
-        {
-            "id": "647",
-            "nombre": "Configuración Impresora",
-            "total": 15
-        },
-        {
-            "id": "649",
-            "nombre": "contraseñas ",
-            "total": 21
-        },
-        {
-            "id": "146",
-            "nombre": "Coordinacion",
-            "total": 2
-        },
-        {
-            "id": "135",
-            "nombre": "CORE",
-            "total": 16
         },
         {
             "id": "108",
             "nombre": "Correos",
-            "total": 47
-        },
-        {
-            "id": "331",
-            "nombre": "corte de energia ",
-            "total": 1
-        },
-        {
-            "id": "320",
-            "nombre": "Creación de cuentas de usuarios",
-            "total": 1
+            "total": 2
         },
         {
             "id": "249",
             "nombre": "dar de baja ",
-            "total": 6
-        },
-        {
-            "id": "340",
-            "nombre": "deco",
             "total": 2
-        },
-        {
-            "id": "656",
-            "nombre": "Desbloqueo Paginas",
-            "total": 1
         },
         {
             "id": "343",
@@ -169,423 +34,88 @@
             "total": 2
         },
         {
-            "id": "643",
-            "nombre": "doc digital ",
-            "total": 2
-        },
-        {
-            "id": "238",
-            "nombre": "DVR equipo Tele Vigilancia",
-            "total": 5
-        },
-        {
-            "id": "668",
-            "nombre": "ECONECTA",
-            "total": 1
-        },
-        {
-            "id": "187",
-            "nombre": "equipo intesis",
-            "total": 1
-        },
-        {
-            "id": "189",
-            "nombre": "equipo lenovo",
-            "total": 1
-        },
-        {
-            "id": "156",
-            "nombre": "Equipo Nuevo",
-            "total": 1
-        },
-        {
-            "id": "176",
-            "nombre": "equipo olidata ",
-            "total": 1
-        },
-        {
             "id": "97",
             "nombre": "Equipos",
-            "total": 563
-        },
-        {
-            "id": "204",
-            "nombre": "equipos de baja ",
-            "total": 1
+            "total": 4
         },
         {
             "id": "364",
             "nombre": "equipos intesis",
-            "total": 3
-        },
-        {
-            "id": "336",
-            "nombre": "equipos opciones",
-            "total": 1
-        },
-        {
-            "id": "268",
-            "nombre": "Escritorio Remoto",
-            "total": 1
+            "total": 2
         },
         {
             "id": "155",
             "nombre": "Etiquetadora",
-            "total": 134
-        },
-        {
-            "id": "209",
-            "nombre": "excel",
-            "total": 19
-        },
-        {
-            "id": "310",
-            "nombre": "Falla de pc",
-            "total": 2
-        },
-        {
-            "id": "211",
-            "nombre": "Firma Electronica",
-            "total": 2
-        },
-        {
-            "id": "368",
-            "nombre": "hdmi ",
-            "total": 4
-        },
-        {
-            "id": "253",
-            "nombre": "Huelleros",
-            "total": 26
-        },
-        {
-            "id": "254",
-            "nombre": "IMED",
-            "total": 6
-        },
-        {
-            "id": "671",
-            "nombre": "impresora de credenciales ",
-            "total": 2
-        },
-        {
-            "id": "158",
-            "nombre": "Impresora etiquetas",
-            "total": 12
-        },
-        {
-            "id": "150",
-            "nombre": "Impresora kropsys",
-            "total": 22
+            "total": 1
         },
         {
             "id": "101",
             "nombre": "Impresoras",
-            "total": 278
-        },
-        {
-            "id": "294",
-            "nombre": "Impresoras con problemas",
-            "total": 57
-        },
-        {
-            "id": "337",
-            "nombre": "informes de baja ",
-            "total": 3
-        },
-        {
-            "id": "170",
-            "nombre": "instalacion de equipo",
-            "total": 11
-        },
-        {
-            "id": "539",
-            "nombre": "Instalacion Nube NEXTCLOUD",
-            "total": 1
-        },
-        {
-            "id": "639",
-            "nombre": "Instalación Onlyoffice",
-            "total": 29
-        },
-        {
-            "id": "596",
-            "nombre": "Instalación PC",
-            "total": 22
-        },
-        {
-            "id": "166",
-            "nombre": "Instalacion programas",
-            "total": 6
+            "total": 4
         },
         {
             "id": "102",
             "nombre": "Internet",
-            "total": 125
+            "total": 2
         },
         {
             "id": "436",
             "nombre": "inventario ",
-            "total": 10
-        },
-        {
-            "id": "307",
-            "nombre": "ips",
-            "total": 6
-        },
-        {
-            "id": "322",
-            "nombre": "Jasper",
-            "total": 2
-        },
-        {
-            "id": "95",
-            "nombre": "LAN",
             "total": 1
         },
         {
             "id": "169",
             "nombre": "levantamiento de informacion ",
-            "total": 15
-        },
-        {
-            "id": "362",
-            "nombre": "licencia office ",
-            "total": 2
-        },
-        {
-            "id": "188",
-            "nombre": "Licencias Medicas",
-            "total": 4
+            "total": 1
         },
         {
             "id": "284",
             "nombre": "licitacion",
-            "total": 6
+            "total": 1
         },
         {
             "id": "94",
             "nombre": "Manager",
-            "total": 34
-        },
-        {
-            "id": "280",
-            "nombre": "Mercado Publico",
             "total": 1
-        },
-        {
-            "id": "579",
-            "nombre": "Mini Switch",
-            "total": 5
-        },
-        {
-            "id": "223",
-            "nombre": "monitores",
-            "total": 10
-        },
-        {
-            "id": "105",
-            "nombre": "Mouse",
-            "total": 11
-        },
-        {
-            "id": "217",
-            "nombre": "movimiento de equipos",
-            "total": 15
-        },
-        {
-            "id": "499",
-            "nombre": "Nextcloud",
-            "total": 66
-        },
-        {
-            "id": "215",
-            "nombre": "notebook",
-            "total": 6
         },
         {
             "id": "181",
             "nombre": "office",
-            "total": 69
+            "total": 3
         },
         {
-            "id": "225",
-            "nombre": "Outlook",
-            "total": 11
-        },
-        {
-            "id": "124",
-            "nombre": "Pagina Web",
-            "total": 10
-        },
-        {
-            "id": "297",
-            "nombre": "Password",
-            "total": 7
-        },
-        {
-            "id": "473",
-            "nombre": "PC con problemas",
-            "total": 87
-        },
-        {
-            "id": "174",
-            "nombre": "pc opciones",
-            "total": 1
-        },
-        {
-            "id": "265",
-            "nombre": "PDF",
-            "total": 7
-        },
-        {
-            "id": "309",
-            "nombre": "perdida de informacion ",
-            "total": 1
-        },
-        {
-            "id": "122",
-            "nombre": "Petición",
-            "total": 1
-        },
-        {
-            "id": "655",
-            "nombre": "Pie de Firma",
-            "total": 5
-        },
-        {
-            "id": "232",
-            "nombre": "Prestamo Notebooks",
-            "total": 2
-        },
-        {
-            "id": "373",
-            "nombre": "prestamo pc ",
-            "total": 1
-        },
-        {
-            "id": "638",
-            "nombre": "Problemas con WPS",
-            "total": 1
-        },
-        {
-            "id": "214",
-            "nombre": "Programas",
-            "total": 4
-        },
-        {
-            "id": "200",
-            "nombre": "proxy",
-            "total": 10
-        },
-        {
-            "id": "258",
-            "nombre": "RAC",
-            "total": 2
-        },
-        {
-            "id": "257",
-            "nombre": "ras",
-            "total": 2
-        },
-        {
-            "id": "159",
-            "nombre": "Recuperar Informacion",
+            "id": "626",
+            "nombre": "Onedrive ",
             "total": 1
         },
         {
             "id": "113",
             "nombre": "Redes",
-            "total": 396
-        },
-        {
-            "id": "299",
-            "nombre": "remasterizacion equipo",
-            "total": 22
-        },
-        {
-            "id": "673",
-            "nombre": "renuncia de funcionario ",
-            "total": 2
-        },
-        {
-            "id": "374",
-            "nombre": "respaldo de informacion",
-            "total": 7
-        },
-        {
-            "id": "622",
-            "nombre": "retiro de equipos ",
-            "total": 12
-        },
-        {
-            "id": "104",
-            "nombre": "Retráctil",
-            "total": 4
-        },
-        {
-            "id": "100",
-            "nombre": "Reunión",
-            "total": 3
-        },
-        {
-            "id": "255",
-            "nombre": "revision equipo nuevo",
-            "total": 1
-        },
-        {
-            "id": "654",
-            "nombre": "RNI",
-            "total": 1
-        },
-        {
-            "id": "380",
-            "nombre": "SAHE",
-            "total": 1
-        },
-        {
-            "id": "298",
-            "nombre": "SAMU",
-            "total": 1
+            "total": 16
         },
         {
             "id": "308",
             "nombre": "SCANER",
-            "total": 54
+            "total": 1
         },
         {
             "id": "230",
             "nombre": "Servidores",
-            "total": 22
-        },
-        {
-            "id": "620",
-            "nombre": "Sidexis",
-            "total": 10
-        },
-        {
-            "id": "348",
-            "nombre": "sirh",
             "total": 1
         },
         {
             "id": "162",
             "nombre": "Sistema",
-            "total": 4
+            "total": 1
         },
         {
             "id": "203",
             "nombre": "software",
-            "total": 21
+            "total": 2
         },
         {
             "id": "346",
             "nombre": "solicitud de celular ",
-            "total": 1
-        },
-        {
-            "id": "172",
-            "nombre": "solicitud de computador",
             "total": 1
         },
         {
@@ -594,129 +124,29 @@
             "total": 1
         },
         {
-            "id": "365",
-            "nombre": "solicitud de huellero",
-            "total": 2
-        },
-        {
             "id": "190",
             "nombre": "solicitud de impresoras ",
-            "total": 5
-        },
-        {
-            "id": "326",
-            "nombre": "Solicitud de switch",
-            "total": 2
+            "total": 3
         },
         {
             "id": "325",
             "nombre": "solicitud de telefono",
-            "total": 7
-        },
-        {
-            "id": "272",
-            "nombre": "Tablet ",
-            "total": 1
-        },
-        {
-            "id": "279",
-            "nombre": "TEAMS",
-            "total": 5
-        },
-        {
-            "id": "106",
-            "nombre": "Teclado",
-            "total": 22
-        },
-        {
-            "id": "329",
-            "nombre": "teclados ",
             "total": 4
         },
         {
             "id": "96",
             "nombre": "Telefonia",
-            "total": 93
-        },
-        {
-            "id": "123",
-            "nombre": "Telemedicina",
-            "total": 3
-        },
-        {
-            "id": "594",
-            "nombre": "tonner",
-            "total": 2
-        },
-        {
-            "id": "321",
-            "nombre": "Totem",
             "total": 6
-        },
-        {
-            "id": "160",
-            "nombre": "Traslado equipos",
-            "total": 15
-        },
-        {
-            "id": "277",
-            "nombre": "Traslado Informacion",
-            "total": 1
-        },
-        {
-            "id": "604",
-            "nombre": "Turnos",
-            "total": 5
-        },
-        {
-            "id": "597",
-            "nombre": "tv",
-            "total": 4
         },
         {
             "id": "240",
             "nombre": "ups",
-            "total": 8
-        },
-        {
-            "id": "317",
-            "nombre": "visita a terreno ",
-            "total": 1
-        },
-        {
-            "id": "613",
-            "nombre": "vlan ",
-            "total": 6
+            "total": 2
         },
         {
             "id": "128",
             "nombre": "VPN",
-            "total": 4
-        },
-        {
-            "id": "153",
-            "nombre": "Wifi",
-            "total": 13
-        },
-        {
-            "id": "683",
-            "nombre": "Libre Office",
-            "total": 2
-        },
-        {
-            "id": "677",
-            "nombre": "cambio de pc",
-            "total": 2
-        },
-        {
-            "id": "684",
-            "nombre": "Windows Update",
-            "total": 2
-        },
-        {
-            "id": "685",
-            "nombre": "instalacion de huelleros",
-            "total": 2
+            "total": 1
         },
         {
             "id": "690",
@@ -729,882 +159,52 @@
             "total": 1
         },
         {
-            "id": "688",
-            "nombre": "onlyoffice",
-            "total": 1
-        },
-        {
             "id": "687",
             "nombre": "microfono",
             "total": 1
         },
         {
-            "id": "681",
-            "nombre": "solicitud de notebook",
+            "id": "684",
+            "nombre": "Windows Update",
             "total": 1
         },
         {
-            "id": "678",
-            "nombre": "gestion alumnos en practica",
+            "id": "677",
+            "nombre": "cambio de pc",
             "total": 1
-        },
-        {
-            "id": "none",
-            "nombre": "Sin categoría",
-            "total": 36
         }
     ],
     "tabla_unidades": [
         {
-            "nombre": "Informatica",
-            "total": 245
-        },
-        {
-            "nombre": "ADMISIÓN",
-            "total": 36
-        },
-        {
-            "nombre": "ONCOLOGIA",
-            "total": 34
-        },
-        {
-            "nombre": "LABORATORIO",
-            "total": 33
-        },
-        {
-            "nombre": "Operaciones",
-            "total": 33
-        },
-        {
-            "nombre": "MEDICINA",
-            "total": 32
-        },
-        {
-            "nombre": "Informática",
-            "total": 29
-        },
-        {
-            "nombre": "DENTAL",
-            "total": 27
-        },
-        {
-            "nombre": "Inyectable",
-            "total": 27
-        },
-        {
-            "nombre": "ABASTECIMIENTO",
-            "total": 27
-        },
-        {
-            "nombre": "RECURSOS HUMANOS",
-            "total": 25
-        },
-        {
-            "nombre": "Oncología",
-            "total": 25
+            "nombre": "Soporte Ti",
+            "total": 7
         },
         {
             "nombre": "Rayos",
-            "total": 24
+            "total": 5
         },
         {
-            "nombre": "PEDIATRIA",
-            "total": 24
+            "nombre": "ONCOLOGIA",
+            "total": 4
         },
         {
-            "nombre": "Soporte Ti",
-            "total": 22
-        },
-        {
-            "nombre": "Informatica Soporte T1",
-            "total": 21
-        },
-        {
-            "nombre": "Admision",
-            "total": 21
-        },
-        {
-            "nombre": "DIRECCION",
-            "total": 20
-        },
-        {
-            "nombre": "PSIQUIATRIA",
-            "total": 19
-        },
-        {
-            "nombre": "Dialisis",
-            "total": 18
-        },
-        {
-            "nombre": "Poli Otorrino",
-            "total": 17
-        },
-        {
-            "nombre": "Cae",
-            "total": 16
-        },
-        {
-            "nombre": "Pediatría",
-            "total": 15
-        },
-        {
-            "nombre": "HBV",
-            "total": 15
-        },
-        {
-            "nombre": "POLI PEDIATRIA",
-            "total": 14
-        },
-        {
-            "nombre": "Poli Cirugía",
-            "total": 14
-        },
-        {
-            "nombre": "CUIDADOS PALIATIVOS",
-            "total": 14
-        },
-        {
-            "nombre": "Uci Pediátrica",
-            "total": 13
-        },
-        {
-            "nombre": "Alimentacion",
-            "total": 13
-        },
-        {
-            "nombre": "Poli Pediatría",
-            "total": 13
-        },
-        {
-            "nombre": "Anapat",
-            "total": 12
-        },
-        {
-            "nombre": "GINECOLOGIA",
-            "total": 12
-        },
-        {
-            "nombre": "UCI ADULTO",
-            "total": 11
-        },
-        {
-            "nombre": "Partos",
-            "total": 11
-        },
-        {
-            "nombre": "URGENCIA ADULTOS",
-            "total": 11
-        },
-        {
-            "nombre": "POLI MEDICINA",
-            "total": 10
-        },
-        {
-            "nombre": "Movilización",
-            "total": 10
-        },
-        {
-            "nombre": "Urgencia",
-            "total": 10
-        },
-        {
-            "nombre": "ARCHIVO",
-            "total": 10
-        },
-        {
-            "nombre": "Uti2",
-            "total": 10
-        },
-        {
-            "nombre": "BANCO DE SANGRE",
-            "total": 10
-        },
-        {
-            "nombre": "Uti 1",
-            "total": 10
-        },
-        {
-            "nombre": "Rrhh",
-            "total": 10
-        },
-        {
-            "nombre": "RECUPERACION PABELLON CENTRAL",
-            "total": 10
-        },
-        {
-            "nombre": "Reclutamiento",
-            "total": 10
-        },
-        {
-            "nombre": "Poli Oftalmología",
-            "total": 10
-        },
-        {
-            "nombre": "Calidad",
-            "total": 9
-        },
-        {
-            "nombre": "Surmedica",
-            "total": 9
-        },
-        {
-            "nombre": "Poli Ginecología",
-            "total": 9
-        },
-        {
-            "nombre": "Poli Neuro",
-            "total": 9
-        },
-        {
-            "nombre": "RADIOTERAPIA",
-            "total": 9
-        },
-        {
-            "nombre": "Uci",
-            "total": 9
-        },
-        {
-            "nombre": "PABELLON CENTRAL",
-            "total": 9
-        },
-        {
-            "nombre": "Neonatología",
-            "total": 9
-        },
-        {
-            "nombre": "PREQUIRURGICO",
-            "total": 8
-        },
-        {
-            "nombre": "Sda",
-            "total": 8
-        },
-        {
-            "nombre": "Oirs",
-            "total": 8
-        },
-        {
-            "nombre": "POLI RESPIRATORIO",
-            "total": 8
-        },
-        {
-            "nombre": "POLI HEMATOLOGIA",
-            "total": 8
-        },
-        {
-            "nombre": "Bodega Resago",
-            "total": 8
-        },
-        {
-            "nombre": "Uti1",
-            "total": 8
-        },
-        {
-            "nombre": "Auditorio",
-            "total": 8
-        },
-        {
-            "nombre": "RECUPERACIÓN H",
-            "total": 8
-        },
-        {
-            "nombre": "Dirección",
-            "total": 8
-        },
-        {
-            "nombre": "UCI PEDIATRICA",
-            "total": 7
-        },
-        {
-            "nombre": "Farmacia R1",
-            "total": 7
-        },
-        {
-            "nombre": "URGENCIA PEDIATRICA",
-            "total": 7
-        },
-        {
-            "nombre": "Neurologia",
-            "total": 7
-        },
-        {
-            "nombre": "Anatomía Patológica",
-            "total": 7
-        },
-        {
-            "nombre": "Bodega General",
-            "total": 7
-        },
-        {
-            "nombre": "Central Documentaria",
-            "total": 7
-        },
-        {
-            "nombre": "Materno Fetal",
-            "total": 7
-        },
-        {
-            "nombre": "Medico Quirurgico",
-            "total": 7
-        },
-        {
-            "nombre": "Neonatologia",
-            "total": 7
-        },
-        {
-            "nombre": "NAVEGADORES EN RED",
-            "total": 7
-        },
-        {
-            "nombre": "POLI DERMATOLOGIA",
-            "total": 7
-        },
-        {
-            "nombre": "MEDICINA NUCLEAR",
-            "total": 7
-        },
-        {
-            "nombre": "Farmacia Hospitalizada",
-            "total": 7
-        },
-        {
-            "nombre": "Computación",
-            "total": 7
-        },
-        {
-            "nombre": "Laboratorio Central",
-            "total": 6
-        },
-        {
-            "nombre": "Psiquiatría",
-            "total": 6
+            "nombre": "Urgencia Ginecología",
+            "total": 2
         },
         {
             "nombre": "Poli Hematología",
-            "total": 6
-        },
-        {
-            "nombre": "Uti 2",
-            "total": 6
-        },
-        {
-            "nombre": "Poli Cardio",
-            "total": 6
-        },
-        {
-            "nombre": "POLI CIRUGIA ADULTO",
-            "total": 6
-        },
-        {
-            "nombre": "Virología",
-            "total": 6
-        },
-        {
-            "nombre": "Poli Gine",
-            "total": 6
-        },
-        {
-            "nombre": "Poli Aro",
-            "total": 6
-        },
-        {
-            "nombre": "Urgencia Adulto",
-            "total": 6
-        },
-        {
-            "nombre": "Alimentación",
-            "total": 6
-        },
-        {
-            "nombre": "Epidemiologia",
-            "total": 6
-        },
-        {
-            "nombre": "Ex Poli Pediatria",
-            "total": 6
-        },
-        {
-            "nombre": "Ginecología",
-            "total": 5
-        },
-        {
-            "nombre": "Recuperación Central",
-            "total": 5
-        },
-        {
-            "nombre": "Uci 2",
-            "total": 5
-        },
-        {
-            "nombre": "MOVILIZACION",
-            "total": 5
-        },
-        {
-            "nombre": "Farmacia Hospitalizados",
-            "total": 5
-        },
-        {
-            "nombre": "Farmacia Ambulatoria",
-            "total": 5
-        },
-        {
-            "nombre": "Hemodinamia",
-            "total": 5
-        },
-        {
-            "nombre": "Pabellon",
-            "total": 5
-        },
-        {
-            "nombre": "Juridica",
-            "total": 5
-        },
-        {
-            "nombre": "Bodega De Rezago",
-            "total": 5
-        },
-        {
-            "nombre": "Prevencion De Riesgos",
-            "total": 5
-        },
-        {
-            "nombre": "Farmacia A1",
-            "total": 5
-        },
-        {
-            "nombre": "COMPUTACION",
-            "total": 5
-        },
-        {
-            "nombre": "Licencias Medicas",
-            "total": 5
-        },
-        {
-            "nombre": "Poli Gastro",
-            "total": 5
-        },
-        {
-            "nombre": "UGA",
-            "total": 5
-        },
-        {
-            "nombre": "Contabilidad",
-            "total": 5
-        },
-        {
-            "nombre": "Farmacia Hosp",
-            "total": 5
-        },
-        {
-            "nombre": "Poli Hemato",
-            "total": 5
-        },
-        {
-            "nombre": "EQUIPOS MEDICOS",
-            "total": 5
-        },
-        {
-            "nombre": "Mantención De Sistemas",
-            "total": 5
-        },
-        {
-            "nombre": "Ges",
-            "total": 5
-        },
-        {
-            "nombre": "SAMU",
-            "total": 5
-        },
-        {
-            "nombre": "POLI REUMATOLOGIA",
-            "total": 5
-        },
-        {
-            "nombre": "Expoli Pediatria",
-            "total": 5
-        },
-        {
-            "nombre": "Pabellón Central",
-            "total": 4
+            "total": 2
         },
         {
             "nombre": "Poli Inmuno",
-            "total": 4
-        },
-        {
-            "nombre": "EQUIPOS INDUSTRIALES",
-            "total": 4
-        },
-        {
-            "nombre": "Gases Clinicos",
-            "total": 4
-        },
-        {
-            "nombre": "NEONATO CUIDADOS INTENSIVOS",
-            "total": 4
-        },
-        {
-            "nombre": "Mantención",
-            "total": 4
-        },
-        {
-            "nombre": "SERVICIO SOCIAL",
-            "total": 4
-        },
-        {
-            "nombre": "FARMACIA H. REGIONAL",
-            "total": 4
-        },
-        {
-            "nombre": "Cirugía Adulto",
-            "total": 4
-        },
-        {
-            "nombre": "Admison",
-            "total": 4
-        },
-        {
-            "nombre": "Ute",
-            "total": 4
-        },
-        {
-            "nombre": "ESTERILIZACION",
-            "total": 4
-        },
-        {
-            "nombre": "Quimio Ambulatoria",
-            "total": 4
-        },
-        {
-            "nombre": "Quimioterapia Ambulatorio",
-            "total": 4
-        },
-        {
-            "nombre": "Anatomía Patologica",
-            "total": 4
-        },
-        {
-            "nombre": "Quimioterapia",
-            "total": 4
-        },
-        {
-            "nombre": "Dental Donald Canter",
-            "total": 4
-        },
-        {
-            "nombre": "POLI GINECOLOGIA",
-            "total": 4
-        },
-        {
-            "nombre": "Poli Oncología",
-            "total": 4
-        },
-        {
-            "nombre": "POLI UROLOGIA",
-            "total": 4
-        },
-        {
-            "nombre": "Traumatología",
-            "total": 4
-        },
-        {
-            "nombre": "Surmedica Pediatria",
-            "total": 4
-        },
-        {
-            "nombre": "DEPARTAMENTO OPERACIONES",
-            "total": 4
-        },
-        {
-            "nombre": "Afusal",
-            "total": 4
-        },
-        {
-            "nombre": "Recaudación",
-            "total": 4
-        },
-        {
-            "nombre": "Farmacia Recetario",
-            "total": 4
-        },
-        {
-            "nombre": "Usf",
-            "total": 4
-        },
-        {
-            "nombre": "LAB. DE HISTOCOMPATIBILIDAD",
-            "total": 4
-        },
-        {
-            "nombre": "Bodega Farmacia",
-            "total": 4
-        },
-        {
-            "nombre": "Psiquiatría Hospitalizado",
-            "total": 4
-        },
-        {
-            "nombre": "Poli Cardiología",
-            "total": 4
-        },
-        {
-            "nombre": "Monitoreo Ges",
-            "total": 4
-        },
-        {
-            "nombre": "Biología Molecular",
-            "total": 3
-        },
-        {
-            "nombre": "Poli Dermatología",
-            "total": 3
-        },
-        {
-            "nombre": "Neonato",
-            "total": 3
-        },
-        {
-            "nombre": "Poli Onco",
-            "total": 3
-        },
-        {
-            "nombre": "Spoorte Ti",
-            "total": 3
-        },
-        {
-            "nombre": "Hematología 2° Piso He",
-            "total": 3
-        },
-        {
-            "nombre": "Neurología",
-            "total": 3
-        },
-        {
-            "nombre": "NEUROCIRUGIA",
-            "total": 3
-        },
-        {
-            "nombre": "Biologia Molecular",
-            "total": 3
-        },
-        {
-            "nombre": "Medicina Fisica",
-            "total": 3
-        },
-        {
-            "nombre": "LAVANDERIA",
-            "total": 3
-        },
-        {
-            "nombre": "Recuperacion H",
-            "total": 3
-        },
-        {
-            "nombre": "Poli Taco",
-            "total": 3
-        },
-        {
-            "nombre": "Farmacia Oncologica",
-            "total": 3
-        },
-        {
-            "nombre": "Poli Nefro",
-            "total": 3
-        },
-        {
-            "nombre": "Uci2",
-            "total": 3
-        },
-        {
-            "nombre": "Ciclo De Vida",
-            "total": 3
-        },
-        {
-            "nombre": "Prevencion De Riesgo",
-            "total": 3
-        },
-        {
-            "nombre": "Poli Endocrino",
-            "total": 3
-        },
-        {
-            "nombre": "Esterilización",
-            "total": 3
-        },
-        {
-            "nombre": "Some",
-            "total": 3
-        },
-        {
-            "nombre": "POLI OFTALMOLOGIA",
-            "total": 3
-        },
-        {
-            "nombre": "Poli Psiquiatria",
-            "total": 3
-        },
-        {
-            "nombre": "CHILE CRECE CONTIGO",
-            "total": 3
-        },
-        {
-            "nombre": "Admsion",
-            "total": 3
-        },
-        {
-            "nombre": "Cuidados Paleativos",
-            "total": 3
-        },
-        {
-            "nombre": "Oncologia Hospitalizados",
-            "total": 3
-        },
-        {
-            "nombre": "Patologia Mamaria",
-            "total": 3
-        },
-        {
-            "nombre": "Bodega  General",
-            "total": 3
-        },
-        {
-            "nombre": "UNIDAD DE COSTOS",
-            "total": 3
-        },
-        {
-            "nombre": "POLI ONCOLOGIA",
-            "total": 3
-        },
-        {
-            "nombre": "Oncología Hospitalizados",
-            "total": 3
-        },
-        {
-            "nombre": "Remuneración",
-            "total": 3
-        },
-        {
-            "nombre": "Histocompatibilidad",
-            "total": 3
-        },
-        {
-            "nombre": "UTI QUIRURGICA",
-            "total": 3
-        },
-        {
-            "nombre": "Hematologia Hosp",
-            "total": 3
-        },
-        {
-            "nombre": "MANTENIMIENTO",
-            "total": 3
-        },
-        {
-            "nombre": "TRAUMATOLOGIA ADULTO",
-            "total": 3
-        },
-        {
-            "nombre": "Lista De Espera Quirurgica",
-            "total": 3
-        },
-        {
-            "nombre": "Poli Cirugía Adulto",
-            "total": 3
-        },
-        {
-            "nombre": "Surmedica 4To Piso",
-            "total": 3
-        },
-        {
-            "nombre": "Farmacia Oncologia",
-            "total": 3
-        },
-        {
-            "nombre": "Cesamco Amulen",
-            "total": 3
-        },
-        {
-            "nombre": "Diálisis",
-            "total": 3
-        },
-        {
-            "nombre": "Soporte",
-            "total": 3
-        },
-        {
-            "nombre": "Terapia Ocupacional",
             "total": 2
         },
         {
-            "nombre": "Oncología Infantil",
+            "nombre": "Anapat",
             "total": 2
         },
         {
-            "nombre": "Pediatria Hospitalizados",
-            "total": 2
-        },
-        {
-            "nombre": "Medicina 3Er Piso",
-            "total": 2
-        },
-        {
-            "nombre": "Geriatría",
-            "total": 2
-        },
-        {
-            "nombre": "PABELLON PARTOS",
-            "total": 2
-        },
-        {
-            "nombre": "Kinesiologia",
-            "total": 2
-        },
-        {
-            "nombre": "Poli Transplante",
-            "total": 2
-        },
-        {
-            "nombre": "Cirugia",
-            "total": 2
-        },
-        {
-            "nombre": "Bodega Rezago",
-            "total": 2
-        },
-        {
-            "nombre": "Poli Trauma",
-            "total": 2
-        },
-        {
-            "nombre": "Toma De Muestra",
-            "total": 2
-        },
-        {
-            "nombre": "Quimio Amb",
-            "total": 2
-        },
-        {
-            "nombre": "Uti",
-            "total": 2
-        },
-        {
-            "nombre": "Polirespiratorio",
-            "total": 2
-        },
-        {
-            "nombre": "OFICINA INFOR. Y RECLAMOS OIR",
-            "total": 2
-        },
-        {
-            "nombre": "ALIMENTACION (UCP)",
-            "total": 2
-        },
-        {
-            "nombre": "Remuneraciones",
-            "total": 2
-        },
-        {
-            "nombre": "Lavandería",
+            "nombre": "POLI PEDIATRIA",
             "total": 2
         },
         {
@@ -1612,375 +212,23 @@
             "total": 2
         },
         {
-            "nombre": "PRAIS",
+            "nombre": "Biologia Molecular",
             "total": 2
         },
         {
-            "nombre": "Gestion Ambiental",
+            "nombre": "Operaciones",
             "total": 2
         },
         {
-            "nombre": "Poli Pediatría Surmedica",
+            "nombre": "PSIQUIATRIA",
             "total": 2
         },
         {
-            "nombre": "Recuperacion",
-            "total": 2
-        },
-        {
-            "nombre": "Prequirúrgico",
-            "total": 2
-        },
-        {
-            "nombre": "Urgencia Ginecologica",
-            "total": 2
-        },
-        {
-            "nombre": "Hematología Intensiva",
-            "total": 2
-        },
-        {
-            "nombre": "JARDIN INFANTIL",
-            "total": 2
-        },
-        {
-            "nombre": "Fisiatria",
-            "total": 2
-        },
-        {
-            "nombre": "Carpinteria",
-            "total": 2
-        },
-        {
-            "nombre": "Fenats Oficina",
-            "total": 2
-        },
-        {
-            "nombre": "Secretaria Medicina",
-            "total": 2
-        },
-        {
-            "nombre": "Poli Gine Prequirurgico",
-            "total": 2
-        },
-        {
-            "nombre": "Virologia",
-            "total": 2
-        },
-        {
-            "nombre": "Secretaria Hematologia",
-            "total": 2
-        },
-        {
-            "nombre": "Kinesiología",
-            "total": 2
-        },
-        {
-            "nombre": "Unidad De Archivo",
-            "total": 2
-        },
-        {
-            "nombre": "Urgencia Ginecologia",
-            "total": 2
-        },
-        {
-            "nombre": "Uci1",
-            "total": 2
-        },
-        {
-            "nombre": "Quimio Ambulatorio",
-            "total": 2
-        },
-        {
-            "nombre": "Estadisticas",
-            "total": 2
-        },
-        {
-            "nombre": "Admision Secretaria",
-            "total": 2
-        },
-        {
-            "nombre": "ANATOMIA PATOLOGICA",
-            "total": 2
-        },
-        {
-            "nombre": "Prevención De Riesgo",
-            "total": 2
-        },
-        {
-            "nombre": "Poli Hematologia Infantil",
-            "total": 2
-        },
-        {
-            "nombre": "Grd",
-            "total": 2
-        },
-        {
-            "nombre": "Pabellon 5",
-            "total": 2
-        },
-        {
-            "nombre": "Registro De Cancer",
-            "total": 2
-        },
-        {
-            "nombre": "Ugcc",
-            "total": 2
-        },
-        {
-            "nombre": "Jefatura De Pabellón",
-            "total": 2
-        },
-        {
-            "nombre": "Inyectables",
-            "total": 2
-        },
-        {
-            "nombre": "CENTRAL TELEFÓNICA",
-            "total": 2
-        },
-        {
-            "nombre": "Admisión Donald Canter",
-            "total": 2
-        },
-        {
-            "nombre": "Dosimetria",
-            "total": 2
-        },
-        {
-            "nombre": "Otorrino",
-            "total": 2
-        },
-        {
-            "nombre": "Personal",
-            "total": 2
-        },
-        {
-            "nombre": "Hospital Amigo",
-            "total": 2
-        },
-        {
-            "nombre": "Hematologia",
-            "total": 2
-        },
-        {
-            "nombre": "POLI OTORRINOLARINGOLOGIA",
-            "total": 2
-        },
-        {
-            "nombre": "Vestuario",
-            "total": 2
-        },
-        {
-            "nombre": "Gestión Oncológica",
-            "total": 2
-        },
-        {
-            "nombre": "Taller De Soldadura",
-            "total": 2
-        },
-        {
-            "nombre": "Nutrición",
-            "total": 2
-        },
-        {
-            "nombre": "Equipos Médicos",
-            "total": 2
-        },
-        {
-            "nombre": "Expoli Pedriatria",
-            "total": 2
-        },
-        {
-            "nombre": "Fenats Historica",
-            "total": 2
-        },
-        {
-            "nombre": "URGENCIA GINECO-OBSTETRICIA",
-            "total": 2
-        },
-        {
-            "nombre": "Gastro",
-            "total": 2
-        },
-        {
-            "nombre": "Poli Oncología Toma De Muestra",
-            "total": 2
-        },
-        {
-            "nombre": "Mantencion De Sistemas",
-            "total": 2
-        },
-        {
-            "nombre": "Oncoinfantil",
-            "total": 2
-        },
-        {
-            "nombre": "Poli Reumatología",
-            "total": 2
-        },
-        {
-            "nombre": "REDES ELECTRICAS",
-            "total": 2
-        },
-        {
-            "nombre": "Logistica",
-            "total": 2
-        },
-        {
-            "nombre": "POLI PERSONAL",
-            "total": 2
-        },
-        {
-            "nombre": "Psiquiatria Hospitalizados",
-            "total": 2
-        },
-        {
-            "nombre": "Poli Hematología Infantil",
-            "total": 2
-        },
-        {
-            "nombre": "Admisión (Oficina Nueva Container) Rocio",
-            "total": 2
-        },
-        {
-            "nombre": "Macrored",
-            "total": 2
-        },
-        {
-            "nombre": "Donald Canter",
-            "total": 2
-        },
-        {
-            "nombre": "Central De Alimentación",
-            "total": 2
-        },
-        {
-            "nombre": "Hospitalización Domiciliaria",
-            "total": 2
-        },
-        {
-            "nombre": "Uti 3",
-            "total": 2
-        },
-        {
-            "nombre": "Recepción Oncología",
-            "total": 2
-        },
-        {
-            "nombre": "Urgencia Pediátrica",
-            "total": 2
-        },
-        {
-            "nombre": "Traumatología Hospitalizados",
-            "total": 2
-        },
-        {
-            "nombre": "Radio Terapia",
-            "total": 2
-        },
-        {
-            "nombre": "Sala De Monitoreo",
-            "total": 2
-        },
-        {
-            "nombre": "Uci 1-2",
-            "total": 2
-        },
-        {
-            "nombre": "Sdm",
-            "total": 2
-        },
-        {
-            "nombre": "Poli Nefrología",
-            "total": 2
-        },
-        {
-            "nombre": "Angiografo",
-            "total": 2
-        },
-        {
-            "nombre": "Medicina 3Er Piso Edificio He",
-            "total": 2
-        },
-        {
-            "nombre": "Prevención De Riesgos",
-            "total": 2
-        },
-        {
-            "nombre": "Hematología",
-            "total": 2
-        },
-        {
-            "nombre": "Farmacia Oncológica",
-            "total": 2
-        },
-        {
-            "nombre": "Policlínico Ginecología",
-            "total": 2
-        },
-        {
-            "nombre": "Policlínico Oftalmología",
-            "total": 2
-        },
-        {
-            "nombre": "POLI TRAUMATOLOGIA",
-            "total": 2
-        },
-        {
-            "nombre": "POLI PATOLOGIA MAMARIA",
-            "total": 2
-        },
-        {
-            "nombre": "Policlínico De Dermatología",
-            "total": 2
-        },
-        {
-            "nombre": "SSLR",
-            "total": 2
-        },
-        {
-            "nombre": "Unidad Física",
-            "total": 2
-        },
-        {
-            "nombre": "Central Telefonica",
+            "nombre": "Informática",
             "total": 1
         },
         {
-            "nombre": "Cirugia 3Er Piso",
-            "total": 1
-        },
-        {
-            "nombre": "Dental Box 20",
-            "total": 1
-        },
-        {
-            "nombre": "DENTAL (DC)",
-            "total": 1
-        },
-        {
-            "nombre": "Sala De Reuniones De Urgencia",
-            "total": 1
-        },
-        {
-            "nombre": "Anapat Lab De Citogenetica",
-            "total": 1
-        },
-        {
-            "nombre": "Uci Pediátricapc",
-            "total": 1
-        },
-        {
-            "nombre": "Química",
-            "total": 1
-        },
-        {
-            "nombre": "Urgencia Ginecología",
-            "total": 1
-        },
-        {
-            "nombre": "Onco Infantil",
+            "nombre": "Farmacia R1",
             "total": 1
         },
         {
@@ -1988,23 +236,7 @@
             "total": 1
         },
         {
-            "nombre": "Policlinico Transplante",
-            "total": 1
-        },
-        {
-            "nombre": "Recaudacion",
-            "total": 1
-        },
-        {
-            "nombre": "Recu Partos",
-            "total": 1
-        },
-        {
-            "nombre": "Operaciones 120",
-            "total": 1
-        },
-        {
-            "nombre": "Central De Alimentacion",
+            "nombre": "Urgencia",
             "total": 1
         },
         {
@@ -2012,27 +244,7 @@
             "total": 1
         },
         {
-            "nombre": "Cirugia Iinfantil",
-            "total": 1
-        },
-        {
-            "nombre": "Gestion Matronería",
-            "total": 1
-        },
-        {
-            "nombre": "Box Primera Respuesta Urgencia",
-            "total": 1
-        },
-        {
-            "nombre": "Asenf",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Radioterapia",
-            "total": 1
-        },
-        {
-            "nombre": "Subdireccion Medica",
+            "nombre": "Poli Transplante",
             "total": 1
         },
         {
@@ -2040,11 +252,15 @@
             "total": 1
         },
         {
-            "nombre": "Urgencia Digitación",
+            "nombre": "Neonato",
             "total": 1
         },
         {
-            "nombre": "Toma De Muestras",
+            "nombre": "Surmedica",
+            "total": 1
+        },
+        {
+            "nombre": "Poli Trauma",
             "total": 1
         },
         {
@@ -2052,31 +268,15 @@
             "total": 1
         },
         {
+            "nombre": "Quimio Amb",
+            "total": 1
+        },
+        {
+            "nombre": "Uti",
+            "total": 1
+        },
+        {
             "nombre": "Urgenciqa Pediatrica",
-            "total": 1
-        },
-        {
-            "nombre": "Servicio Ginecologia",
-            "total": 1
-        },
-        {
-            "nombre": "Geriatria",
-            "total": 1
-        },
-        {
-            "nombre": "Servicio De Pediatría",
-            "total": 1
-        },
-        {
-            "nombre": "Quimio. Ambulatorio Infantil",
-            "total": 1
-        },
-        {
-            "nombre": "Hematología \/ Uti Quirúrgica",
-            "total": 1
-        },
-        {
-            "nombre": "Cirugía Hombre",
             "total": 1
         },
         {
@@ -2084,135 +284,19 @@
             "total": 1
         },
         {
-            "nombre": "Recepción De Urgencia",
+            "nombre": "Informatica",
             "total": 1
         },
         {
-            "nombre": "Inmunología",
+            "nombre": "Uci2",
             "total": 1
         },
         {
-            "nombre": "POLI ENDOCRINOLOGIA",
+            "nombre": "Neurologia",
             "total": 1
         },
         {
-            "nombre": "UNIDAD HEMATOLOGIA INTENSIVA",
-            "total": 1
-        },
-        {
-            "nombre": "Sub Dirección Médica",
-            "total": 1
-        },
-        {
-            "nombre": "Hemodinamia\/ Angiógráfo",
-            "total": 1
-        },
-        {
-            "nombre": "Subdepartamento De Remuneraciones",
-            "total": 1
-        },
-        {
-            "nombre": "Citometría\/ Laboratorio 2° Piso",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Cirugia",
-            "total": 1
-        },
-        {
-            "nombre": "Rayos Sysadmin",
-            "total": 1
-        },
-        {
-            "nombre": "Biologia Molecular  Oncohematologia Infantil",
-            "total": 1
-        },
-        {
-            "nombre": "Biologia Molecular -- Oncohematologia Infantil",
-            "total": 1
-        },
-        {
-            "nombre": "Uoc Pediatrica",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Neuro Box 10",
-            "total": 1
-        },
-        {
-            "nombre": "Estadistica",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Pediatria Surmedica",
-            "total": 1
-        },
-        {
-            "nombre": "Centro De Especialidades Odontológicas Donald Canter",
-            "total": 1
-        },
-        {
-            "nombre": "Farmacia Ambulatorio",
-            "total": 1
-        },
-        {
-            "nombre": "Gendarmeria",
-            "total": 1
-        },
-        {
-            "nombre": "Asistencia Social",
-            "total": 1
-        },
-        {
-            "nombre": "Quimio. Ambulatorio",
-            "total": 1
-        },
-        {
-            "nombre": "Recuperacion Central",
-            "total": 1
-        },
-        {
-            "nombre": "Secretaría Admisión",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Reuma",
-            "total": 1
-        },
-        {
-            "nombre": "Hemato 2Do Piso",
-            "total": 1
-        },
-        {
-            "nombre": "Traumatología Hosp",
-            "total": 1
-        },
-        {
-            "nombre": "Farmacia H Regional",
-            "total": 1
-        },
-        {
-            "nombre": "Pabellón 7",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Neurología",
-            "total": 1
-        },
-        {
-            "nombre": "Quimio Terapia Amb",
-            "total": 1
-        },
-        {
-            "nombre": "Cirugía Infantil",
-            "total": 1
-        },
-        {
-            "nombre": "Scaner",
-            "total": 1
-        },
-        {
-            "nombre": "Labo",
+            "nombre": "Fisiatria",
             "total": 1
         },
         {
@@ -2220,147 +304,31 @@
             "total": 1
         },
         {
-            "nombre": "Oftalmología",
+            "nombre": "Poli Cardio",
             "total": 1
         },
         {
-            "nombre": "Policlínico De Nefro.medicina-Inmuno",
+            "nombre": "Poli Aro",
             "total": 1
         },
         {
-            "nombre": "Reumatologia",
+            "nombre": "Admision",
             "total": 1
         },
         {
-            "nombre": "Tesorería",
+            "nombre": "Grd",
             "total": 1
         },
         {
-            "nombre": "Poli Cirugia Secretaria",
+            "nombre": "Admison",
             "total": 1
         },
         {
-            "nombre": "Poli Oncologia Enfermeria",
+            "nombre": "ABASTECIMIENTO",
             "total": 1
         },
         {
-            "nombre": "Archivo De Oncología",
-            "total": 1
-        },
-        {
-            "nombre": "Uci Adultos",
-            "total": 1
-        },
-        {
-            "nombre": "Unidad De Estadísticas",
-            "total": 1
-        },
-        {
-            "nombre": "Oncología Hospitalizado",
-            "total": 1
-        },
-        {
-            "nombre": "Soporte Tics",
-            "total": 1
-        },
-        {
-            "nombre": "Virología Laboratorio",
-            "total": 1
-        },
-        {
-            "nombre": "Qmt",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Hematolo",
-            "total": 1
-        },
-        {
-            "nombre": "Gestión De Personas",
-            "total": 1
-        },
-        {
-            "nombre": "Quimioterapia Oncologia",
-            "total": 1
-        },
-        {
-            "nombre": "Prequirurgica",
-            "total": 1
-        },
-        {
-            "nombre": "Uci Pediatria",
-            "total": 1
-        },
-        {
-            "nombre": "Admisión Secretaria",
-            "total": 1
-        },
-        {
-            "nombre": "Prequirúrjico",
-            "total": 1
-        },
-        {
-            "nombre": "Repostería",
-            "total": 1
-        },
-        {
-            "nombre": "Quimiterapia",
-            "total": 1
-        },
-        {
-            "nombre": "UNIDAD ONCO_HEMATOLOGIA INFANT",
-            "total": 1
-        },
-        {
-            "nombre": "UN.HOSPIT.DOMICILIARIA",
-            "total": 1
-        },
-        {
-            "nombre": "Ambulancia Apoyo",
-            "total": 1
-        },
-        {
-            "nombre": "Neurología Hospitalizado",
-            "total": 1
-        },
-        {
-            "nombre": "Admision.-",
-            "total": 1
-        },
-        {
-            "nombre": "Ap Ginecologica",
-            "total": 1
-        },
-        {
-            "nombre": "Pp",
-            "total": 1
-        },
-        {
-            "nombre": "Patología Mamaría",
-            "total": 1
-        },
-        {
-            "nombre": "Quimioterapia Ambulatorio Infantil",
-            "total": 1
-        },
-        {
-            "nombre": "Quimioambulatoria",
-            "total": 1
-        },
-        {
-            "nombre": "Admision Container",
-            "total": 1
-        },
-        {
-            "nombre": "Fenat Nacional",
-            "total": 1
-        },
-        {
-            "nombre": "Licencia Medicas",
-            "total": 1
-        },
-        {
-            "nombre": "Hospital Rio Bueno",
+            "nombre": "Materno Fetal",
             "total": 1
         },
         {
@@ -2368,179 +336,15 @@
             "total": 1
         },
         {
-            "nombre": "Sala Servidores",
+            "nombre": "SAMU",
             "total": 1
         },
         {
-            "nombre": "Unidad",
+            "nombre": "Farmacia A1",
             "total": 1
         },
         {
-            "nombre": "Hospitalizacion Domiciliaria",
-            "total": 1
-        },
-        {
-            "nombre": "PUERPERIO",
-            "total": 1
-        },
-        {
-            "nombre": "Onco Hospitalizados",
-            "total": 1
-        },
-        {
-            "nombre": "Laboratorio Virología",
-            "total": 1
-        },
-        {
-            "nombre": "Uci Recuperación Parto",
-            "total": 1
-        },
-        {
-            "nombre": "Cirugía Uti Medica",
-            "total": 1
-        },
-        {
-            "nombre": "Trauma Neo",
-            "total": 1
-        },
-        {
-            "nombre": "Jefatura De Anestesia",
-            "total": 1
-        },
-        {
-            "nombre": "Lista De Espera De Procedimiento",
-            "total": 1
-        },
-        {
-            "nombre": "Dental Donal Canter",
-            "total": 1
-        },
-        {
-            "nombre": "Hematología Hospitalizados",
-            "total": 1
-        },
-        {
-            "nombre": "Anatomia Hospitalizados",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Gastronomía",
-            "total": 1
-        },
-        {
-            "nombre": "Oftalmologia Sur Medica",
-            "total": 1
-        },
-        {
-            "nombre": "Oncología Dosimetria",
-            "total": 1
-        },
-        {
-            "nombre": "Jardín",
-            "total": 1
-        },
-        {
-            "nombre": "Hosp Rio Bueno",
-            "total": 1
-        },
-        {
-            "nombre": "Partos Secretaria",
-            "total": 1
-        },
-        {
-            "nombre": "Psiquiatria Infanto Adolescente",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Urología",
-            "total": 1
-        },
-        {
-            "nombre": "Oncología Dosimetría",
-            "total": 1
-        },
-        {
-            "nombre": "Servicio Medico",
-            "total": 1
-        },
-        {
-            "nombre": "Jardin",
-            "total": 1
-        },
-        {
-            "nombre": "Oncologia Dosimetria",
-            "total": 1
-        },
-        {
-            "nombre": "Taco",
-            "total": 1
-        },
-        {
-            "nombre": "Bodega Zocalo",
-            "total": 1
-        },
-        {
-            "nombre": "Bacteriologia",
-            "total": 1
-        },
-        {
-            "nombre": "Expoli Pediatría",
-            "total": 1
-        },
-        {
-            "nombre": "Ropería",
-            "total": 1
-        },
-        {
-            "nombre": "POLI PSIQUIATRIA ADULTO",
-            "total": 1
-        },
-        {
-            "nombre": "QUIMIOTERAPIA AMBULATORIA",
-            "total": 1
-        },
-        {
-            "nombre": "Secretaria Dirección",
-            "total": 1
-        },
-        {
-            "nombre": "Citometria De Flujo",
-            "total": 1
-        },
-        {
-            "nombre": "Gestion De Enfermeria",
-            "total": 1
-        },
-        {
-            "nombre": "Citometria De Flujos",
-            "total": 1
-        },
-        {
-            "nombre": "Oficina Subsistema Chcc.",
-            "total": 1
-        },
-        {
-            "nombre": "Departamentos De Operaciones",
-            "total": 1
-        },
-        {
-            "nombre": "Dialisis Peritoneal",
-            "total": 1
-        },
-        {
-            "nombre": "Hemato Hosp",
-            "total": 1
-        },
-        {
-            "nombre": "Desarrollo Poli Pediatría",
-            "total": 1
-        },
-        {
-            "nombre": "Admision Detras De Ventanilla",
-            "total": 1
-        },
-        {
-            "nombre": "NUTRICION CLINICA",
+            "nombre": "Cae",
             "total": 1
         },
         {
@@ -2548,223 +352,7 @@
             "total": 1
         },
         {
-            "nombre": "Auditoria",
-            "total": 1
-        },
-        {
-            "nombre": "Desarrollo 2",
-            "total": 1
-        },
-        {
-            "nombre": "Central De Monitoreo",
-            "total": 1
-        },
-        {
-            "nombre": "Lista De Espera (Ventanilla 1)",
-            "total": 1
-        },
-        {
-            "nombre": "4To Medicina",
-            "total": 1
-        },
-        {
-            "nombre": "Admision Ventana",
-            "total": 1
-        },
-        {
-            "nombre": "Jean",
-            "total": 1
-        },
-        {
-            "nombre": "Finanza 5° Piso",
-            "total": 1
-        },
-        {
-            "nombre": "Residencia Becados Cirugia",
-            "total": 1
-        },
-        {
-            "nombre": "Box Ginecologia Exterior",
-            "total": 1
-        },
-        {
-            "nombre": "Sector Fumadores",
-            "total": 1
-        },
-        {
-            "nombre": "Rac Dental",
-            "total": 1
-        },
-        {
-            "nombre": "Finanzas",
-            "total": 1
-        },
-        {
-            "nombre": "Soldadura",
-            "total": 1
-        },
-        {
-            "nombre": "Urgencia Reanimador",
-            "total": 1
-        },
-        {
-            "nombre": "Vacunatorio",
-            "total": 1
-        },
-        {
-            "nombre": "Ex Escuelita",
-            "total": 1
-        },
-        {
-            "nombre": "ECOCARDIO",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Hemato Infantil",
-            "total": 1
-        },
-        {
-            "nombre": "Contenedor Samu",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Ex Pediatría",
-            "total": 1
-        },
-        {
-            "nombre": "Secretaria Neonatologia",
-            "total": 1
-        },
-        {
-            "nombre": "Urgencia Flujo C3",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Reuma Dr Barria",
-            "total": 1
-        },
-        {
-            "nombre": "Bodega Poli Pediatría",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Pediatría Box 314",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Pediatría Box 302",
-            "total": 1
-        },
-        {
-            "nombre": "Auditoria Clinica",
-            "total": 1
-        },
-        {
-            "nombre": "Mentenimiento",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Traumatología",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Oftalmología Surmedica",
-            "total": 1
-        },
-        {
-            "nombre": "Comite Paritario",
-            "total": 1
-        },
-        {
-            "nombre": "Mantencion",
-            "total": 1
-        },
-        {
-            "nombre": "Dental Maria Paz",
-            "total": 1
-        },
-        {
-            "nombre": "Secretaria Quinto Piso",
-            "total": 1
-        },
-        {
-            "nombre": "Unidad Salud Funcionarios",
-            "total": 1
-        },
-        {
-            "nombre": "Para Entregar Durante La Semana",
-            "total": 1
-        },
-        {
-            "nombre": "Gestion Camas",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Dental Box 26",
-            "total": 1
-        },
-        {
-            "nombre": "Uti 1 3 Piso Edificio Nuevo",
-            "total": 1
-        },
-        {
-            "nombre": "Uti 1 Tercer Piso",
-            "total": 1
-        },
-        {
-            "nombre": "Box 1 Urgencia",
-            "total": 1
-        },
-        {
-            "nombre": "Box Flujo C3 Urgencia",
-            "total": 1
-        },
-        {
-            "nombre": "Sala De Rayos",
-            "total": 1
-        },
-        {
-            "nombre": "Oncología Hosp",
-            "total": 1
-        },
-        {
-            "nombre": "Urgencia Pediatrica Box 3",
-            "total": 1
-        },
-        {
-            "nombre": "Pabellón 5",
-            "total": 1
-        },
-        {
-            "nombre": "Farmacia Psiquiatría",
-            "total": 1
-        },
-        {
-            "nombre": "Servicio Neurocirugía",
-            "total": 1
-        },
-        {
-            "nombre": "Ex Fundacion Oncologica",
-            "total": 1
-        },
-        {
-            "nombre": "Box Psicólogo Reclutamiento",
-            "total": 1
-        },
-        {
-            "nombre": "Secre Neonatología",
-            "total": 1
-        },
-        {
-            "nombre": "Oncologia Infantil 2Do Piso",
-            "total": 1
-        },
-        {
-            "nombre": "Box 4 Respiratorio",
-            "total": 1
-        },
-        {
-            "nombre": "Farmacia Onco",
+            "nombre": "Ex Poli Pediatria",
             "total": 1
         },
         {
@@ -2772,235 +360,15 @@
             "total": 1
         },
         {
-            "nombre": "Ex Policlínico Pediatría",
+            "nombre": "DIRECCION",
             "total": 1
         },
         {
-            "nombre": "Auditorium",
+            "nombre": "Inyectable",
             "total": 1
         },
         {
-            "nombre": "Servicio Pediatrico",
-            "total": 1
-        },
-        {
-            "nombre": "Quimio Infanto",
-            "total": 1
-        },
-        {
-            "nombre": "Capacitación",
-            "total": 1
-        },
-        {
-            "nombre": "Famacia A1",
-            "total": 1
-        },
-        {
-            "nombre": "Taller De Carpinteria",
-            "total": 1
-        },
-        {
-            "nombre": "Dosimetría Radioterapia",
-            "total": 1
-        },
-        {
-            "nombre": "Portería",
-            "total": 1
-        },
-        {
-            "nombre": "Macro Red",
-            "total": 1
-        },
-        {
-            "nombre": "Pediatra",
-            "total": 1
-        },
-        {
-            "nombre": "Porteria",
-            "total": 1
-        },
-        {
-            "nombre": "Sala De Reuniones",
-            "total": 1
-        },
-        {
-            "nombre": "Policlínico Dental",
-            "total": 1
-        },
-        {
-            "nombre": "Gestión De Las Personas",
-            "total": 1
-        },
-        {
-            "nombre": "OFTALMOLOGIA",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Nefrología Box 5",
-            "total": 1
-        },
-        {
-            "nombre": "Médico Quirúrgico 2",
-            "total": 1
-        },
-        {
-            "nombre": "Dermatología",
-            "total": 1
-        },
-        {
-            "nombre": "Control Gestión",
-            "total": 1
-        },
-        {
-            "nombre": "Farmacia Bodega",
-            "total": 1
-        },
-        {
-            "nombre": "Oficina De Partes",
-            "total": 1
-        },
-        {
-            "nombre": "Sala Del Sueño",
-            "total": 1
-        },
-        {
-            "nombre": "Obstetricia",
-            "total": 1
-        },
-        {
-            "nombre": "Medicina Física",
-            "total": 1
-        },
-        {
-            "nombre": "Departamento De Desarrollo",
-            "total": 1
-        },
-        {
-            "nombre": "Policirugia Adulto Secretaría",
-            "total": 1
-        },
-        {
-            "nombre": "Ginecología Sala De Espera",
-            "total": 1
-        },
-        {
-            "nombre": "Shap",
-            "total": 1
-        },
-        {
-            "nombre": "Dental Box 25",
-            "total": 1
-        },
-        {
-            "nombre": "Laboratorio Central (Uro Análisis)",
-            "total": 1
-        },
-        {
-            "nombre": "Cuidados Paliativos Edificio Ce",
-            "total": 1
-        },
-        {
-            "nombre": "Departamento De Operaciones",
-            "total": 1
-        },
-        {
-            "nombre": "Sala De Servidores",
-            "total": 1
-        },
-        {
-            "nombre": "Oncohematoinfantil",
-            "total": 1
-        },
-        {
-            "nombre": "Oncología Y Radioterapia",
-            "total": 1
-        },
-        {
-            "nombre": "Endocrino",
-            "total": 1
-        },
-        {
-            "nombre": "Anatomia Patológica",
-            "total": 1
-        },
-        {
-            "nombre": "Surmedica 3Er Piso",
-            "total": 1
-        },
-        {
-            "nombre": "Bodega",
-            "total": 1
-        },
-        {
-            "nombre": "Policlinico Infectologia",
-            "total": 1
-        },
-        {
-            "nombre": "Policlinico Infectología",
-            "total": 1
-        },
-        {
-            "nombre": "Dosimetría Oncología",
-            "total": 1
-        },
-        {
-            "nombre": "Pediatrica",
-            "total": 1
-        },
-        {
-            "nombre": "2Do Piso Unidades Pediatricas",
-            "total": 1
-        },
-        {
-            "nombre": "Estadística",
-            "total": 1
-        },
-        {
-            "nombre": "Oncología Oficina Tecnólogos",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Hemato (Exescuelita)",
-            "total": 1
-        },
-        {
-            "nombre": "Servicio Salud Los Rios",
-            "total": 1
-        },
-        {
-            "nombre": "Policirugía Adulto",
-            "total": 1
-        },
-        {
-            "nombre": "Nutricionista",
-            "total": 1
-        },
-        {
-            "nombre": "Psiquiatria Farmacia",
-            "total": 1
-        },
-        {
-            "nombre": "Pabellón Partos",
-            "total": 1
-        },
-        {
-            "nombre": "2Do Piso Pediatria Oncohemato",
-            "total": 1
-        },
-        {
-            "nombre": "2Do Piso Pediatria Oncohematoinfantil",
-            "total": 1
-        },
-        {
-            "nombre": "Pediatria Oncohematoinfantil",
-            "total": 1
-        },
-        {
-            "nombre": "Electro Encefalograma",
-            "total": 1
-        },
-        {
-            "nombre": "Braquiterapia",
+            "nombre": "Macrored",
             "total": 1
         },
         {
@@ -3012,523 +380,36 @@
             "total": 1
         },
         {
-            "nombre": "Servicio De Medicina 3Er Piso He",
-            "total": 1
-        },
-        {
-            "nombre": "Anatomía",
-            "total": 1
-        },
-        {
-            "nombre": "Reclutamiento 5° Piso",
-            "total": 1
-        },
-        {
-            "nombre": "Rayos\/ Sys Admin",
-            "total": 1
-        },
-        {
-            "nombre": "Hospital Lanco",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Infectología",
-            "total": 1
-        },
-        {
-            "nombre": "Oncología Quimioterapia",
-            "total": 1
-        },
-        {
-            "nombre": "Alfa",
-            "total": 1
-        },
-        {
-            "nombre": "Configuración De Correo",
-            "total": 1
-        },
-        {
-            "nombre": "Urgencia Recaudación",
-            "total": 1
-        },
-        {
-            "nombre": "Psiquiatria Secretaria",
-            "total": 1
-        },
-        {
-            "nombre": "Psiquiatría Secretaría",
-            "total": 1
-        },
-        {
-            "nombre": "Recuperación Oncología",
-            "total": 1
-        },
-        {
-            "nombre": "Anatomía Patología  Citología",
-            "total": 1
-        },
-        {
-            "nombre": "Urgencia Primera Respuesta",
-            "total": 1
-        },
-        {
-            "nombre": "Container Recaudación",
-            "total": 1
-        },
-        {
-            "nombre": "Box Cirugía Urgencia",
-            "total": 1
-        },
-        {
-            "nombre": "Categorizador De Urgencia",
-            "total": 1
-        },
-        {
-            "nombre": "Onco Infanrtil",
-            "total": 1
-        },
-        {
-            "nombre": "Dental Box 19",
-            "total": 1
-        },
-        {
-            "nombre": "Cesamco",
-            "total": 1
-        },
-        {
-            "nombre": "Donald Canter Dental.",
-            "total": 1
-        },
-        {
-            "nombre": "Braqui Terapia",
-            "total": 1
-        },
-        {
-            "nombre": "Braqui Terapia.",
-            "total": 1
-        },
-        {
-            "nombre": "Ambulancia De Apoyo",
-            "total": 1
-        },
-        {
-            "nombre": "Cirugía Hospitalaria",
-            "total": 1
-        },
-        {
-            "nombre": "Pediatria Hospitalizados H2",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Oftalmo Box 412",
-            "total": 1
-        },
-        {
-            "nombre": "L.e.q.",
-            "total": 1
-        },
-        {
-            "nombre": "Ias",
-            "total": 1
-        },
-        {
-            "nombre": "Lista Espera Quirúrgica",
-            "total": 1
-        },
-        {
-            "nombre": "Surmedica - Poli Pediatría",
-            "total": 1
-        },
-        {
-            "nombre": "Pabellón",
-            "total": 1
-        },
-        {
-            "nombre": "Poli Inmunología",
-            "total": 1
-        },
-        {
-            "nombre": "Hospital La Union",
-            "total": 1
-        },
-        {
-            "nombre": "Laboratorio  Bacteriologia",
-            "total": 1
-        },
-        {
-            "nombre": "Urgencia Obstétrica",
-            "total": 1
-        },
-        {
-            "nombre": "Recepción De Muestras Laboratorio",
-            "total": 1
-        },
-        {
-            "nombre": "Hematología Infantil (Ex Escuelita)",
-            "total": 1
-        },
-        {
-            "nombre": "Gestion Oncologica",
-            "total": 1
-        },
-        {
-            "nombre": "Hosp Domiciliaria",
-            "total": 1
-        },
-        {
-            "nombre": "Hemato",
-            "total": 1
-        },
-        {
-            "nombre": "Policlinico Tph",
-            "total": 1
-        },
-        {
-            "nombre": "Control De Gestión Clínica",
-            "total": 1
-        },
-        {
-            "nombre": "Archivo Oncología",
-            "total": 1
-        },
-        {
-            "nombre": "Monitoreo  Ges",
-            "total": 1
-        },
-        {
-            "nombre": "Monitoreo Gestión",
-            "total": 1
-        },
-        {
-            "nombre": "Bilblioteca Uach",
-            "total": 1
-        },
-        {
-            "nombre": "Comunicaciones",
-            "total": 1
-        },
-        {
-            "nombre": "Periodista",
-            "total": 1
-        },
-        {
-            "nombre": "Logística",
-            "total": 1
-        },
-        {
-            "nombre": "Prevencion - Movilizacion",
-            "total": 1
-        },
-        {
-            "nombre": "Preveción De Riesgo",
-            "total": 1
-        },
-        {
-            "nombre": "Electrocom",
-            "total": 1
-        },
-        {
-            "nombre": "Infraestructura",
-            "total": 1
-        },
-        {
-            "nombre": "Neurocirugía",
-            "total": 1
-        },
-        {
-            "nombre": "Unidad De Recuperación",
-            "total": 1
-        },
-        {
-            "nombre": "Hematología 2Do Piso",
-            "total": 1
-        },
-        {
-            "nombre": "Medicina 4To",
-            "total": 1
-        },
-        {
-            "nombre": "Informática (Desarrollo)",
-            "total": 1
-        },
-        {
-            "nombre": "Sistema",
-            "total": 1
-        },
-        {
-            "nombre": "Pediátrico Quirúrgico (5To Piso)",
-            "total": 1
-        },
-        {
-            "nombre": "Oirs Pediatria Reposteria",
-            "total": 1
-        },
-        {
-            "nombre": "Recuperación",
-            "total": 1
-        },
-        {
-            "nombre": "Farmacia Oncología",
-            "total": 1
-        },
-        {
-            "nombre": "IAAS",
-            "total": 1
-        },
-        {
-            "nombre": "Sala De Reuniones Dirección",
-            "total": 1
-        },
-        {
-            "nombre": "Trabajo Social Oficina 4",
-            "total": 1
-        },
-        {
-            "nombre": "Dental (Box 20)",
-            "total": 1
-        },
-        {
-            "nombre": "Gestión En Rehabilitación",
-            "total": 1
-        },
-        {
-            "nombre": "POLI NEUROCIRUGIA",
-            "total": 1
-        },
-        {
-            "nombre": "CIRUGIA INFANTIL",
-            "total": 1
-        },
-        {
-            "nombre": "Recuperacion Central \/ Pabellon Central",
-            "total": 1
-        },
-        {
-            "nombre": "Traumatolgia Hospitalizado",
-            "total": 1
-        },
-        {
-            "nombre": "Psiquiatria Adulto",
-            "total": 1
-        },
-        {
-            "nombre": "Laboratorio Virologia",
-            "total": 1
-        },
-        {
-            "nombre": "Cardiologia",
-            "total": 1
-        },
-        {
-            "nombre": "Policlínico Dermatología",
-            "total": 1
-        },
-        {
-            "nombre": "Activo Fijo",
-            "total": 1
-        },
-        {
-            "nombre": "Surmédica",
-            "total": 1
-        },
-        {
-            "nombre": "POLI CARDIOLOGIA",
-            "total": 1
-        },
-        {
-            "nombre": "Sala Multiusos",
-            "total": 1
-        },
-        {
-            "nombre": "Pre Quirúrgico",
-            "total": 1
-        },
-        {
-            "nombre": "Gestión Oncología",
-            "total": 1
-        },
-        {
-            "nombre": "Control De Gestión",
-            "total": 1
-        },
-        {
-            "nombre": "Rayos Secretaria",
-            "total": 1
-        },
-        {
-            "nombre": "Jefatura Lavanderia",
-            "total": 1
-        },
-        {
-            "nombre": "Pdi",
-            "total": 1
-        },
-        {
-            "nombre": "Jurídica",
+            "nombre": "Radio Terapia",
             "total": 1
         }
     ],
-    "total_unidades": 2338,
+    "total_unidades": 74,
     "selected_cats": [
         {
             "id": "125",
             "nombre": "Administrativa",
-            "total": 96
-        },
-        {
-            "id": "98",
-            "nombre": "Alfa",
-            "total": 1
-        },
-        {
-            "id": "168",
-            "nombre": "AP",
-            "total": 28
+            "total": 5
         },
         {
             "id": "161",
             "nombre": "Apoyo empresa externa",
-            "total": 2
-        },
-        {
-            "id": "228",
-            "nombre": "asesoria equipos externos",
             "total": 1
-        },
-        {
-            "id": "338",
-            "nombre": "autoconsulta",
-            "total": 1
-        },
-        {
-            "id": "222",
-            "nombre": "brazaletes",
-            "total": 1
-        },
-        {
-            "id": "99",
-            "nombre": "Camaras",
-            "total": 238
         },
         {
             "id": "485",
             "nombre": "cambio nombre de anexo",
-            "total": 6
-        },
-        {
-            "id": "593",
-            "nombre": "Cambio Telefono",
-            "total": 5
-        },
-        {
-            "id": "288",
-            "nombre": "Cambio Vlan",
             "total": 1
-        },
-        {
-            "id": "144",
-            "nombre": "Capacitación usuario",
-            "total": 2
-        },
-        {
-            "id": "202",
-            "nombre": "carpetas compartidas ",
-            "total": 2
-        },
-        {
-            "id": "283",
-            "nombre": "Celular",
-            "total": 1
-        },
-        {
-            "id": "163",
-            "nombre": "chicote",
-            "total": 2
-        },
-        {
-            "id": "500",
-            "nombre": "Ciberseguridad",
-            "total": 1
-        },
-        {
-            "id": "670",
-            "nombre": "claves de equipo",
-            "total": 3
-        },
-        {
-            "id": "248",
-            "nombre": "compra materiales",
-            "total": 1
-        },
-        {
-            "id": "210",
-            "nombre": "compras",
-            "total": 1
-        },
-        {
-            "id": "615",
-            "nombre": "Comunicados",
-            "total": 1
-        },
-        {
-            "id": "555",
-            "nombre": "Conexion a Internet",
-            "total": 43
-        },
-        {
-            "id": "353",
-            "nombre": "configuracion de equipos",
-            "total": 10
-        },
-        {
-            "id": "647",
-            "nombre": "Configuración Impresora",
-            "total": 15
-        },
-        {
-            "id": "649",
-            "nombre": "contraseñas ",
-            "total": 21
-        },
-        {
-            "id": "146",
-            "nombre": "Coordinacion",
-            "total": 2
-        },
-        {
-            "id": "135",
-            "nombre": "CORE",
-            "total": 16
         },
         {
             "id": "108",
             "nombre": "Correos",
-            "total": 47
-        },
-        {
-            "id": "331",
-            "nombre": "corte de energia ",
-            "total": 1
-        },
-        {
-            "id": "320",
-            "nombre": "Creación de cuentas de usuarios",
-            "total": 1
+            "total": 2
         },
         {
             "id": "249",
             "nombre": "dar de baja ",
-            "total": 6
-        },
-        {
-            "id": "340",
-            "nombre": "deco",
             "total": 2
-        },
-        {
-            "id": "656",
-            "nombre": "Desbloqueo Paginas",
-            "total": 1
         },
         {
             "id": "343",
@@ -3536,423 +417,88 @@
             "total": 2
         },
         {
-            "id": "643",
-            "nombre": "doc digital ",
-            "total": 2
-        },
-        {
-            "id": "238",
-            "nombre": "DVR equipo Tele Vigilancia",
-            "total": 5
-        },
-        {
-            "id": "668",
-            "nombre": "ECONECTA",
-            "total": 1
-        },
-        {
-            "id": "187",
-            "nombre": "equipo intesis",
-            "total": 1
-        },
-        {
-            "id": "189",
-            "nombre": "equipo lenovo",
-            "total": 1
-        },
-        {
-            "id": "156",
-            "nombre": "Equipo Nuevo",
-            "total": 1
-        },
-        {
-            "id": "176",
-            "nombre": "equipo olidata ",
-            "total": 1
-        },
-        {
             "id": "97",
             "nombre": "Equipos",
-            "total": 563
-        },
-        {
-            "id": "204",
-            "nombre": "equipos de baja ",
-            "total": 1
+            "total": 4
         },
         {
             "id": "364",
             "nombre": "equipos intesis",
-            "total": 3
-        },
-        {
-            "id": "336",
-            "nombre": "equipos opciones",
-            "total": 1
-        },
-        {
-            "id": "268",
-            "nombre": "Escritorio Remoto",
-            "total": 1
+            "total": 2
         },
         {
             "id": "155",
             "nombre": "Etiquetadora",
-            "total": 134
-        },
-        {
-            "id": "209",
-            "nombre": "excel",
-            "total": 19
-        },
-        {
-            "id": "310",
-            "nombre": "Falla de pc",
-            "total": 2
-        },
-        {
-            "id": "211",
-            "nombre": "Firma Electronica",
-            "total": 2
-        },
-        {
-            "id": "368",
-            "nombre": "hdmi ",
-            "total": 4
-        },
-        {
-            "id": "253",
-            "nombre": "Huelleros",
-            "total": 26
-        },
-        {
-            "id": "254",
-            "nombre": "IMED",
-            "total": 6
-        },
-        {
-            "id": "671",
-            "nombre": "impresora de credenciales ",
-            "total": 2
-        },
-        {
-            "id": "158",
-            "nombre": "Impresora etiquetas",
-            "total": 12
-        },
-        {
-            "id": "150",
-            "nombre": "Impresora kropsys",
-            "total": 22
+            "total": 1
         },
         {
             "id": "101",
             "nombre": "Impresoras",
-            "total": 278
-        },
-        {
-            "id": "294",
-            "nombre": "Impresoras con problemas",
-            "total": 57
-        },
-        {
-            "id": "337",
-            "nombre": "informes de baja ",
-            "total": 3
-        },
-        {
-            "id": "170",
-            "nombre": "instalacion de equipo",
-            "total": 11
-        },
-        {
-            "id": "539",
-            "nombre": "Instalacion Nube NEXTCLOUD",
-            "total": 1
-        },
-        {
-            "id": "639",
-            "nombre": "Instalación Onlyoffice",
-            "total": 29
-        },
-        {
-            "id": "596",
-            "nombre": "Instalación PC",
-            "total": 22
-        },
-        {
-            "id": "166",
-            "nombre": "Instalacion programas",
-            "total": 6
+            "total": 4
         },
         {
             "id": "102",
             "nombre": "Internet",
-            "total": 125
+            "total": 2
         },
         {
             "id": "436",
             "nombre": "inventario ",
-            "total": 10
-        },
-        {
-            "id": "307",
-            "nombre": "ips",
-            "total": 6
-        },
-        {
-            "id": "322",
-            "nombre": "Jasper",
-            "total": 2
-        },
-        {
-            "id": "95",
-            "nombre": "LAN",
             "total": 1
         },
         {
             "id": "169",
             "nombre": "levantamiento de informacion ",
-            "total": 15
-        },
-        {
-            "id": "362",
-            "nombre": "licencia office ",
-            "total": 2
-        },
-        {
-            "id": "188",
-            "nombre": "Licencias Medicas",
-            "total": 4
+            "total": 1
         },
         {
             "id": "284",
             "nombre": "licitacion",
-            "total": 6
+            "total": 1
         },
         {
             "id": "94",
             "nombre": "Manager",
-            "total": 34
-        },
-        {
-            "id": "280",
-            "nombre": "Mercado Publico",
             "total": 1
-        },
-        {
-            "id": "579",
-            "nombre": "Mini Switch",
-            "total": 5
-        },
-        {
-            "id": "223",
-            "nombre": "monitores",
-            "total": 10
-        },
-        {
-            "id": "105",
-            "nombre": "Mouse",
-            "total": 11
-        },
-        {
-            "id": "217",
-            "nombre": "movimiento de equipos",
-            "total": 15
-        },
-        {
-            "id": "499",
-            "nombre": "Nextcloud",
-            "total": 66
-        },
-        {
-            "id": "215",
-            "nombre": "notebook",
-            "total": 6
         },
         {
             "id": "181",
             "nombre": "office",
-            "total": 69
+            "total": 3
         },
         {
-            "id": "225",
-            "nombre": "Outlook",
-            "total": 11
-        },
-        {
-            "id": "124",
-            "nombre": "Pagina Web",
-            "total": 10
-        },
-        {
-            "id": "297",
-            "nombre": "Password",
-            "total": 7
-        },
-        {
-            "id": "473",
-            "nombre": "PC con problemas",
-            "total": 87
-        },
-        {
-            "id": "174",
-            "nombre": "pc opciones",
-            "total": 1
-        },
-        {
-            "id": "265",
-            "nombre": "PDF",
-            "total": 7
-        },
-        {
-            "id": "309",
-            "nombre": "perdida de informacion ",
-            "total": 1
-        },
-        {
-            "id": "122",
-            "nombre": "Petición",
-            "total": 1
-        },
-        {
-            "id": "655",
-            "nombre": "Pie de Firma",
-            "total": 5
-        },
-        {
-            "id": "232",
-            "nombre": "Prestamo Notebooks",
-            "total": 2
-        },
-        {
-            "id": "373",
-            "nombre": "prestamo pc ",
-            "total": 1
-        },
-        {
-            "id": "638",
-            "nombre": "Problemas con WPS",
-            "total": 1
-        },
-        {
-            "id": "214",
-            "nombre": "Programas",
-            "total": 4
-        },
-        {
-            "id": "200",
-            "nombre": "proxy",
-            "total": 10
-        },
-        {
-            "id": "258",
-            "nombre": "RAC",
-            "total": 2
-        },
-        {
-            "id": "257",
-            "nombre": "ras",
-            "total": 2
-        },
-        {
-            "id": "159",
-            "nombre": "Recuperar Informacion",
+            "id": "626",
+            "nombre": "Onedrive ",
             "total": 1
         },
         {
             "id": "113",
             "nombre": "Redes",
-            "total": 396
-        },
-        {
-            "id": "299",
-            "nombre": "remasterizacion equipo",
-            "total": 22
-        },
-        {
-            "id": "673",
-            "nombre": "renuncia de funcionario ",
-            "total": 2
-        },
-        {
-            "id": "374",
-            "nombre": "respaldo de informacion",
-            "total": 7
-        },
-        {
-            "id": "622",
-            "nombre": "retiro de equipos ",
-            "total": 12
-        },
-        {
-            "id": "104",
-            "nombre": "Retráctil",
-            "total": 4
-        },
-        {
-            "id": "100",
-            "nombre": "Reunión",
-            "total": 3
-        },
-        {
-            "id": "255",
-            "nombre": "revision equipo nuevo",
-            "total": 1
-        },
-        {
-            "id": "654",
-            "nombre": "RNI",
-            "total": 1
-        },
-        {
-            "id": "380",
-            "nombre": "SAHE",
-            "total": 1
-        },
-        {
-            "id": "298",
-            "nombre": "SAMU",
-            "total": 1
+            "total": 16
         },
         {
             "id": "308",
             "nombre": "SCANER",
-            "total": 54
+            "total": 1
         },
         {
             "id": "230",
             "nombre": "Servidores",
-            "total": 22
-        },
-        {
-            "id": "620",
-            "nombre": "Sidexis",
-            "total": 10
-        },
-        {
-            "id": "348",
-            "nombre": "sirh",
             "total": 1
         },
         {
             "id": "162",
             "nombre": "Sistema",
-            "total": 4
+            "total": 1
         },
         {
             "id": "203",
             "nombre": "software",
-            "total": 21
+            "total": 2
         },
         {
             "id": "346",
             "nombre": "solicitud de celular ",
-            "total": 1
-        },
-        {
-            "id": "172",
-            "nombre": "solicitud de computador",
             "total": 1
         },
         {
@@ -3961,129 +507,29 @@
             "total": 1
         },
         {
-            "id": "365",
-            "nombre": "solicitud de huellero",
-            "total": 2
-        },
-        {
             "id": "190",
             "nombre": "solicitud de impresoras ",
-            "total": 5
-        },
-        {
-            "id": "326",
-            "nombre": "Solicitud de switch",
-            "total": 2
+            "total": 3
         },
         {
             "id": "325",
             "nombre": "solicitud de telefono",
-            "total": 7
-        },
-        {
-            "id": "272",
-            "nombre": "Tablet ",
-            "total": 1
-        },
-        {
-            "id": "279",
-            "nombre": "TEAMS",
-            "total": 5
-        },
-        {
-            "id": "106",
-            "nombre": "Teclado",
-            "total": 22
-        },
-        {
-            "id": "329",
-            "nombre": "teclados ",
             "total": 4
         },
         {
             "id": "96",
             "nombre": "Telefonia",
-            "total": 93
-        },
-        {
-            "id": "123",
-            "nombre": "Telemedicina",
-            "total": 3
-        },
-        {
-            "id": "594",
-            "nombre": "tonner",
-            "total": 2
-        },
-        {
-            "id": "321",
-            "nombre": "Totem",
             "total": 6
-        },
-        {
-            "id": "160",
-            "nombre": "Traslado equipos",
-            "total": 15
-        },
-        {
-            "id": "277",
-            "nombre": "Traslado Informacion",
-            "total": 1
-        },
-        {
-            "id": "604",
-            "nombre": "Turnos",
-            "total": 5
-        },
-        {
-            "id": "597",
-            "nombre": "tv",
-            "total": 4
         },
         {
             "id": "240",
             "nombre": "ups",
-            "total": 8
-        },
-        {
-            "id": "317",
-            "nombre": "visita a terreno ",
-            "total": 1
-        },
-        {
-            "id": "613",
-            "nombre": "vlan ",
-            "total": 6
+            "total": 2
         },
         {
             "id": "128",
             "nombre": "VPN",
-            "total": 4
-        },
-        {
-            "id": "153",
-            "nombre": "Wifi",
-            "total": 13
-        },
-        {
-            "id": "683",
-            "nombre": "Libre Office",
-            "total": 2
-        },
-        {
-            "id": "677",
-            "nombre": "cambio de pc",
-            "total": 2
-        },
-        {
-            "id": "684",
-            "nombre": "Windows Update",
-            "total": 2
-        },
-        {
-            "id": "685",
-            "nombre": "instalacion de huelleros",
-            "total": 2
+            "total": 1
         },
         {
             "id": "690",
@@ -4096,50 +542,35 @@
             "total": 1
         },
         {
-            "id": "688",
-            "nombre": "onlyoffice",
-            "total": 1
-        },
-        {
             "id": "687",
             "nombre": "microfono",
             "total": 1
         },
         {
-            "id": "681",
-            "nombre": "solicitud de notebook",
+            "id": "684",
+            "nombre": "Windows Update",
             "total": 1
         },
         {
-            "id": "678",
-            "nombre": "gestion alumnos en practica",
+            "id": "677",
+            "nombre": "cambio de pc",
             "total": 1
-        },
-        {
-            "id": "none",
-            "nombre": "Sin categoría",
-            "total": 36
         }
     ],
-    "selected_sum": 3143,
-    "quick_2m": 1636,
-    "quick_6m": 3143,
-    "quick_12m": 3143,
+    "selected_sum": 78,
+    "quick_2m": 65,
+    "quick_6m": 78,
+    "quick_12m": 78,
     "status_totals": {
-        "Nueva": 109,
-        "Cerrada": 3031,
+        "Nueva": 75,
         "En curso": 3
     },
     "priority_totals": {
-        "Normal": 3126,
-        "Alta": 14,
-        "Inmediata": 1,
-        "Urgente": 2
+        "Normal": 78
     },
     "tracker_totals": {
-        "Soporte": 2869,
-        "Tareas": 271,
-        "Proyecto Soporte": 3
+        "Soporte": 75,
+        "Tareas": 3
     },
-    "actualizado": "2026-05-12T19:10:29+02:00"
+    "actualizado": "2026-05-20T20:52:58+02:00"
 }

@@ -258,3 +258,118 @@
 [12-05-2026 13:39:49] MAINTENANCE_ENABLED - Usuario=Jean Cortés Lorca; inicio=12-05-2026 13:39:49; termino=12-05-2026 16:39
 [12-05-2026 13:46:49] MAINTENANCE_DISABLED - Usuario=Jean Cortés Lorca; inicio=12-05-2026 13:39:49; termino_configurado=12-05-2026 16:39
 [12-05-2026 13:54:41] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[12-05-2026 14:39:57] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[13-05-2026 08:47:37] SESSION_TIMEOUT - Sesión expirada por inactividad
+[14-05-2026 08:59:28] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[14-05-2026 12:41:08] SESSION_TIMEOUT - Sesión expirada por inactividad
+[14-05-2026 12:41:10] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[14-05-2026 15:40:36] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[18-05-2026 08:03:37] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[18-05-2026 09:05:43] SESSION_TIMEOUT - Sesión expirada por inactividad
+[18-05-2026 09:05:45] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[18-05-2026 09:10:28] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[18-05-2026 09:10:52] MAINTENANCE_DISABLED - Usuario=Jean Cortés Lorca; inicio=12-05-2026 13:31:00; termino_configurado=12-05-2026 15:30
+[18-05-2026 09:11:04] LOGIN_SUCCESS - User root root (1)
+[18-05-2026 10:17:54] SESSION_TIMEOUT - Sesión expirada por inactividad
+[18-05-2026 10:17:55] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[18-05-2026 11:24:28] SESSION_TIMEOUT - Sesión expirada por inactividad
+[18-05-2026 11:24:30] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[18-05-2026 15:58:38] SESSION_TIMEOUT - Sesión expirada por inactividad
+[18-05-2026 15:58:40] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[19-05-2026 07:56:32] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[19-05-2026 14:11:05] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[20-05-2026 08:03:18] SESSION_TIMEOUT - Sesión expirada por inactividad
+[20-05-2026 08:03:42] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[20-05-2026 10:10:31] SESSION_TIMEOUT - Sesión expirada por inactividad
+[20-05-2026 10:10:34] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[20-05-2026 13:58:59] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[22-05-2026 12:58:26] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[22-05-2026 16:24:51] SESSION_TIMEOUT - Sesión expirada por inactividad
+[26-05-2026 08:36:24] SESSION_TIMEOUT - Sesión expirada por inactividad
+[26-05-2026 08:36:30] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[26-05-2026 10:46:41] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[26-05-2026 12:19:32] SESSION_TIMEOUT - Sesión expirada por inactividad
+[26-05-2026 12:19:34] LOGIN_FAILURE - Intento con ""
+[26-05-2026 12:19:36] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[02-06-2026 08:29:42] SESSION_TIMEOUT - Sesión expirada por inactividad
+[02-06-2026 08:29:46] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[02-06-2026 08:56:26] SESSION_TIMEOUT - Sesión expirada por inactividad
+[02-06-2026 08:56:29] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[02-06-2026 10:40:34] SESSION_TIMEOUT - Sesión expirada por inactividad
+[02-06-2026 10:40:37] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[02-06-2026 12:34:56] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[02-06-2026 15:26:12] SESSION_TIMEOUT - Sesión expirada por inactividad
+[02-06-2026 15:26:14] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[04-06-2026 10:04:24] SESSION_TIMEOUT - Sesión expirada por inactividad
+[04-06-2026 10:04:27] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[04-06-2026 10:31:28] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[05-06-2026 10:04:55] SESSION_TIMEOUT - Sesión expirada por inactividad
+[05-06-2026 10:04:58] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[06-06-2026 16:58:00] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[08-06-2026 08:06:14] SESSION_TIMEOUT - Sesión expirada por inactividad
+[08-06-2026 08:06:34] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[10-06-2026 08:06:52] SESSION_TIMEOUT - Sesión expirada por inactividad
+[10-06-2026 09:26:56] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[10-06-2026 10:25:08] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[11-06-2026 09:16:25] SESSION_TIMEOUT - Sesión expirada por inactividad
+[11-06-2026 09:16:28] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[11-06-2026 09:54:26] SESSION_TIMEOUT - Sesión expirada por inactividad
+[11-06-2026 09:54:28] LOGIN_FAILURE - Intento con ""
+[11-06-2026 09:54:30] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[11-06-2026 11:09:58] SESSION_TIMEOUT - Sesión expirada por inactividad
+[11-06-2026 11:10:01] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[11-06-2026 13:01:00] SESSION_TIMEOUT - Sesión expirada por inactividad
+[11-06-2026 13:01:04] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[11-06-2026 15:04:45] SESSION_TIMEOUT - Sesión expirada por inactividad
+[11-06-2026 15:04:50] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[11-06-2026 17:09:34] SESSION_TIMEOUT - Sesión expirada por inactividad
+[12-06-2026 07:55:56] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[12-06-2026 09:09:54] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[12-06-2026 14:46:57] SESSION_TIMEOUT - Sesión expirada por inactividad
+[15-06-2026 02:01:18] SESSION_TIMEOUT - Sesión expirada por inactividad
+[15-06-2026 11:05:09] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[16-06-2026 08:55:58] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[17-06-2026 10:19:08] SESSION_TIMEOUT - Sesión expirada por inactividad
+[17-06-2026 12:54:03] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[18-06-2026 14:43:45] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[18-06-2026 16:32:32] SESSION_TIMEOUT - Sesión expirada por inactividad
+[18-06-2026 16:32:35] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[19-06-2026 13:11:23] SESSION_TIMEOUT - Sesión expirada por inactividad
+[22-06-2026 11:05:46] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[22-06-2026 11:05:47] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[23-06-2026 15:54:04] SESSION_TIMEOUT - Sesión expirada por inactividad
+[23-06-2026 16:26:39] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[24-06-2026 08:00:06] SESSION_TIMEOUT - Sesión expirada por inactividad
+[25-06-2026 09:00:44] SESSION_TIMEOUT - Sesión expirada por inactividad
+[25-06-2026 09:00:50] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[25-06-2026 14:36:58] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[26-06-2026 08:03:28] SESSION_TIMEOUT - Sesión expirada por inactividad
+[26-06-2026 09:24:24] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[26-06-2026 09:34:27] SESSION_TIMEOUT - Sesión expirada por inactividad
+[26-06-2026 09:34:31] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[30-06-2026 08:05:57] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[01-07-2026 08:18:06] SESSION_TIMEOUT - Sesión expirada por inactividad
+[01-07-2026 10:16:44] LOGIN_SUCCESS - User Jean Cortés Lorca (42)
+[01-07-2026 12:03:57] SESSION_TIMEOUT - Sesión expirada por inactividad
+[01-07-2026 12:03:59] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[02-07-2026 15:17:14] SESSION_TIMEOUT - Sesión expirada por inactividad
+[02-07-2026 15:17:17] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[06-07-2026 14:47:51] SESSION_TIMEOUT - Sesión expirada por inactividad
+[06-07-2026 14:47:54] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[07-07-2026 11:11:28] SESSION_TIMEOUT - Sesión expirada por inactividad
+[07-07-2026 15:11:09] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[07-07-2026 15:30:56] SESSION_TIMEOUT - Sesión expirada por inactividad
+[07-07-2026 15:30:59] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[07-07-2026 16:28:58] SESSION_TIMEOUT - Sesión expirada por inactividad
+[09-07-2026 09:20:48] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[09-07-2026 10:59:17] SESSION_TIMEOUT - Sesión expirada por inactividad
+[09-07-2026 11:43:30] LOGIN_SUCCESS - User Camilo Urrutia Cárcamo (122)
+[09-07-2026 12:23:25] SESSION_TIMEOUT - Sesión expirada por inactividad
+[09-07-2026 12:25:34] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[09-07-2026 15:05:07] SESSION_TIMEOUT - Sesión expirada por inactividad
+[09-07-2026 15:05:08] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[13-07-2026 10:44:09] SESSION_TIMEOUT - Sesión expirada por inactividad
+[13-07-2026 10:44:12] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[13-07-2026 11:02:00] SESSION_TIMEOUT - Sesión expirada por inactividad
+[13-07-2026 11:02:03] LOGIN_SUCCESS - User Hernan Ulloa (117)
+[17-07-2026 08:01:35] SESSION_TIMEOUT - Sesión expirada por inactividad
